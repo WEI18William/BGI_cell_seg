@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.image.transform API documentation</title>
+<meta name="description" content="图像变换类" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.image.transform</code></h1>
+</header>
+<section id="section-intro">
+<p>图像变换类</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+图像变换类
+&#34;&#34;&#34;
+import pyvips
+import numpy as np
+import math
+
+format_to_dtype = {
+    &#39;uchar&#39;: np.uint8,
+    &#39;char&#39;: np.int8,
+    &#39;ushort&#39;: np.uint16,
+    &#39;short&#39;: np.int16,
+    &#39;uint&#39;: np.uint32,
+    &#39;int&#39;: np.int32,
+    &#39;float&#39;: np.float32,
+    &#39;double&#39;: np.float64,
+    &#39;complex&#39;: np.complex64,
+    &#39;dpcomplex&#39;: np.complex128,
+}
+
+# map np dtypes to vips
+dtype_to_format = {
+    &#39;uint8&#39;: &#39;uchar&#39;,
+    &#39;int8&#39;: &#39;char&#39;,
+    &#39;uint16&#39;: &#39;ushort&#39;,
+    &#39;int16&#39;: &#39;short&#39;,
+    &#39;uint32&#39;: &#39;uint&#39;,
+    &#39;int32&#39;: &#39;int&#39;,
+    &#39;float32&#39;: &#39;float&#39;,
+    &#39;float64&#39;: &#39;double&#39;,
+    &#39;complex64&#39;: &#39;complex&#39;,
+    &#39;complex128&#39;: &#39;dpcomplex&#39;,
+}
+
+
+def crop_around_center(image, width, height):
+    &#34;&#34;&#34;
+    Given a NumPy / OpenCV 2 image, crops it to the given width and height,
+    around it&#39;s centre point
+    &#34;&#34;&#34;
+
+    image_size = (image.shape[1], image.shape[0])
+    image_center = (int(image_size[0] * 0.5), int(image_size[1] * 0.5))
+
+    if width &gt; image_size[0]:
+        width = image_size[0]
+
+    if height &gt; image_size[1]:
+        height = image_size[1]
+
+    x1 = int(image_center[0] - width * 0.5)
+    x2 = int(image_center[0] + width * 0.5)
+    y1 = int(image_center[1] - height * 0.5)
+    y2 = int(image_center[1] + height * 0.5)
+
+    return image[y1:y2, x1:x2]
+
+
+def rotatedRectWithMaxArea(w, h, angle):
+    &#34;&#34;&#34;
+    Given a rectangle of size wxh that has been rotated by &#39;angle&#39; (in
+    radians), computes the width and height of the largest possible
+    axis-aligned rectangle (maximal area) within the rotated rectangle.
+    &#34;&#34;&#34;
+    if w &lt;= 0 or h &lt;= 0:
+        return 0, 0
+
+    width_is_longer = w &gt;= h
+    side_long, side_short = (w, h) if width_is_longer else (h, w)
+
+    # since the solutions for angle, -angle and 180-angle are all the same,
+    # if suffices to look at the first quadrant and the absolute values of sin,cos:
+    sin_a, cos_a = abs(math.sin(angle)), abs(math.cos(angle))
+    if side_short &lt;= 2. * sin_a * cos_a * side_long or abs(sin_a - cos_a) &lt; 1e-10:
+        # half constrained case: two crop corners touch the longer side,
+        #   the other two corners are on the mid-line parallel to the longer line
+        x = 0.5 * side_short
+        wr, hr = (x / sin_a, x / cos_a) if width_is_longer else (x / cos_a, x / sin_a)
+    else:
+        # fully constrained case: crop touches all 4 sides
+        cos_2a = cos_a * cos_a - sin_a * sin_a
+        wr, hr = (w * cos_a - h * sin_a) / cos_2a, (h * cos_a - w * sin_a) / cos_2a
+
+    return wr, hr
+
+
+class ImageTransform(pyvips.Image):
+    def __init__(self):
+        self.image = None
+
+    def set_image(self, image_path: str):
+        &#34;&#34;&#34;
+        :param image_path: str | array
+        &#34;&#34;&#34;
+        if isinstance(image_path, str):
+            self.image = self.new_from_file(image_path)
+        elif isinstance(image_path, np.ndarray):
+            self.image = self.new_from_array(image_path)
+        else:
+            print(&#34;Image path type error.&#34;)
+
+    def offset(self, x_offset: int = 0, y_offset: int = 0, dst_size: tuple = None):
+        offset = [x_offset, y_offset]
+        self.__rigid_transform(offset=offset, dst_shape=dst_size)
+        arr = self.to_image()
+        return arr
+
+    def scale(self, x_scale: float, y_scale: float):
+        self.__affine_transform(scale_x=x_scale, scale_y=y_scale)
+        arr = self.to_image()
+        return arr
+
+    def resize(self, dst_size: tuple):
+        x_scale = dst_size[1] / self.image.width
+        y_scale = dst_size[0] / self.image.height
+        arr = self.scale(x_scale=x_scale, y_scale=y_scale)
+        return arr
+
+    def rot90(self, rot90_type: int, ret_dst=True):
+        &#34;&#34;&#34;
+        2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+        &#34;&#34;&#34;
+        self.__rigid_transform(rot_type=rot90_type)
+        if ret_dst:
+            return self.to_image()
+        else:
+            return None
+
+    def rot(self, angle):
+        self.__affine_transform(rotation=angle)
+        arr = self.to_image()
+        return arr
+
+    def rot_scale(self, x_scale: float, y_scale: float, angle: float, ):
+        self.__affine_transform(scale_x=x_scale, scale_y=y_scale, rotation=angle)
+        arr = self.to_image()
+        return arr
+
+    def flip(self, flip_type: str, ret_dst=True):
+        &#39;&#39;&#39;
+        :param flip_type: &#39;ver&#39; | &#39;hor&#39;
+        
+        2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+        &#39;&#39;&#39;
+        self.__rigid_transform(flip=flip_type)
+        if ret_dst:
+            return self.to_image()
+        else:
+            return None
+
+    def rot_and_crop(self, angle):
+        &#34;&#34;&#34;
+        Given the angle, return the maximum rectangle within the rotated rectangle.
+
+        Args:
+            angle (): angle in degree
+
+        Returns:
+            arr_cropped: cropped rotated image
+
+        &#34;&#34;&#34;
+        image_height, image_width = self.image.height, self.image.width
+        rot_arr = self.rot(angle)
+        arr_cropped = crop_around_center(
+            rot_arr,
+            *rotatedRectWithMaxArea(
+                w=image_width,
+                h=image_height,
+                angle=math.radians(angle)
+            )
+        )
+        return arr_cropped
+
+    def __rigid_transform(self, flip=None, rot_type=None, offset=None, dst_shape=None):
+        &#34;&#34;&#34;
+        2023/4/6 @dengzhonghan 将扩展画布优先于offset挪动
+        2023/5/6 @dengzhonghan 画布扩展与offset挪动合并，不然需要判断两幅图尺寸大小的关系
+        2023/9/19 @fxzhao 修复用affine做旋转的问题,替换为pyvips自带的rot方法
+        刚性
+        &#34;&#34;&#34;
+        if flip is not None:
+            if flip == &#39;ver&#39;:
+                self.image = self.image.flipver()
+            elif flip == &#39;hor&#39;:
+                self.image = self.image.fliphor()
+
+        if rot_type is not None:
+            # theta = np.radians(-rot_type * 90)
+            # m = [np.cos(theta), -np.sin(theta), np.sin(theta), np.cos(theta)]
+            # self.image = self.image.affine(m, interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+            #                                background=[0])
+            if rot_type == 1:
+                self.image = self.image.rot270()
+            elif rot_type == 2:
+                self.image = self.image.rot180()
+            elif rot_type == 3:
+                self.image = self.image.rot90()
+        # if dst_shape is not None:
+        #     h, w = dst_shape
+        #     self.image = self.image.affine([1, 0, 0, 1],
+        #                                    interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+        #                                    oarea=[0, 0, w, h])
+        if offset is not None and dst_shape is not None:
+            x, y = offset
+            h, w = dst_shape
+            self.image = self.image.affine([1, 0, 0, 1],
+                                           interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+                                           idx=x, idy=y, oarea=[0, 0, w, h])
+
+    def __affine_transform(self, scale_x=None, scale_y=None, rotation=None):
+        &#34;&#34;&#34;
+        仿射
+        &#34;&#34;&#34;
+        if scale_x is None: scale_x = 1
+        if scale_y is None: scale_y = 1
+        if rotation is None: rotation = 0
+
+        theta = np.radians(rotation)
+        m = [scale_x * np.cos(theta), scale_x * np.sin(theta),
+             -scale_y * np.sin(theta), scale_y * np.cos(theta)]
+        self.image = self.image.affine(m, interpolate=pyvips.Interpolate.new(&#34;nearest&#34;), background=[0])
+
+    @staticmethod
+    def numpy2vips(a):
+        height, width, bands = a.shape
+        linear = a.reshape(width * height * bands)
+        vi = pyvips.Image.new_from_memory(linear.data, width, height, bands,
+                                          dtype_to_format[str(a.dtype)])
+        return vi
+
+    @staticmethod
+    def vips2numpy(vi):
+        return np.ndarray(buffer=vi.write_to_memory(),
+                          dtype=format_to_dtype[vi.format],
+                          shape=[vi.height, vi.width, vi.bands])
+
+    def to_image(self):
+        &#39;&#39;&#39;
+        pyvips -&gt; array
+        &#39;&#39;&#39;
+        arr = self.vips2numpy(self.image)
+        if arr.ndim == 3:
+            if arr.shape[2] != 3:
+                arr = arr[:, :, 0]
+        return arr
+
+
+def main():
+    pass
+
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="cellbin.image.transform.crop_around_center"><code class="name flex">
+<span>def <span class="ident">crop_around_center</span></span>(<span>image, width, height)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a NumPy / OpenCV 2 image, crops it to the given width and height,
+around it's centre point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def crop_around_center(image, width, height):
+    &#34;&#34;&#34;
+    Given a NumPy / OpenCV 2 image, crops it to the given width and height,
+    around it&#39;s centre point
+    &#34;&#34;&#34;
+
+    image_size = (image.shape[1], image.shape[0])
+    image_center = (int(image_size[0] * 0.5), int(image_size[1] * 0.5))
+
+    if width &gt; image_size[0]:
+        width = image_size[0]
+
+    if height &gt; image_size[1]:
+        height = image_size[1]
+
+    x1 = int(image_center[0] - width * 0.5)
+    x2 = int(image_center[0] + width * 0.5)
+    y1 = int(image_center[1] - height * 0.5)
+    y2 = int(image_center[1] + height * 0.5)
+
+    return image[y1:y2, x1:x2]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    pass</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.rotatedRectWithMaxArea"><code class="name flex">
+<span>def <span class="ident">rotatedRectWithMaxArea</span></span>(<span>w, h, angle)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a rectangle of size wxh that has been rotated by 'angle' (in
+radians), computes the width and height of the largest possible
+axis-aligned rectangle (maximal area) within the rotated rectangle.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotatedRectWithMaxArea(w, h, angle):
+    &#34;&#34;&#34;
+    Given a rectangle of size wxh that has been rotated by &#39;angle&#39; (in
+    radians), computes the width and height of the largest possible
+    axis-aligned rectangle (maximal area) within the rotated rectangle.
+    &#34;&#34;&#34;
+    if w &lt;= 0 or h &lt;= 0:
+        return 0, 0
+
+    width_is_longer = w &gt;= h
+    side_long, side_short = (w, h) if width_is_longer else (h, w)
+
+    # since the solutions for angle, -angle and 180-angle are all the same,
+    # if suffices to look at the first quadrant and the absolute values of sin,cos:
+    sin_a, cos_a = abs(math.sin(angle)), abs(math.cos(angle))
+    if side_short &lt;= 2. * sin_a * cos_a * side_long or abs(sin_a - cos_a) &lt; 1e-10:
+        # half constrained case: two crop corners touch the longer side,
+        #   the other two corners are on the mid-line parallel to the longer line
+        x = 0.5 * side_short
+        wr, hr = (x / sin_a, x / cos_a) if width_is_longer else (x / cos_a, x / sin_a)
+    else:
+        # fully constrained case: crop touches all 4 sides
+        cos_2a = cos_a * cos_a - sin_a * sin_a
+        wr, hr = (w * cos_a - h * sin_a) / cos_2a, (h * cos_a - w * sin_a) / cos_2a
+
+    return wr, hr</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.image.transform.ImageTransform"><code class="flex name class">
+<span>class <span class="ident">ImageTransform</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wrap a VipsImage object.</p>
+<p>Wrap around a pointer.</p>
+<p>Wraps a GObject instance around an underlying pointer. When the
+instance is garbage-collected, the underlying object is unreferenced.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ImageTransform(pyvips.Image):
+    def __init__(self):
+        self.image = None
+
+    def set_image(self, image_path: str):
+        &#34;&#34;&#34;
+        :param image_path: str | array
+        &#34;&#34;&#34;
+        if isinstance(image_path, str):
+            self.image = self.new_from_file(image_path)
+        elif isinstance(image_path, np.ndarray):
+            self.image = self.new_from_array(image_path)
+        else:
+            print(&#34;Image path type error.&#34;)
+
+    def offset(self, x_offset: int = 0, y_offset: int = 0, dst_size: tuple = None):
+        offset = [x_offset, y_offset]
+        self.__rigid_transform(offset=offset, dst_shape=dst_size)
+        arr = self.to_image()
+        return arr
+
+    def scale(self, x_scale: float, y_scale: float):
+        self.__affine_transform(scale_x=x_scale, scale_y=y_scale)
+        arr = self.to_image()
+        return arr
+
+    def resize(self, dst_size: tuple):
+        x_scale = dst_size[1] / self.image.width
+        y_scale = dst_size[0] / self.image.height
+        arr = self.scale(x_scale=x_scale, y_scale=y_scale)
+        return arr
+
+    def rot90(self, rot90_type: int, ret_dst=True):
+        &#34;&#34;&#34;
+        2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+        &#34;&#34;&#34;
+        self.__rigid_transform(rot_type=rot90_type)
+        if ret_dst:
+            return self.to_image()
+        else:
+            return None
+
+    def rot(self, angle):
+        self.__affine_transform(rotation=angle)
+        arr = self.to_image()
+        return arr
+
+    def rot_scale(self, x_scale: float, y_scale: float, angle: float, ):
+        self.__affine_transform(scale_x=x_scale, scale_y=y_scale, rotation=angle)
+        arr = self.to_image()
+        return arr
+
+    def flip(self, flip_type: str, ret_dst=True):
+        &#39;&#39;&#39;
+        :param flip_type: &#39;ver&#39; | &#39;hor&#39;
+        
+        2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+        &#39;&#39;&#39;
+        self.__rigid_transform(flip=flip_type)
+        if ret_dst:
+            return self.to_image()
+        else:
+            return None
+
+    def rot_and_crop(self, angle):
+        &#34;&#34;&#34;
+        Given the angle, return the maximum rectangle within the rotated rectangle.
+
+        Args:
+            angle (): angle in degree
+
+        Returns:
+            arr_cropped: cropped rotated image
+
+        &#34;&#34;&#34;
+        image_height, image_width = self.image.height, self.image.width
+        rot_arr = self.rot(angle)
+        arr_cropped = crop_around_center(
+            rot_arr,
+            *rotatedRectWithMaxArea(
+                w=image_width,
+                h=image_height,
+                angle=math.radians(angle)
+            )
+        )
+        return arr_cropped
+
+    def __rigid_transform(self, flip=None, rot_type=None, offset=None, dst_shape=None):
+        &#34;&#34;&#34;
+        2023/4/6 @dengzhonghan 将扩展画布优先于offset挪动
+        2023/5/6 @dengzhonghan 画布扩展与offset挪动合并，不然需要判断两幅图尺寸大小的关系
+        2023/9/19 @fxzhao 修复用affine做旋转的问题,替换为pyvips自带的rot方法
+        刚性
+        &#34;&#34;&#34;
+        if flip is not None:
+            if flip == &#39;ver&#39;:
+                self.image = self.image.flipver()
+            elif flip == &#39;hor&#39;:
+                self.image = self.image.fliphor()
+
+        if rot_type is not None:
+            # theta = np.radians(-rot_type * 90)
+            # m = [np.cos(theta), -np.sin(theta), np.sin(theta), np.cos(theta)]
+            # self.image = self.image.affine(m, interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+            #                                background=[0])
+            if rot_type == 1:
+                self.image = self.image.rot270()
+            elif rot_type == 2:
+                self.image = self.image.rot180()
+            elif rot_type == 3:
+                self.image = self.image.rot90()
+        # if dst_shape is not None:
+        #     h, w = dst_shape
+        #     self.image = self.image.affine([1, 0, 0, 1],
+        #                                    interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+        #                                    oarea=[0, 0, w, h])
+        if offset is not None and dst_shape is not None:
+            x, y = offset
+            h, w = dst_shape
+            self.image = self.image.affine([1, 0, 0, 1],
+                                           interpolate=pyvips.Interpolate.new(&#34;nearest&#34;),
+                                           idx=x, idy=y, oarea=[0, 0, w, h])
+
+    def __affine_transform(self, scale_x=None, scale_y=None, rotation=None):
+        &#34;&#34;&#34;
+        仿射
+        &#34;&#34;&#34;
+        if scale_x is None: scale_x = 1
+        if scale_y is None: scale_y = 1
+        if rotation is None: rotation = 0
+
+        theta = np.radians(rotation)
+        m = [scale_x * np.cos(theta), scale_x * np.sin(theta),
+             -scale_y * np.sin(theta), scale_y * np.cos(theta)]
+        self.image = self.image.affine(m, interpolate=pyvips.Interpolate.new(&#34;nearest&#34;), background=[0])
+
+    @staticmethod
+    def numpy2vips(a):
+        height, width, bands = a.shape
+        linear = a.reshape(width * height * bands)
+        vi = pyvips.Image.new_from_memory(linear.data, width, height, bands,
+                                          dtype_to_format[str(a.dtype)])
+        return vi
+
+    @staticmethod
+    def vips2numpy(vi):
+        return np.ndarray(buffer=vi.write_to_memory(),
+                          dtype=format_to_dtype[vi.format],
+                          shape=[vi.height, vi.width, vi.bands])
+
+    def to_image(self):
+        &#39;&#39;&#39;
+        pyvips -&gt; array
+        &#39;&#39;&#39;
+        arr = self.vips2numpy(self.image)
+        if arr.ndim == 3:
+            if arr.shape[2] != 3:
+                arr = arr[:, :, 0]
+        return arr</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pyvips.vimage.Image</li>
+<li>pyvips.vobject.VipsObject</li>
+<li>pyvips.gobject.GObject</li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="cellbin.image.transform.ImageTransform.numpy2vips"><code class="name flex">
+<span>def <span class="ident">numpy2vips</span></span>(<span>a)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def numpy2vips(a):
+    height, width, bands = a.shape
+    linear = a.reshape(width * height * bands)
+    vi = pyvips.Image.new_from_memory(linear.data, width, height, bands,
+                                      dtype_to_format[str(a.dtype)])
+    return vi</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.vips2numpy"><code class="name flex">
+<span>def <span class="ident">vips2numpy</span></span>(<span>vi)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def vips2numpy(vi):
+    return np.ndarray(buffer=vi.write_to_memory(),
+                      dtype=format_to_dtype[vi.format],
+                      shape=[vi.height, vi.width, vi.bands])</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.image.transform.ImageTransform.flip"><code class="name flex">
+<span>def <span class="ident">flip</span></span>(<span>self, flip_type: str, ret_dst=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param flip_type: 'ver' | 'hor'</p>
+<p>2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def flip(self, flip_type: str, ret_dst=True):
+    &#39;&#39;&#39;
+    :param flip_type: &#39;ver&#39; | &#39;hor&#39;
+    
+    2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+    &#39;&#39;&#39;
+    self.__rigid_transform(flip=flip_type)
+    if ret_dst:
+        return self.to_image()
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.offset"><code class="name flex">
+<span>def <span class="ident">offset</span></span>(<span>self, x_offset: int = 0, y_offset: int = 0, dst_size: tuple = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def offset(self, x_offset: int = 0, y_offset: int = 0, dst_size: tuple = None):
+    offset = [x_offset, y_offset]
+    self.__rigid_transform(offset=offset, dst_shape=dst_size)
+    arr = self.to_image()
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.resize"><code class="name flex">
+<span>def <span class="ident">resize</span></span>(<span>self, dst_size: tuple)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resize an image.</p>
+<h2 id="example">Example</h2>
+<p>out = in.resize(scale, kernel=Union[str, Kernel], vscale=float)</p>
+<h2 id="returns">Returns</h2>
+<p>out (Image): Output image</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>in</code></strong> :&ensp;<code>Image</code></dt>
+<dd>Input image argument</dd>
+<dt><strong><code>scale</code></strong> :&ensp;<code>float</code></dt>
+<dd>Scale image by this factor</dd>
+</dl>
+<p>Keyword args:
+kernel (Union[str, Kernel]): Resampling kernel
+vscale (float): Vertical scale image by this factor</p>
+<h2 id="raises">Raises</h2>
+<p>:class:<code>.Error</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resize(self, dst_size: tuple):
+    x_scale = dst_size[1] / self.image.width
+    y_scale = dst_size[0] / self.image.height
+    arr = self.scale(x_scale=x_scale, y_scale=y_scale)
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.rot"><code class="name flex">
+<span>def <span class="ident">rot</span></span>(<span>self, angle)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rotate an image.</p>
+<h2 id="example">Example</h2>
+<p>out = in.rot(angle)</p>
+<h2 id="returns">Returns</h2>
+<p>out (Image): Output image</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>in</code></strong> :&ensp;<code>Image</code></dt>
+<dd>Input image</dd>
+<dt><strong><code>angle</code></strong> :&ensp;<code>Union[str, Angle]</code></dt>
+<dd>Angle to rotate image</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<p>:class:<code>.Error</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rot(self, angle):
+    self.__affine_transform(rotation=angle)
+    arr = self.to_image()
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.rot90"><code class="name flex">
+<span>def <span class="ident">rot90</span></span>(<span>self, rot90_type: int, ret_dst=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rot90(self, rot90_type: int, ret_dst=True):
+    &#34;&#34;&#34;
+    2023/09/21 @fxzhao 增加参数ret_dst,默认为True返回数据,否则返回None
+    &#34;&#34;&#34;
+    self.__rigid_transform(rot_type=rot90_type)
+    if ret_dst:
+        return self.to_image()
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.rot_and_crop"><code class="name flex">
+<span>def <span class="ident">rot_and_crop</span></span>(<span>self, angle)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given the angle, return the maximum rectangle within the rotated rectangle.</p>
+<h2 id="args">Args</h2>
+<p>angle (): angle in degree</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>arr_cropped</code></dt>
+<dd>cropped rotated image</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rot_and_crop(self, angle):
+    &#34;&#34;&#34;
+    Given the angle, return the maximum rectangle within the rotated rectangle.
+
+    Args:
+        angle (): angle in degree
+
+    Returns:
+        arr_cropped: cropped rotated image
+
+    &#34;&#34;&#34;
+    image_height, image_width = self.image.height, self.image.width
+    rot_arr = self.rot(angle)
+    arr_cropped = crop_around_center(
+        rot_arr,
+        *rotatedRectWithMaxArea(
+            w=image_width,
+            h=image_height,
+            angle=math.radians(angle)
+        )
+    )
+    return arr_cropped</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.rot_scale"><code class="name flex">
+<span>def <span class="ident">rot_scale</span></span>(<span>self, x_scale: float, y_scale: float, angle: float)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rot_scale(self, x_scale: float, y_scale: float, angle: float, ):
+    self.__affine_transform(scale_x=x_scale, scale_y=y_scale, rotation=angle)
+    arr = self.to_image()
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.scale"><code class="name flex">
+<span>def <span class="ident">scale</span></span>(<span>self, x_scale: float, y_scale: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Scale an image to uchar.</p>
+<h2 id="example">Example</h2>
+<p>out = in.scale(exp=float, log=bool)</p>
+<h2 id="returns">Returns</h2>
+<p>out (Image): Output image</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>in</code></strong> :&ensp;<code>Image</code></dt>
+<dd>Input image</dd>
+</dl>
+<p>Keyword args:
+exp (float): Exponent for log scale
+log (bool): Log scale</p>
+<h2 id="raises">Raises</h2>
+<p>:class:<code>.Error</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scale(self, x_scale: float, y_scale: float):
+    self.__affine_transform(scale_x=x_scale, scale_y=y_scale)
+    arr = self.to_image()
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.set_image"><code class="name flex">
+<span>def <span class="ident">set_image</span></span>(<span>self, image_path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param image_path: str | array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_image(self, image_path: str):
+    &#34;&#34;&#34;
+    :param image_path: str | array
+    &#34;&#34;&#34;
+    if isinstance(image_path, str):
+        self.image = self.new_from_file(image_path)
+    elif isinstance(image_path, np.ndarray):
+        self.image = self.new_from_array(image_path)
+    else:
+        print(&#34;Image path type error.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.image.transform.ImageTransform.to_image"><code class="name flex">
+<span>def <span class="ident">to_image</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>pyvips -&gt; array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_image(self):
+    &#39;&#39;&#39;
+    pyvips -&gt; array
+    &#39;&#39;&#39;
+    arr = self.vips2numpy(self.image)
+    if arr.ndim == 3:
+        if arr.shape[2] != 3:
+            arr = arr[:, :, 0]
+    return arr</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.image" href="index.html">cellbin.image</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="cellbin.image.transform.crop_around_center" href="#cellbin.image.transform.crop_around_center">crop_around_center</a></code></li>
+<li><code><a title="cellbin.image.transform.main" href="#cellbin.image.transform.main">main</a></code></li>
+<li><code><a title="cellbin.image.transform.rotatedRectWithMaxArea" href="#cellbin.image.transform.rotatedRectWithMaxArea">rotatedRectWithMaxArea</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.image.transform.ImageTransform" href="#cellbin.image.transform.ImageTransform">ImageTransform</a></code></h4>
+<ul class="two-column">
+<li><code><a title="cellbin.image.transform.ImageTransform.flip" href="#cellbin.image.transform.ImageTransform.flip">flip</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.numpy2vips" href="#cellbin.image.transform.ImageTransform.numpy2vips">numpy2vips</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.offset" href="#cellbin.image.transform.ImageTransform.offset">offset</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.resize" href="#cellbin.image.transform.ImageTransform.resize">resize</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.rot" href="#cellbin.image.transform.ImageTransform.rot">rot</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.rot90" href="#cellbin.image.transform.ImageTransform.rot90">rot90</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.rot_and_crop" href="#cellbin.image.transform.ImageTransform.rot_and_crop">rot_and_crop</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.rot_scale" href="#cellbin.image.transform.ImageTransform.rot_scale">rot_scale</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.scale" href="#cellbin.image.transform.ImageTransform.scale">scale</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.set_image" href="#cellbin.image.transform.ImageTransform.set_image">set_image</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.to_image" href="#cellbin.image.transform.ImageTransform.to_image">to_image</a></code></li>
+<li><code><a title="cellbin.image.transform.ImageTransform.vips2numpy" href="#cellbin.image.transform.ImageTransform.vips2numpy">vips2numpy</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

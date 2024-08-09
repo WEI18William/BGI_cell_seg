@@ -1,0 +1,3869 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.test.scripts.pipeline API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.test.scripts.pipeline</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+from time import time
+import h5py
+import numpy as np
+import argparse
+from shutil import copyfile
+import json
+from datetime import datetime
+import math
+from json import loads, dumps, dump
+import tarfile
+from glob import glob
+import cv2
+import pandas as pd
+import gzip
+import shutil
+from importlib.metadata import version
+import traceback
+import multiprocessing as mp
+
+from cellbin.modules.stitching import Stitching
+from cellbin.modules.registration import Registration
+from cellbin.modules.tissue_segmentation import TissueSegmentation
+from cellbin.modules.cell_segmentation import CellSegmentation
+from cellbin.modules.cell_labelling import CellLabelling
+from cellbin.utils import clog
+from cellbin.image import Image
+from cellbin.dnn.weights import auto_download_weights
+from cellbin.image.augmentation import clarity_enhance_method
+from cellbin.utils.file_manager import search_files, rc_key
+from cellbin.image.augmentation import f_resize
+from cellbin.image.augmentation import f_ij_16_to_8
+from cellbin.image.augmentation import f_gray2bgr
+from cellbin.image.augmentation import f_ij_auto_contrast
+from cellbin.image.augmentation import f_rgb2gray
+from cellbin.modules.iqc.clarity_qc import ClarityQC
+from cellbin.image.mask import iou
+from cellbin import WEIGHT_DIR, PIPELINE_CONFIG_PATH
+
+from stio.chip import STOmicsChip
+from stio.matrix_loader import MatrixLoader
+
+# Constant
+RPI_VERSION = &#39;0.0.2&#39;
+PROG_VERSION = &#39;SAP&#39;
+JIQUN_CF = &#34;/hwfssz1/ST_BIOINTEL/P20Z10200N0039/06.groups/st_ster/pipeline_config.json&#34;
+JIQUN_ZOO = &#34;/hwfssz1/ST_BIOINTEL/P20Z10200N0039/06.groups/st_ster/cellbin_weights&#34;
+IMAGE_SUPPORT = [&#39;.jpg&#39;, &#39;.png&#39;, &#39;.tif&#39;, &#39;.tiff&#39;]
+
+# Default
+DEFAULT_CELL_TYPE = &#34;CELL&#34;
+DEFAULT_CONFIG_PATH = PIPELINE_CONFIG_PATH
+DEFAULT_WEIGHTS_DIR = WEIGHT_DIR
+DEFAULT_VERSION = &#34;SAP&#34;
+
+
+def generate_gem(mask_paths, gem_path, out_path):
+    def row(gem_path):
+        if gem_path.endswith(&#39;.gz&#39;):
+            with gzip.open(gem_path, &#39;rb&#39;) as f:
+                first_line = bytes.decode(f.readline())
+                if &#39;#&#39; in first_line:
+                    rows = 6
+                else:
+                    rows = 0
+        else:
+            with open(gem_path, &#39;rb&#39;) as f:
+                first_line = bytes.decode(f.readline())
+                if &#39;#&#39; in first_line:
+                    rows = 6
+                else:
+                    rows = 0
+        return rows
+
+    clog.info(&#34;Reading data..&#34;)
+    gem = pd.read_csv(gem_path, sep=&#39;\t&#39;, skiprows=row(gem_path))
+    assert &#34;MIDCount&#34; in gem.columns
+    gem[&#39;x&#39;] -= gem[&#39;x&#39;].min()
+    gem[&#39;y&#39;] -= gem[&#39;y&#39;].min()
+
+    for mp in mask_paths:
+        mask_path = mp
+        filename = mask_path.replace(&#39;\\&#39;, &#39;/&#39;).split(&#39;/&#39;)[-1].split(&#39;.&#39;)[0]
+        i = Image()
+        i.read(mask_path)
+        mask = i.image
+        mask[mask &gt; 0] = 1
+        mask = mask.astype(np.uint8)
+        _, maskImg = cv2.connectedComponents(mask, connectivity=8)
+        cur_gem = gem.copy(deep=True)
+        cur_gem[&#39;CellID&#39;] = maskImg[cur_gem[&#39;y&#39;], cur_gem[&#39;x&#39;]]
+
+        cell_gem = os.path.join(out_path, f&#39;{filename}.gem&#39;)
+
+        cur_gem.to_csv(cell_gem, sep=&#39;\t&#39;, index=False)
+        # os.system(&#39;gzip {}&#39;.format(os.path.join(out_path, f&#39;{filename}.gem&#39;)))
+        with open(cell_gem, &#39;rb&#39;) as f_in:
+            with gzip.open(cell_gem + &#39;.gz&#39;, &#39;wb&#39;) as f_out:
+                shutil.copyfileobj(f_in, f_out)
+        os.remove(cell_gem)
+
+
+class binary_mask_rle(object):
+    &#34;&#34;&#34;
+    ref.: https://en.wikipedia.org/wiki/Run-length_encoding
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        pass
+
+    def encode(self, binary_mask):
+        &#39;&#39;&#39;
+        binary_mask: numpy array, 1 - mask, 0 - background
+        Returns run length as string formated
+        &#39;&#39;&#39;
+        binary_mask[binary_mask &gt;= 1] = 1
+        pixels = binary_mask.flatten()
+        pixels = np.concatenate([[0], pixels, [0]])
+        runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
+        runs[1::2] -= runs[::2]
+        runs = np.reshape(runs, (-1, 2))
+        return runs
+
+    def decode(self, mask_rle, shape):
+        &#39;&#39;&#39;
+        mask_rle: run-length as string formated (start length)
+        shape: (height,width) of array to return
+        Returns numpy array, 1 - mask, 0 - background
+        &#39;&#39;&#39;
+        # s = mask_rle.split()
+        # starts, lengths = [np.asarray(x, dtype=int) for x in (s[0:][::2], s[1:][::2])]
+        starts = mask_rle[:, 0]
+        lengths = mask_rle[:, 1]
+        starts -= 1
+        ends = starts + lengths
+        binary_mask = np.zeros(shape[0] * shape[1], dtype=np.uint8)
+        for lo, hi in zip(starts, ends):
+            binary_mask[lo:hi] = 1
+        return binary_mask.reshape(shape)
+
+
+def file_rc_index(file_name):
+    tags = os.path.split(file_name)[1].split(&#39;_&#39;)
+    xy = list()
+    for tag in tags:
+        if (len(tag) == 4) and tag.isdigit(): xy.append(tag)
+    c = xy[0]
+    r = xy[1]
+    return [int(r), int(c)]
+
+
+def imagespath2dict(images_path):
+    fov_images = search_files(images_path, exts=IMAGE_SUPPORT)
+    src_fovs = dict()
+    for it in fov_images:
+        col, row = file_rc_index(it)
+        src_fovs[rc_key(row, col)] = it
+
+    return src_fovs
+
+
+def outline(image, line_width):
+    import cv2 as cv
+    image = np.where(image != 0, 1, 0).astype(np.uint8)
+    edge = np.zeros((image.shape), dtype=np.uint8)
+    contours, hierachy = cv.findContours(image, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+    r = cv.drawContours(edge, contours, -1, (255, 255, 255), line_width)
+    return r
+
+
+def _write_attrs(gp, d):
+    &#34;&#34;&#34; Write dict to hdf5.Group as attributes. &#34;&#34;&#34;
+    for k, v in d.items():
+        gp.attrs[k] = v
+
+
+def json_serialize(obj, file_path: str):
+    with open(file_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as fd:
+        str_dct = dumps(obj, default=lambda o: o.__dict__)
+        dump(loads(str_dct), fd, indent=2, ensure_ascii=False)
+
+
+def splitImage(im, tag, imgSize, h5_path, bin_size):
+    &#34;&#34;&#34; Split image into patches with imgSize and save to h5 file. &#34;&#34;&#34;
+    # get number of patches
+    height, width = im.shape[:2]
+    # num_x = int(width/imgSize) + 1
+    # num_y = int(height/imgSize) + 1
+    num_x = math.ceil(width / imgSize)
+    num_y = math.ceil(height / imgSize)
+
+    with h5py.File(h5_path, &#39;a&#39;) as out:
+        group = out.require_group(f&#39;{tag}/bin_{bin_size}&#39;)
+
+        # write attributes
+        attrs = {&#39;sizex&#39;: width,
+                 &#39;sizey&#39;: height,
+                 &#39;XimageNumber&#39;: num_x,
+                 &#39;YimageNumber&#39;: num_y}
+        _write_attrs(group, attrs)
+
+        # write dataset
+        for x in range(0, num_x):
+            for y in range(0, num_y):
+                # deal with last row/column images
+                x_end = min(((x + 1) * imgSize), width)
+                y_end = min(((y + 1) * imgSize), height)
+                if im.ndim == 3:
+                    small_im = im[y * imgSize:y_end, x * imgSize:x_end, :]
+                else:
+                    small_im = im[y * imgSize:y_end, x * imgSize:x_end]
+
+                data_name = f&#39;{x}/{y}&#39;
+                # h_, w_ = small_im.shape
+                # if h_ * w_ == 0: continue
+                try:
+                    # normal dataset creation
+                    group.create_dataset(data_name, data=small_im)
+                except Exception as e:
+                    # if dataset already exists, replace it with new data
+                    del group[data_name]
+                    group.create_dataset(data_name, data=small_im)
+
+
+def createPyramid(imgs, h5_path, imgSize=256, x_start=0, y_start=0, mag=(2, 10, 50, 100, 15), s_type=&#39;ssDNA&#39;):
+    &#34;&#34;&#34; Create image pyramid and save to h5. &#34;&#34;&#34;
+    img = imgs[&#39;ssDNA&#39;]
+    # get height and width
+    height, width = img.shape[:2]
+    # im = np.rot90(im, 1)  ## 旋转图片，配准后的图片应该不用旋转了
+
+    # write image metadata
+    with h5py.File(h5_path, &#39;a&#39;) as h5_out:
+        meta_group = h5_out.require_group(&#39;metaInfo&#39;)
+        info = {&#39;imgSize&#39;: imgSize,
+                &#39;x_start&#39;: x_start,
+                &#39;y_start&#39;: y_start,
+                &#39;sizex&#39;: width,
+                &#39;sizey&#39;: height,
+                &#39;version&#39;: &#39;0.0.1&#39;}
+        _write_attrs(meta_group, info)
+
+    # write image pyramid of bin size
+    for k, img_p in imgs.items():
+        # if img.dtype != &#39;uint8&#39;:
+        #     img_p = transfer_16bit_to_8bit(img_p)
+        for bin_size in mag:
+            if k == &#39;CellMask&#39;:
+                img_p = outline(img_p, line_width=2)
+            if k == &#39;TissueMask&#39;:
+                img_p = outline(img_p, line_width=100)
+            im_downsample = img_p[::bin_size, ::bin_size]
+            splitImage(im_downsample, k, imgSize, h5_path, bin_size)
+
+
+class Pipeline(object):
+    def __init__(self):
+        self._ipr_path = None
+        self._gem_path = None
+
+        self.t_seg = None
+        self.c_seg = None
+        self.clarity_eval = None
+        self.stitcher = Stitching()
+        self.registrator = Registration()
+        self.chip_template_getter = STOmicsChip()
+        self.bmr = binary_mask_rle()
+
+        self._input_path = None
+        self.image_paths = None
+        self._output_path = None
+        self.is_stitched = None
+
+        self._stereo_chip = None
+        self._stain_type = None
+        self._cell_seg_type = None
+        self.chip_name = None
+        self.config_file = None
+        self.zoo_dir = None
+        self.c_config = None
+        self.t_config = None
+        self.clarity_config = None
+        self.stitch_config = None
+        self.regist_config = None
+        self.weight_names = None
+        self.x_start = None
+        self.y_start = None
+
+        self._stitch_img = None
+        self._regist_img = None
+        # self._tissue_img = None
+        # self._cell_img = None
+        # self.log_file = None
+
+        self.mask = None
+
+        # self.file_name = None
+        self.version = None
+        self.debug_mode = False  # TODO: 后面这个需要加个接口! @dzh
+
+        # 命名
+        self.stitch_img_name = &#39;fov_stitched&#39;
+        self.stitch_template = &#39;stitch_template&#39;
+        self.gene_template = &#39;matrix_template&#39;
+        self.stitch_transform_name = &#39;fov_stitched_transformed&#39;
+        self.transform_template = &#39;transform_template&#39;
+        self.regist_img_name = &#39;regist&#39;
+        self.gene_img_name = &#39;gene&#39;
+        self.tissue_mask_name = &#39;tissue_cut&#39;
+        self.cell_mask_name = &#39;mask&#39;
+        self.cell_correct_mask_name = &#39;cell_mask_correct&#39;
+        self.clarity_eval_name = &#39;clarity_eval&#39;
+        self.filtered_cell_mask_name = &#39;cell_mask_filter&#39;
+        self.filtered_cell_correct_mask_name = &#39;cell_mask_correct_filter&#39;
+
+        self.img_ext = &#39;.tif&#39;
+        self.txt_ext = &#39;.txt&#39;
+
+        # time cost
+        self.stitch_time = 0
+        self.regist_time = 0
+        self.tissue_seg_time = 0
+        self.cell_seg_time = 0
+        self.cell_seg_correct_time = 0
+
+        # default init
+        self.set_cell_seg_type(DEFAULT_CELL_TYPE)
+        self.set_config_file(DEFAULT_CONFIG_PATH)
+        self.set_zoo_dir(DEFAULT_WEIGHTS_DIR)
+        self.set_version(DEFAULT_VERSION)
+
+        clog.info(&#34;Init success.&#34;)
+
+    def set_cell_seg_type(self, ct):
+        self._cell_seg_type = ct
+
+    def set_config_file(self, cf):
+        with open(cf, &#39;r&#39;) as f:
+            th_dict = json.load(f)
+        self.config_file = th_dict
+        self.c_config = self.config_file[&#39;cell_seg&#39;]
+        self.t_config = self.config_file[&#39;tissue_seg&#39;]
+        self.clarity_config = self.config_file[&#39;clarity_eval&#39;]
+        self.stitch_config = self.config_file[&#39;stitch&#39;]
+        self.regist_config = self.config_file.get(&#39;registration&#39;, {})
+        cpu_count = mp.cpu_count()
+        self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                                  self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;])
+        self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                              self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;])
+        clog.info(f&#34;Using threads for stitch  {self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;]}\n&#34;
+                  f&#34;using threads for  cell correct {self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;]}&#34;)
+        print(&#34;asd&#34;)
+
+    def set_zoo_dir(self, path: str):
+        self.zoo_dir = path
+
+    def set_version(self, v: str):
+        self.version = v
+
+    def auto_load_weights(self, ):
+        self.weight_names = [
+            self.c_config[self._cell_seg_type][self._stain_type],
+            self.t_config[self._stain_type],
+        ]
+        auto_download_weights(self.zoo_dir, self.weight_names)  # if empty, auto download weights
+
+    def prepare_input(self):
+        clog.info(f&#34;Preparing input for pipeline (images)&#34;)
+        fname, ext = os.path.splitext(self._input_path)
+        if ext == &#39;.gz&#39;:
+            # 解压文件 （延用开发版本）
+            with tarfile.open(self._input_path, &#39;r&#39;) as tfo:
+                for tarinfo in tfo:
+                    if tarinfo.name == &#39;&#39;:
+                        continue
+                    if os.path.splitext(tarinfo.name)[1] == &#39;&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tif&#39; or \
+                            os.path.splitext(tarinfo.name)[1] == &#39;.czi&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tiff&#39;:
+                        tfo.extract(tarinfo, self._output_path)
+            if not self.is_stitched:
+                # 找到小图路径
+                for name in os.listdir(self._output_path):
+                    cur_path = os.path.join(self._output_path, name)
+                    clog.info(f&#34;Current path -&gt; {cur_path}&#34;)
+                    if os.path.isdir(cur_path):
+                        img_dir = cur_path
+                        break
+                else:
+                    raise Exception(f&#34;Could not find fov directory&#34;)
+
+            else:
+                # 找到大图路径
+                for f in os.listdir(self._output_path):
+                    large_path = os.path.join(self._output_path, f)
+                    if large_path.endswith(&#39;.tif&#39;):
+                        img_dir = large_path
+
+        elif ext == &#39;&#39;:  # 小图路径
+            img_dir = self._input_path
+        elif ext in IMAGE_SUPPORT:  # 单张大图
+            self.is_stitched = True
+            img_dir = self._input_path
+        clog.info(f&#34;Source image path(dir) {img_dir}&#34;)
+        if not self.is_stitched:
+            self.image_paths = imagespath2dict(img_dir)
+        else:
+            self.image_paths = img_dir
+
+    def initialize_clarity_eval(self):
+        try:
+            clog.info(&#39;Initialize for clarity eval&#39;)
+            self.clarity_eval = ClarityQC()
+            self.clarity_eval.load_model(
+                model_path=os.path.join(self.zoo_dir, self.clarity_config[self._stain_type]),
+                batch_size=self.clarity_config[&#39;running_config&#39;][&#39;batch_size&#39;],
+                gpu=self.clarity_config[&#39;running_config&#39;][&#39;gpu&#39;]
+            )
+            clog.info(&#39;Load weights (Clarity Eval-{}) finished.&#39;.format(self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initialize_t_seg(self):
+        try:
+            clog.info(&#39;Initialize for tissue seg&#39;)
+            clog.info(f&#39;Tissue seg weight: {os.path.join(self.zoo_dir, self.t_config[self._stain_type])}&#39;)
+            self.t_seg = TissueSegmentation(
+                model_path=os.path.join(self.zoo_dir, self.t_config[self._stain_type]),
+                stype=self._stain_type,
+                gpu=self.t_config[&#39;running_config&#39;][&#39;gpu&#39;],
+                num_threads=self.t_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+            )
+            clog.info(&#39;Load weights (tissue-{}) finished.&#39;.format(self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initialize_c_seg(self):
+        try:
+            clog.info(&#39;Initialize for cell seg&#39;)
+            self.c_seg = CellSegmentation(
+                model_path=os.path.join(self.zoo_dir, self.c_config[self._cell_seg_type][self._stain_type]),
+                gpu=self.c_config[&#34;running_config&#34;][&#34;gpu&#34;],
+                num_threads=self.c_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+            )
+            clog.info(&#39;Load weights (cell-{}-{}) finished.&#39;.format(self._cell_seg_type, self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def load_initial_info(self, ):
+        try:
+            clog.info(&#39;Load initial info (StainType, ChipSN...)&#39;)
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                self._stain_type = conf[&#39;QCInfo&#39;].attrs[&#39;StainType&#39;]
+                self._stain_type = self._stain_type.upper()
+                self.chip_name = conf[&#39;ImageInfo&#39;].attrs[&#39;STOmicsChipSN&#39;]
+                if not self.chip_template_getter.is_chip_number_legal(self.chip_name):
+                    raise Exception(f&#34;{self.chip_name} not supported&#34;)
+                    # 获取芯片号对应的芯片模板
+                short_sn = self.chip_template_getter.get_valid_chip_no(self.chip_name)
+                self._stereo_chip = self.chip_template_getter.get_chip_grids(short_sn)
+                self.is_stitched = conf[&#39;ImageInfo&#39;].attrs[&#39;StitchedImage&#39;]
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initial_ipr_attrs(self, ):
+        try:
+            clog.info(&#39;Initial some ipr attrs and datasets for pipeline (TissueSeg, CellSeg, ManualState...)&#39;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                if &#39;StereoResepVersion&#39; not in conf[&#39;ImageInfo&#39;].attrs.keys():
+                    conf[&#39;ImageInfo&#39;].attrs[&#39;StereoResepVersion&#39;] = PROG_VERSION
+                if &#34;IPRVersion&#34; not in conf.keys():
+                    conf.attrs[&#39;IPRVersion&#39;] = &#39;0.0.1&#39;
+                if &#34;StereoResepSwitch&#34; not in conf.keys():
+                    group = conf.create_group(&#39;StereoResepSwitch&#39;)
+                    group.attrs[&#39;stitch&#39;] = True
+                    group.attrs[&#39;tissueseg&#39;] = True
+                    group.attrs[&#39;cellseg&#39;] = True
+                    group.attrs[&#39;register&#39;] = True
+                if &#34;ManualState&#34; not in conf.keys():
+                    group = conf.create_group(&#39;ManualState&#39;)
+                    group.attrs[&#39;stitch&#39;] = False
+                    group.attrs[&#39;tissueseg&#39;] = False
+                    group.attrs[&#39;cellseg&#39;] = False
+                    group.attrs[&#39;register&#39;] = False
+                if &#39;TissueSeg&#39; not in conf.keys():
+                    conf.create_group(&#39;TissueSeg&#39;)
+                if &#39;CellSeg&#39; not in conf.keys():
+                    conf.create_group(&#39;CellSeg&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _stitching(self, ):
+        clog.info(&#39;Stitching&#39;)
+        try:
+            # TODO 替代io模块, ipr临时测通, 不涉及写入
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                research_stitch_module = conf[&#39;Research&#39;][&#39;Stitch&#39;]
+                location = research_stitch_module[&#39;StitchFovLocation&#39;][...]
+                track_template = research_stitch_module[&#39;GlobalTemplate&#39;][...]
+                microscope_stitch = research_stitch_module.attrs[&#39;MicroscopeStitch&#39;]
+                if microscope_stitch == 0:
+                    h_jitter = research_stitch_module[&#39;HorizontalJitter&#39;][...]
+                    v_jitter = research_stitch_module[&#39;VerticalJitter&#39;][...]
+
+                rows = conf[&#39;ImageInfo&#39;].attrs[&#39;ScanRows&#39;]
+                cols = conf[&#39;ImageInfo&#39;].attrs[&#39;ScanCols&#39;]
+
+            fov_stitched_path = os.path.join(self._output_path, self.stitch_img_name + self.img_ext)
+            #########
+            if not self.is_stitched:
+                self.stitcher.set_size(rows, cols)
+                self.stitcher.set_global_location(location)
+                self.stitcher.stitch(src_fovs=self.image_paths, output_path=self._output_path)
+
+                try:
+                    fft_detect_channel = self.stitch_config[&#39;fft_channel&#39;].get(self._stain_type, 0)
+                except Exception as e:
+                    fft_detect_channel = 0
+
+                clog.info(f&#39;Stitch module fft channel: {fft_detect_channel}&#39;)
+                # TODO 得到行向和列向拼接偏移量评估
+                if microscope_stitch == 0:
+                    self.stitcher.set_jitter(h_jitter, v_jitter)
+                    x_jitter_eval, y_jitter_eval = self.stitcher._get_stitch_eval()
+                else:
+                    self.stitcher._get_jitter(
+                        src_fovs=self.image_paths,
+                        process=self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;],
+                        fft_channel=fft_detect_channel
+                    )
+                    x_jitter_eval, y_jitter_eval = self.stitcher._get_jitter_eval()
+
+                self._stitch_img = self.stitcher.get_image()
+                Image.write_s(self._stitch_img, fov_stitched_path,
+                              compression=True)
+
+                with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                    # 适配stio ipr，image studio ipr
+                    stitch_module = conf[&#39;Stitch&#39;]
+                    stitch_module.attrs[&#39;StitchingScore&#39;] = -1
+                    bgi_stitch_module_name = &#39;BGIStitch&#39;
+                    if bgi_stitch_module_name not in stitch_module.keys():
+                        stitch_module.require_group(bgi_stitch_module_name)
+                    bgi_stitch_module = stitch_module[bgi_stitch_module_name]
+                    try:
+                        bgi_stitch_module.attrs[&#39;StitchedGlobalHeight&#39;] = self._stitch_img.shape[0]
+                        bgi_stitch_module.attrs[&#39;StitchedGlobalWidth&#39;] = self._stitch_img.shape[1]
+                        if &#39;StitchedGlobalLoc&#39; in bgi_stitch_module.keys():
+                            del bgi_stitch_module[&#39;StitchedGlobalLoc&#39;]
+                    except:
+                        pass
+                    bgi_stitch_module.create_dataset(&#39;StitchedGlobalLoc&#39;, data=np.array(location))
+                    stitch_eval_module_name = &#39;StitchEval&#39;
+                    if stitch_eval_module_name not in stitch_module.keys():
+                        stitch_module.require_group(stitch_eval_module_name)
+                    stitch_eval_module = stitch_module[stitch_eval_module_name]
+                    if &#39;StitchEvalH&#39; in stitch_eval_module.keys():
+                        del stitch_eval_module[&#39;StitchEvalH&#39;]
+                        del stitch_eval_module[&#39;StitchEvalV&#39;]
+                    stitch_eval_module.create_dataset(&#39;StitchEvalH&#39;, data=x_jitter_eval)
+                    stitch_eval_module.create_dataset(&#39;StitchEvalV&#39;, data=y_jitter_eval)
+                    conf[&#39;StereoResepSwitch&#39;].attrs[&#39;stitch&#39;] = False
+            else:
+                try:
+                    copyfile(self.image_paths, fov_stitched_path)  # TODO: 处理大图！！
+                except Exception as e:
+                    clog.error(traceback.format_exc())
+
+            np.savetxt(os.path.join(self._output_path, self.stitch_template + self.txt_ext), track_template)
+            clog.info(&#39;Stitching Done&#39;)
+
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _registration(self, ):
+        clog.info(&#39;Registration&#39;)
+        try:
+            # TODO 替代io模块, ipr临时测通, 不涉及写入
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                scale_x = conf[&#39;Register&#39;].attrs[&#39;ScaleX&#39;]
+                scale_y = conf[&#39;Register&#39;].attrs[&#39;ScaleY&#39;]
+                rotate = conf[&#39;Register&#39;].attrs[&#39;Rotation&#39;]
+                track_template = conf[&#39;Research&#39;][&#39;Stitch&#39;][&#39;GlobalTemplate&#39;][...]
+            rgb_image = None  # grayscale image is None, rgb image is not None
+            if self._stitch_img is None:
+                i = Image()
+                stitch_img_path = os.path.join(self._output_path, self.stitch_img_name + self.img_ext)
+                i.read(image=stitch_img_path)
+                self._stitch_img = i.image
+
+            if self._stitch_img.ndim == 3:
+                rgb_image = self._stitch_img.copy()
+                regist_channel = self.regist_config.get(&#39;channel&#39;, {}).get(&#39;HE&#39;, None)
+                if regist_channel is None:
+                    if self._stain_type == &#39;HE&#39;:
+                        clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel, stain type is HE and regist &#34;
+                                  f&#34;channel is None, convert, using cell seg rgb2gray method&#34;)
+                        self._stitch_img = f_rgb2gray(self._stitch_img, need_not=True)
+                    else:
+                        clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel and regist channel is None,&#34;
+                                  f&#34;convert using regular rgb2gray method&#34;)
+                        self._stitch_img = f_rgb2gray(self._stitch_img)
+                else:
+                    clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel and regist channel is {regist_channel},&#34;
+                              f&#34;using {regist_channel} as regist channel&#34;)
+                    self._stitch_img = self._stitch_img[:, :, regist_channel]
+            else:
+                clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel, no need to convert&#34;)
+
+            # _, _, x_start, y_start, gene_exp = gef2image(self._gem_path, self._output_path)
+            ml = MatrixLoader(self._gem_path, self._output_path)
+            gene_exp, self.x_start, self.y_start = ml.f_gene2img_pd()
+
+            #########
+            self.registrator.mass_registration_stitch(
+                fov_stitched=self._stitch_img,
+                vision_image=gene_exp,
+                chip_template=self._stereo_chip,
+                track_template=track_template,
+                scale_x=1 / scale_x,
+                scale_y=1 / scale_y,
+                rotation=rotate,
+                flip=True
+            )
+            vision_cp = self.registrator.vision_cp
+            self.registrator.transform_to_regist()
+            self._regist_img = self.registrator.regist_img  # TODO 配准图返回
+            regist_img_copy = self._regist_img.copy()
+            # regist_score = self.registrator.register_score(regist_img_copy, gene_exp)  # 会改变第一个入参
+            if rgb_image is not None:
+                clog.info(f&#34;Stitch image is rgb, generating rgb regist image&#34;)
+                fov_transform = self.registrator.stitch_to_transform(
+                    fov_stitch=rgb_image,
+                    scale_x=1 / scale_x,
+                    scale_y=1 / scale_y,
+                    rotation=rotate,
+                )
+                self.registrator.fov_transformed = fov_transform
+                self.registrator.transform_to_regist()
+                self._regist_img = self.registrator.regist_img  # 配准图返回
+
+            np.savetxt(os.path.join(self._output_path, self.gene_template + self.txt_ext), vision_cp)
+            regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+            Image.write_s(self._regist_img, regist_path, compression=True)
+            Image.write_s(
+                gene_exp,
+                os.path.join(self._output_path, f&#39;{self.chip_name}_{self.gene_img_name}&#39; + self.img_ext),
+                compression=True)
+
+            ####
+            # 适配流程
+            h_, w_ = self.registrator.fov_transformed.shape[:2]
+            json_serialize({&#39;height&#39;: h_, &#39;width&#39;: w_}, os.path.join(self._output_path, &#39;attrs.json&#39;))
+            if w_ &gt; h_:
+                thumb = f_resize(f_ij_16_to_8(self.registrator.fov_transformed.copy()), (1500, int(h_ * 1500 / w_)))
+            else:
+                thumb = f_resize(f_ij_16_to_8(self.registrator.fov_transformed.copy()), (int(w_ * 1500 / h_), 1500))
+            Image.write_s(thumb, os.path.join(self._output_path, &#39;transform_thumb.png&#39;))
+
+            # 组织最大外接矩阵
+            bbox = [0, 0, self._regist_img.shape[1], self._regist_img.shape[0]]
+            with open(os.path.join(self._output_path, f&#39;{self.chip_name}_tissue_bbox.csv&#39;), &#39;w&#39;) as f:
+                f.write(&#39;left\tupper\tright\tlower\n&#39;)
+                f.write(&#39;\t&#39;.join(list(map(str, bbox))))
+            ####
+
+            Image.write_s(
+                self.registrator.fov_transformed,
+                os.path.join(self._output_path, self.stitch_transform_name + self.img_ext),
+                compression=True)
+            np.savetxt(os.path.join(self._output_path, self.transform_template + self.txt_ext),
+                       self.registrator.adjusted_stitch_template_unflip)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                if &#39;MatrixTemplate&#39; in conf[&#39;Register&#39;].keys():
+                    del conf[&#39;Register&#39;][&#39;MatrixTemplate&#39;]
+                if &#39;TransformTemplate&#39; in conf[&#39;Stitch&#39;].keys():
+                    del conf[&#39;Stitch/TransformTemplate&#39;]
+                conf[&#39;Stitch&#39;].create_dataset(
+                    &#39;TransformTemplate&#39;,
+                    data=self.registrator.adjusted_stitch_template_unflip[:, :2]
+                )
+                conf[&#39;Register&#39;].create_dataset(&#39;MatrixTemplate&#39;, data=vision_cp[:, :2], compression=&#39;gzip&#39;)
+                conf[&#39;Register&#39;].attrs[&#39;CounterRot90&#39;] = self.registrator.rot90
+                conf[&#39;Register&#39;].attrs[&#39;OffsetX&#39;] = self.registrator.offset[0]
+                conf[&#39;Register&#39;].attrs[&#39;OffsetY&#39;] = self.registrator.offset[1]
+                # conf[&#39;Register&#39;].attrs[&#39;RegisterScore&#39;] = regist_score
+                conf[&#39;Register&#39;].attrs[&#39;MatrixShape&#39;] = gene_exp.shape
+                conf[&#39;Register&#39;].attrs[&#39;XStart&#39;] = self.x_start
+                conf[&#39;Register&#39;].attrs[&#39;YStart&#39;] = self.y_start
+                conf[&#39;Register&#39;].attrs[&#39;Flip&#39;] = True
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;register&#39;] = False
+
+            del self._stitch_img
+            del gene_exp
+            del self.registrator.fov_transformed
+            del self._regist_img
+            self._regist_img = None
+            clog.info(&#39;Registration Done&#39;)
+
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_regist_score(self):
+        try:
+            irt = Image()
+            irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_tissue_cut.tif&#39;))
+            tissue_mask = irt.image
+            irc = Image()
+            irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.gene_img_name}&#39; + self.img_ext))
+            gene_image = irc.image
+            regist_score = self.registrator.register_score(tissue_mask, gene_image)
+            clog.info(f&#34;Regist score is: {regist_score}&#34;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                conf[&#39;Register&#39;].attrs[&#39;RegisterScore&#39;] = regist_score
+            clog.info(&#34;Finish calculating regist score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_stitch_score(self):
+        try:
+            stitch_result_dict = {}
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                try:
+                    StitchEvalH = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalH&#39;]
+                    stitchevalH = np.array(StitchEvalH)
+                    stitch_result_dict[&#39;H_mean&#39;] = np.mean(stitchevalH[stitchevalH != -1])
+                    stitch_result_dict[&#39;H_max&#39;] = np.abs(stitchevalH).max()
+                except:
+                    stitch_result_dict[&#39;H_mean&#39;] = -1
+                    stitch_result_dict[&#39;H_max&#39;] = -1
+                try:
+                    StitchEvalV = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalV&#39;]
+                    stitchevalV = np.array(StitchEvalV)
+                    stitch_result_dict[&#39;V_mean&#39;] = np.mean(stitchevalV[stitchevalV != -1])
+                    stitch_result_dict[&#39;V_max&#39;] = np.abs(stitchevalV).max()
+                except:
+                    stitch_result_dict[&#39;V_mean&#39;] = -1
+                    stitch_result_dict[&#39;V_max&#39;] = -1
+                conf[&#39;Stitch&#39;][&#39;StitchEval&#39;].attrs[&#39;StitchScore&#39;] = &#34;_&#34;.join(map(str, stitch_result_dict.values()))
+            clog.info(&#34;Finish calculating stitch score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_cell_seg_score(self):
+        def check_wh(wh, bin):
+            cel_num = np.subtract(np.float32(wh), np.multiply(np.ones(wh.shape, dtype=np.float32), bin))
+            cel_num_01 = np.multiply(cel_num[:, 0], cel_num[:, 1]) &lt;= 0
+            cel_num_11 = np.bitwise_and(cel_num[:, 0] &gt; 0, cel_num[:, 1] &gt; 0)
+            return np.sum(np.bitwise_or(cel_num_01, cel_num_11))
+
+        try:
+            cell_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+            )
+            i = Image()
+            i.read(cell_mask_path)
+            cell_mask = i.image
+            mask = np.clip(cell_mask, 0, 1)
+            all_cell_area = np.sum(mask)
+            cell_num, _, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+            cell_num -= 1
+            stats = stats[1:, 2:5]
+            wh = stats[:, 0:2]
+            area = stats[:, 2]
+
+            cell_num_40 = check_wh(wh, 40)
+            result = [all_cell_area / cell_num, cell_num_40 / cell_num]
+
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                cell_seg = conf[&#39;Research&#39;].require_group(&#39;CellSeg&#39;)
+                cell_seg.attrs[&#39;CellSegScore&#39;] = &#34;_&#34;.join(map(str, result))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _tissue_segmentation(self):
+        clog.info(&#39;Tissue Segmentation&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+
+            mask = self.t_seg.run(self._regist_img)
+            Image.write_s(
+                mask,
+                os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext),
+                compression=True
+            )
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                tissue_module = &#39;TissueSeg&#39;
+                if tissue_module not in conf.keys():
+                    conf.require_group(tissue_module)
+                conf[tissue_module].attrs[&#39;TissueSegShape&#39;] = mask.shape
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;tissueseg&#39;] = False
+            del mask
+            clog.info(&#39;Tissue Done&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _clarity_eval(self):
+        clog.info(&#39;Clarity Eval&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+            self.clarity_eval.set_enhance_func(clarity_enhance_method.get(self._stain_type, None))
+            self.clarity_eval.run(
+                img=self._regist_img,
+            )
+            self.clarity_eval.post_process()
+            clarity_mask = self.clarity_eval.black_img
+            Image.write_s(
+                clarity_mask,
+                os.path.join(self._output_path, f&#34;{self.chip_name}_clarity_mask&#34; + self.img_ext),
+                compression=True
+            )
+            clarity_heatmap = self.clarity_eval.draw_img
+            cv2.imwrite(
+                os.path.join(self._output_path, f&#34;{self.chip_name}_{self.clarity_eval_name}&#34; + self.img_ext),
+                clarity_heatmap,
+            )
+            clog.info(&#39;Clarity Eval Finished&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _cell_segmentation(self):
+        clog.info(&#39;Cell Segmentation&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+            self.mask = self.c_seg.run(self._regist_img)
+            trace = self.c_seg.get_trace(self.mask)
+            cell_mask_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext)
+            Image.write_s(self.mask, cell_mask_path, compression=True)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                cell_seg = conf[&#39;Research&#39;].require_group(&#39;CellSeg&#39;)
+                # cell_seg.attrs[&#39;CellMaskPath&#39;] = cell_mask_path
+                cell_seg.create_dataset(&#39;CellSegTrace&#39;, data=np.array(trace), compression=&#39;gzip&#39;)
+                cell_seg_module = &#39;CellSeg&#39;
+                if cell_seg_module not in conf.keys():
+                    conf.require_group(cell_seg_module)
+                conf[cell_seg_module].attrs[&#39;CellSegShape&#39;] = self.mask.shape
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;cellseg&#39;] = False
+            del self.c_seg
+            clog.info(&#39;Cell Segmentation Done&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _cell_labeling(self):
+        clog.info(&#39;Cell Labeling&#39;)
+        try:
+            if self.mask is None:
+                cell_mask_path = os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+                )
+                i = Image()
+                i.read(image=cell_mask_path)
+                mask = i.image
+            else:
+                mask = self.mask
+            ml = MatrixLoader(self._gem_path)
+            if self._gem_path.lower().endswith((&#39;.bgef&#39;, &#39;.gef&#39;)):
+                new_file = os.path.join(self._output_path, f&#34;{self.chip_name}_exp.gem&#34;)
+                ml.bgef2gem(bgef_file=self._gem_path, gem_file=new_file, binsize=1)
+            else:
+                # gem gz
+                new_file = self._gem_path
+            # 修正
+            cl = CellLabelling(
+                mask,
+                new_file
+            )
+            cl.set_process(self.config_file[&#34;cell_correct&#34;][&#39;num_threads&#39;])
+            correct_mask, self.exp_matrix = cl.run_fast(distance=10)
+
+            # mask写出
+            # correct_mask = cl.draw_corrected_mask(correct_mask)
+            correct_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_correct_mask_name}&#39; + self.img_ext
+            )
+            Image.write_s(correct_mask, correct_mask_path, compression=True)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _iqc(self, ):
+        clog.info(&#39;Image QC&#39;)
+        pass
+
+    def _check_qc_flag(self, ):
+
+        with h5py.File(self._ipr_path) as conf:
+            qc_flag = conf[&#39;QCInfo&#39;].attrs[&#39;QCPassFlag&#39;]
+
+        return True if qc_flag == 1 else False
+
+    def save_preview(self):
+        try:
+            ir = Image()
+            ir.read(glob(os.path.join(self._output_path, &#39;*_transformed.tif&#39;))[0])
+            img = ir.image
+            if img.dtype != &#39;uint8&#39;:
+                img = f_ij_16_to_8(img)
+            irt = Image()
+            irt.read(glob(os.path.join(self._output_path, &#39;*_tissue_cut.tif&#39;))[0])
+            tissue = irt.image
+            if tissue.dtype != &#39;uint8&#39;:
+                tissue = f_ij_16_to_8(tissue)
+            tissue[tissue &gt; 0] = 255
+            img = f_resize(img)
+            h, w = img.shape[:2]
+            mask = f_resize(tissue, (w, h))
+            if img.ndim == 2:
+                img = f_gray2bgr(img)
+            contours, hierachy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            cv2.drawContours(img, contours, -1, (255, 255, 0), 1)
+            img = f_ij_auto_contrast(img)
+            with h5py.File(self._ipr_path, &#39;r+&#39;) as conf:
+                if &#39;Preview&#39; in conf.keys():
+                    del conf[&#39;Preview&#39;]
+                conf.create_dataset(&#39;Preview&#39;, data=img, compression=&#39;gzip&#39;)
+            clog.info(&#39;Success to create preview&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def cell_mask_post_process(self):
+        &#34;&#34;&#34;
+        Based on cell mask and cell correct mask
+        Generate
+        - filtered cell mask
+        - filtered cell correct mask
+        &#34;&#34;&#34;
+        try:
+            clog.info(&#34;Filtering cell mask and correct mask based on tissue mask&#34;)
+            cell_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+            )
+            correct_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_correct_mask_name}&#39; + self.img_ext
+            )
+            tissue_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext
+            )
+            i = Image()
+            i.read(cell_mask_path)
+            cell_mask = i.image
+            i.read(correct_mask_path)
+            correct_mask = i.image
+            i.read(tissue_mask_path)
+            tissue_mask = i.image
+            filtered_cell_mask = cell_mask * tissue_mask
+            filtered_cell_correct_mask = correct_mask * tissue_mask
+            i.write_s(
+                image=filtered_cell_mask,
+                output_path=os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.filtered_cell_mask_name}&#39; + self.img_ext
+                ),
+                compression=True
+            )
+            i.write_s(
+                image=filtered_cell_correct_mask,
+                output_path=os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.filtered_cell_correct_mask_name}&#39; + self.img_ext
+                ),
+                compression=True
+            )
+            clog.info(&#34;Finished filtering&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def gem_file_post_process(self):
+        &#34;&#34;&#34;
+        Based on these four mask and input gene matrix (gem file)
+        Generate corresponding four gem file
+        &#34;&#34;&#34;
+        try:
+            clog.info(&#34;Generating new gene files based on different masks&#34;)
+            masks = [
+                self.cell_mask_name,
+                self.cell_correct_mask_name,
+                self.filtered_cell_mask_name,
+                self.filtered_cell_correct_mask_name
+            ]
+            if self._gem_path.lower().endswith((&#39;.bgef&#39;, &#39;.gef&#39;)):
+                gem_path = os.path.join(self._output_path, f&#34;{self.chip_name}_exp.gem&#34;)
+                if not os.path.exists(gem_path):
+                    ml = MatrixLoader(self._gem_path)
+                    ml.bgef2gem(bgef_file=self._gem_path, gem_file=gem_path, binsize=1)
+            else:
+                gem_path = self._gem_path
+
+            mask_paths = []
+            for mask_name in masks:
+                cur_mask_path = os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{mask_name}&#39; + self.img_ext
+                )
+                mask_paths.append(cur_mask_path)
+            generate_gem(
+                mask_paths=mask_paths,
+                gem_path=gem_path,
+                out_path=self._output_path
+            )
+            clog.info(&#34;Finished generating new gene files&#34;)
+        except Exception as e:
+            clog.error(str(e))
+
+    def run_x_bin(self, gem_path, input_path, ipr_path, output=None):
+        clog.info(f&#34;Using version {self.version}&#34;)
+        self._gem_path = gem_path
+        self._input_path = input_path
+        self._output_path = os.path.join(output, &#34;registration&#34;)
+        os.makedirs(self._output_path, exist_ok=True)
+        clog.info(f&#34;Pipeline output dir {self._output_path}&#34;)
+        ipr_name = os.path.split(ipr_path)[-1]
+        self._ipr_path = os.path.join(self._output_path, ipr_name)
+        copyfile(ipr_path, self._ipr_path)
+        if self._check_qc_flag():
+
+            clog.info(f&#34;Pipeline using ipr {self._ipr_path}&#34;)
+            self.load_initial_info()  # 初始化多个模块需要用到的信息from ipr，主要是读取
+            self.initial_ipr_attrs()  # 初始化pipeline需要用到的一些group，如果不用stio的话是需要pipeline自己生成的
+            self.prepare_input()  # 解压缩qc的targz，找到图片路径
+            clog.info(&#39;Start pipline&#39;)
+
+            if self.config_file[&#34;operation&#34;][&#34;Stitching&#34;]:
+                start = time()
+                self._stitching()
+                end = time()
+                self.stitch_time = end - start
+                clog.info(f&#34;Stitching module time cost: {self.stitch_time}&#34;)
+                self.get_stitch_score()
+            if self.config_file[&#34;operation&#34;][&#34;Register&#34;]:
+                start = time()
+                self._registration()
+                end = time()
+                self.regist_time = end - start
+                clog.info(f&#34;Registration module time cost: {self.regist_time}&#34;)
+            # 初始化分割模型
+            if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;]:
+                auto_download_weights(self.zoo_dir, [self.t_config[self._stain_type]])
+                start = time()
+                self.initialize_t_seg()
+                self._tissue_segmentation()
+                end = time()
+                self.tissue_seg_time = end - start
+                clog.info(f&#34;Tissue seg module time cost: {self.tissue_seg_time}&#34;)
+                auto_download_weights(self.zoo_dir, [self.clarity_config[self._stain_type]])
+                self.initialize_clarity_eval()
+                self._clarity_eval()
+                self._get_tissue_seg_score()
+                self.get_regist_score()
+                self.save_preview()
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+                auto_download_weights(self.zoo_dir, [self.c_config[self._cell_seg_type][self._stain_type]])
+                start = time()
+                self.initialize_c_seg()
+                self._cell_segmentation()
+                end = time()
+                self.cell_seg_time = end - start
+                clog.info(f&#34;Cell seg module time cost: {self.cell_seg_time}&#34;)
+                self.get_cell_seg_score()
+            if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+                self.regist_to_rpi()
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;]:
+                start = time()
+                self._cell_labeling()
+                end = time()
+                self.cell_seg_correct_time = end - start
+                clog.info(f&#34;Cell seg correct time cost: {self.cell_seg_correct_time}&#34;)
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;] \
+                    and self.version.upper() == &#39;SAP&#39;:
+                self.cell_mask_post_process()
+                self.gem_file_post_process()
+            self.write_time_cost()
+        else:
+            clog.info(&#39;QC failed, skip pipeline.&#39;)
+
+    def write_time_cost(self):
+        with h5py.File(self._ipr_path, &#39;a&#39;) as f:
+            research_info = f[&#39;Research&#39;]
+            research_info.attrs[&#39;StitchTime&#39;] = self.stitch_time
+            research_info.attrs[&#39;RegistTime&#39;] = self.regist_time
+            research_info.attrs[&#39;TissueSegTime&#39;] = self.tissue_seg_time
+            research_info.attrs[&#39;CellSegTime&#39;] = self.cell_seg_time
+            research_info.attrs[&#39;CellSegCorrectTime&#39;] = self.cell_seg_correct_time
+
+    def encode_mask(self, mask):
+        encode_mask = self.bmr.encode(mask)
+        return encode_mask
+
+    def _get_tissue_seg_score(self):
+        try:
+            irt = Image()
+            irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext))
+            tissue_mask = irt.image
+            irc = Image()
+            irc.read(os.path.join(self._output_path, f&#34;{self.chip_name}_clarity_mask&#34; + self.img_ext))
+            clarity_mask = irc.image
+            iou_result = iou(clarity_mask, tissue_mask)
+            iou_result = round(iou_result, 3) * 100
+            clog.info(f&#34;Tissue seg score {iou_result}&#34;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                tissue_module = &#39;TissueSeg&#39;
+                if tissue_module not in conf.keys():
+                    conf.require_group(tissue_module)
+                conf[tissue_module].attrs[&#39;TissueSegScore&#39;] = iou_result
+            clog.info(&#34;Finish calculating tissue seg score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    @staticmethod
+    def transform_to_rpi(transform_path, output_path, chip_name, img_size=256, x_start=0, y_start=0,
+                         mag=(2, 10, 50, 100, 150)):
+        import gc
+        def find_thresh(img: np.ndarray):
+            &#34;&#34;&#34;
+            :param img: gray image
+            :type img: numpy nd array
+            :return: hmin, hmax
+            :rtype: int, int
+            &#34;&#34;&#34;
+            if not isinstance(img, np.ndarray):
+                raise Exception(f&#34;Input must be numpy nd array&#34;)
+            input_dims = len(img.shape)
+            if input_dims != 2:
+                raise Exception(f&#34;Input should be 2 dimensional array, but input array is {input_dims} dimensions&#34;)
+
+            # Constants
+            limit = img.size / 10
+            threshold = img.size / 5000
+            n_bins = 256
+            if img.dtype != &#39;uint8&#39;:
+                bit_max = 65536
+            else:
+                bit_max = 256
+
+            hist_min = np.min(img)
+            hist_max = np.max(img)
+
+            bin_size = (hist_max - hist_min) / n_bins
+            hist, bins = np.histogram(img.flatten(), n_bins, [hist_min, hist_max])
+
+            hmin = 0
+            hmax = bit_max - 1
+
+            for i in range(1, len(hist) - 1):
+                count = hist[i]
+                if count &gt; limit:
+                    continue
+                if count &gt; threshold:
+                    hmin = i
+                    break
+            for i in range(len(hist) - 1, 0, -1):
+                count = hist[i]
+                if count &gt; limit:
+                    continue
+                if count &gt; threshold:
+                    hmax = i
+                    break
+
+            hmin = hist_min + hmin * bin_size
+            hmax = hist_min + hmax * bin_size
+
+            hmin, hmax = int(hmin), int(hmax)
+
+            hmin = max(0, hmin)
+            hmax = min(bit_max - 1, hmax)
+
+            if hmax &gt; hmin:
+                return hmin, hmax
+            else:
+                return 0, 0
+
+        def image_type_convert(img):
+            if img.ndim == 2:
+                arr = img
+            else:
+                if img.shape[0] in [1, 2, 3, 4]:
+                    img = img.transpose((1, 2, 0))
+
+                if img.shape[2] == 1:
+                    arr = img[:, :, 0]
+                elif img.shape[2] == 2:
+                    max_0 = np.sum(img[:, :, 0])
+                    max_1 = np.sum(img[:, :, 1])
+                    index = 0 if max_0 &gt; max_1 else 1
+                    arr = img[:, :, index]
+                else:
+                    arr = img
+            return arr
+
+        img_path = transform_path
+        trans_reader = Image()
+        trans_reader.read(img_path)
+        transform_image = trans_reader.image
+        t1 = time()
+        transform_rpi_path = os.path.join(output_path, f&#39;{chip_name}_fov_transformed.rpi&#39;)
+        # write image metadata
+        with h5py.File(transform_rpi_path, &#39;a&#39;) as h5_out:
+            clog.info(&#34;Create new rpi&#34;)
+            # get height and width
+            height, width = transform_image.shape[:2]
+            meta_group = h5_out.require_group(&#39;metaInfo&#39;)
+            info = {&#39;version&#39;: RPI_VERSION,
+                    &#39;imgSize&#39;: img_size,
+                    &#39;x_start&#39;: x_start,
+                    &#39;y_start&#39;: y_start,
+                    &#39;sizex&#39;: width,
+                    &#39;sizey&#39;: height}
+            _write_attrs(meta_group, info)
+            gc.collect()
+            h5_out.file.flush()
+
+            # write image pyramid of bin size
+            color = &#39;(255, 255, 255)&#39;
+            transform_image = image_type_convert(transform_image)
+            group_name = &#39;ssDNA/Image&#39;
+
+            # 给group name增加 Color, GrayLevelElbow(图像像素值拐点的下限值), MaxGrayLevel, TrackLayer 属性
+            tag = group_name
+            try:
+                track_group = tag.split(&#39;/&#39;)[0]
+            except:
+                clog.warning(&#39;track group must exist.&#39;)
+                track_group = &#39;&#39;
+            try:
+                key_group = tag.split(&#39;/&#39;)[1]
+            except:
+                key_group = &#39;Image&#39;
+                tag = f&#39;{track_group}/{key_group}&#39;
+            group_ = h5_out.require_group(tag)
+            if key_group == &#39;Image&#39;:
+                group_.attrs[&#39;TrackLayer&#39;] = True
+                group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+                if transform_image.ndim == 2:
+                    min_gray_value, max_gray_value = find_thresh(transform_image)
+                    group_.attrs[&#39;MinGrayLevel&#39;] = min_gray_value
+                    group_.attrs[&#39;MaxGrayLevel&#39;] = max_gray_value
+                else:
+                    group_.attrs[&#39;MinGrayLevel&#39;] = 0
+                    group_.attrs[&#39;MaxGrayLevel&#39;] = 0
+            else:
+                group_.attrs[&#39;TrackLayer&#39;] = False
+                group_.attrs[&#39;MinGrayLevel&#39;] = 0
+                group_.attrs[&#39;MaxGrayLevel&#39;] = 255
+                group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+            group_.attrs[&#39;Color&#39;] = color
+            h5_out.file.flush()
+
+        for bin_size in mag:
+            if transform_image.ndim == 3:
+                im_downsample = transform_image[::bin_size, ::bin_size, :]
+            else:
+                im_downsample = transform_image[::bin_size, ::bin_size]
+            splitImage(h5_path=transform_rpi_path, im=im_downsample, tag=group_name, imgSize=img_size, bin_size=bin_size)
+
+        t2 = time()
+        clog.info(f&#34;Save rpi: {t2 - t1:.2f} seconds.&#34;)
+
+    def regist_to_rpi(self):
+        clog.info(&#34;Saving tissue/cell mask to ipr, generate regist rpi&#34;)
+        # need regist, tissue mask, cell mask
+        irt = Image()
+        irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext))
+        tissue_mask = irt.image
+        irc = Image()
+        irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext))
+        cell_mask = irc.image
+        irg = Image()
+        irg.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext))
+        regist_tif = irg.image
+        with h5py.File(self._ipr_path, &#39;r+&#39;) as f:
+            if &#39;CellMask&#39; in f[&#39;CellSeg&#39;].keys():
+                del f[&#39;CellSeg&#39;][&#39;CellMask&#39;]
+            if &#39;TissueMask&#39; in f[&#39;TissueSeg&#39;].keys():
+                del f[&#39;TissueSeg&#39;][&#39;TissueMask&#39;]
+            f[&#39;TissueSeg&#39;].create_dataset(&#39;TissueMask&#39;, data=self.encode_mask(tissue_mask), compression=&#39;gzip&#39;)
+            f[&#39;CellSeg&#39;].create_dataset(&#39;CellMask&#39;, data=self.encode_mask(cell_mask), compression=&#39;gzip&#39;)
+        with h5py.File(self._ipr_path, &#39;r&#39;) as f:
+            x_start = f[&#39;Register&#39;].attrs[&#39;XStart&#39;]
+            y_start = f[&#39;Register&#39;].attrs[&#39;YStart&#39;]
+        result = dict()
+        if self._stain_type == &#39;HE&#39;:
+            s_type = &#39;HE&#39;
+        else:
+            s_type = &#39;ssDNA&#39;
+        result[f&#39;{s_type}&#39;] = regist_tif
+        result[&#39;TissueMask&#39;] = tissue_mask
+        result[&#39;CellMask&#39;] = cell_mask
+        rpi_path = os.path.join(self._output_path, f&#39;{self.chip_name}.rpi&#39;)
+        createPyramid(result, rpi_path, x_start=x_start, y_start=y_start, s_type=s_type)
+        clog.info(&#34;Finished regist to rpi&#34;)
+
+    @staticmethod
+    def get_time():
+        dt = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+        return dt
+
+
+def run_pipeline(input_, output, ipr_path, matrix, cell_type, config, zoo_dir, version=&#39;SAP&#39;):
+    clog.info(&#34;--------------------------------start--------------------------------&#34;)
+    image_root = input_
+    output = output
+    ipr_path = ipr_path
+    gem_file = matrix
+    cell_type = cell_type.upper()
+
+    p = Pipeline()
+    p.set_cell_seg_type(cell_type)
+    p.set_config_file(config)
+    p.set_zoo_dir(zoo_dir)
+    p.set_version(version)
+
+    p.run_x_bin(gem_path=gem_file, input_path=image_root, ipr_path=ipr_path, output=output)
+    clog.info(&#34;--------------------------------end--------------------------------&#34;)
+
+
+def main(args, para):
+    clog.log2file(
+        out_dir=args.output,
+    )
+    clog.set_level()
+
+    try:
+        clog.info(f&#34;Cellbin Version {version(&#39;cell-bin&#39;)}&#34;)
+    except Exception:
+        clog.error(traceback.format_exc())
+
+    clog.info(args)
+    try:
+        run_pipeline(
+            input_=args.input,
+            output=args.output,
+            ipr_path=args.ipr_path,
+            matrix=args.matrix,
+            cell_type=args.cell_type.upper(),
+            config=args.config,
+            zoo_dir=args.zoo_dir,
+            version=args.version
+        )
+    except Exception:
+        clog.error(traceback.format_exc())
+
+
+def arg_parser():
+    usage = &#39;&#39;&#39;
+    python pipeline.py -i /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/images/C4 
+    -m /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/SS200000464BL_C4.raw.gef 
+    -r /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/SS200000464BL_C4_20230403_125857_0.1.ipr 
+    -o /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/test_out 
+    -cf /home/dengzhonghan/Desktop/code/cellbin/scripts/moudule/pipeline_config.json 
+    -z /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/weights
+    &#39;&#39;&#39;
+
+    clog.info(PROG_VERSION)
+    parser = argparse.ArgumentParser(usage=usage)
+    # Must have
+    parser.add_argument(&#34;--version&#34;, action=&#34;version&#34;, version=PROG_VERSION)
+    parser.add_argument(&#34;-i&#34;, &#34;--input&#34;, action=&#34;store&#34;, dest=&#34;input&#34;, type=str, required=True,
+                        help=&#34;Tar file / Input image dir.&#34;)
+    parser.add_argument(&#34;-m&#34;, &#34;--matrix&#34;, action=&#34;store&#34;, dest=&#34;matrix&#34;, type=str, required=True,
+                        help=&#34;Input gene matrix.&#34;)
+    parser.add_argument(&#34;-r&#34;, &#34;--ipr_path&#34;, action=&#34;store&#34;, dest=&#34;ipr_path&#34;, type=str, required=True, help=&#34;Ipr path.&#34;)
+    parser.add_argument(&#34;-o&#34;, &#34;--output&#34;, action=&#34;store&#34;, dest=&#34;output&#34;, type=str, required=True,
+                        help=&#34;Result output dir.&#34;)
+
+    # Optional
+    parser.add_argument(&#34;-cf&#34;, &#34;--config&#34;, action=&#34;store&#34;, dest=&#34;config&#34;, type=str, default=JIQUN_CF,
+                        help=&#34;Config file (Json)&#34;)
+    parser.add_argument(&#34;-z&#34;, &#34;--zoo&#34;, action=&#34;store&#34;, dest=&#34;zoo_dir&#34;, type=str, default=JIQUN_ZOO,
+                        help=&#34;DNN weights dir&#34;)
+
+    parser.add_argument(&#34;-ct&#34;, &#34;--cell_seg&#34;, action=&#34;store&#34;, dest=&#34;cell_type&#34;, type=str, default=&#39;CELL&#39;,
+                        help=&#34;Cell Seg type&#34;)
+    parser.add_argument(&#34;-v&#34;, &#34;--prog_version&#34;, action=&#34;store&#34;, dest=&#34;version&#34;, type=str, default=PROG_VERSION,
+                        help=&#34;SAP or UAT&#34;)
+
+    parser.set_defaults(func=main)
+    (para, args) = parser.parse_known_args()
+    para.func(para, args)
+
+
+if __name__ == &#39;__main__&#39;:
+    arg_parser()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="cellbin.test.scripts.pipeline.arg_parser"><code class="name flex">
+<span>def <span class="ident">arg_parser</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def arg_parser():
+    usage = &#39;&#39;&#39;
+    python pipeline.py -i /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/images/C4 
+    -m /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/SS200000464BL_C4.raw.gef 
+    -r /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/SS200000464BL_C4_20230403_125857_0.1.ipr 
+    -o /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/test_out 
+    -cf /home/dengzhonghan/Desktop/code/cellbin/scripts/moudule/pipeline_config.json 
+    -z /media/Data/dzh/neq_qc_test_data/SS200000464BL_C4/weights
+    &#39;&#39;&#39;
+
+    clog.info(PROG_VERSION)
+    parser = argparse.ArgumentParser(usage=usage)
+    # Must have
+    parser.add_argument(&#34;--version&#34;, action=&#34;version&#34;, version=PROG_VERSION)
+    parser.add_argument(&#34;-i&#34;, &#34;--input&#34;, action=&#34;store&#34;, dest=&#34;input&#34;, type=str, required=True,
+                        help=&#34;Tar file / Input image dir.&#34;)
+    parser.add_argument(&#34;-m&#34;, &#34;--matrix&#34;, action=&#34;store&#34;, dest=&#34;matrix&#34;, type=str, required=True,
+                        help=&#34;Input gene matrix.&#34;)
+    parser.add_argument(&#34;-r&#34;, &#34;--ipr_path&#34;, action=&#34;store&#34;, dest=&#34;ipr_path&#34;, type=str, required=True, help=&#34;Ipr path.&#34;)
+    parser.add_argument(&#34;-o&#34;, &#34;--output&#34;, action=&#34;store&#34;, dest=&#34;output&#34;, type=str, required=True,
+                        help=&#34;Result output dir.&#34;)
+
+    # Optional
+    parser.add_argument(&#34;-cf&#34;, &#34;--config&#34;, action=&#34;store&#34;, dest=&#34;config&#34;, type=str, default=JIQUN_CF,
+                        help=&#34;Config file (Json)&#34;)
+    parser.add_argument(&#34;-z&#34;, &#34;--zoo&#34;, action=&#34;store&#34;, dest=&#34;zoo_dir&#34;, type=str, default=JIQUN_ZOO,
+                        help=&#34;DNN weights dir&#34;)
+
+    parser.add_argument(&#34;-ct&#34;, &#34;--cell_seg&#34;, action=&#34;store&#34;, dest=&#34;cell_type&#34;, type=str, default=&#39;CELL&#39;,
+                        help=&#34;Cell Seg type&#34;)
+    parser.add_argument(&#34;-v&#34;, &#34;--prog_version&#34;, action=&#34;store&#34;, dest=&#34;version&#34;, type=str, default=PROG_VERSION,
+                        help=&#34;SAP or UAT&#34;)
+
+    parser.set_defaults(func=main)
+    (para, args) = parser.parse_known_args()
+    para.func(para, args)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.createPyramid"><code class="name flex">
+<span>def <span class="ident">createPyramid</span></span>(<span>imgs, h5_path, imgSize=256, x_start=0, y_start=0, mag=(2, 10, 50, 100, 15), s_type='ssDNA')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create image pyramid and save to h5.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createPyramid(imgs, h5_path, imgSize=256, x_start=0, y_start=0, mag=(2, 10, 50, 100, 15), s_type=&#39;ssDNA&#39;):
+    &#34;&#34;&#34; Create image pyramid and save to h5. &#34;&#34;&#34;
+    img = imgs[&#39;ssDNA&#39;]
+    # get height and width
+    height, width = img.shape[:2]
+    # im = np.rot90(im, 1)  ## 旋转图片，配准后的图片应该不用旋转了
+
+    # write image metadata
+    with h5py.File(h5_path, &#39;a&#39;) as h5_out:
+        meta_group = h5_out.require_group(&#39;metaInfo&#39;)
+        info = {&#39;imgSize&#39;: imgSize,
+                &#39;x_start&#39;: x_start,
+                &#39;y_start&#39;: y_start,
+                &#39;sizex&#39;: width,
+                &#39;sizey&#39;: height,
+                &#39;version&#39;: &#39;0.0.1&#39;}
+        _write_attrs(meta_group, info)
+
+    # write image pyramid of bin size
+    for k, img_p in imgs.items():
+        # if img.dtype != &#39;uint8&#39;:
+        #     img_p = transfer_16bit_to_8bit(img_p)
+        for bin_size in mag:
+            if k == &#39;CellMask&#39;:
+                img_p = outline(img_p, line_width=2)
+            if k == &#39;TissueMask&#39;:
+                img_p = outline(img_p, line_width=100)
+            im_downsample = img_p[::bin_size, ::bin_size]
+            splitImage(im_downsample, k, imgSize, h5_path, bin_size)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.file_rc_index"><code class="name flex">
+<span>def <span class="ident">file_rc_index</span></span>(<span>file_name)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def file_rc_index(file_name):
+    tags = os.path.split(file_name)[1].split(&#39;_&#39;)
+    xy = list()
+    for tag in tags:
+        if (len(tag) == 4) and tag.isdigit(): xy.append(tag)
+    c = xy[0]
+    r = xy[1]
+    return [int(r), int(c)]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.generate_gem"><code class="name flex">
+<span>def <span class="ident">generate_gem</span></span>(<span>mask_paths, gem_path, out_path)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_gem(mask_paths, gem_path, out_path):
+    def row(gem_path):
+        if gem_path.endswith(&#39;.gz&#39;):
+            with gzip.open(gem_path, &#39;rb&#39;) as f:
+                first_line = bytes.decode(f.readline())
+                if &#39;#&#39; in first_line:
+                    rows = 6
+                else:
+                    rows = 0
+        else:
+            with open(gem_path, &#39;rb&#39;) as f:
+                first_line = bytes.decode(f.readline())
+                if &#39;#&#39; in first_line:
+                    rows = 6
+                else:
+                    rows = 0
+        return rows
+
+    clog.info(&#34;Reading data..&#34;)
+    gem = pd.read_csv(gem_path, sep=&#39;\t&#39;, skiprows=row(gem_path))
+    assert &#34;MIDCount&#34; in gem.columns
+    gem[&#39;x&#39;] -= gem[&#39;x&#39;].min()
+    gem[&#39;y&#39;] -= gem[&#39;y&#39;].min()
+
+    for mp in mask_paths:
+        mask_path = mp
+        filename = mask_path.replace(&#39;\\&#39;, &#39;/&#39;).split(&#39;/&#39;)[-1].split(&#39;.&#39;)[0]
+        i = Image()
+        i.read(mask_path)
+        mask = i.image
+        mask[mask &gt; 0] = 1
+        mask = mask.astype(np.uint8)
+        _, maskImg = cv2.connectedComponents(mask, connectivity=8)
+        cur_gem = gem.copy(deep=True)
+        cur_gem[&#39;CellID&#39;] = maskImg[cur_gem[&#39;y&#39;], cur_gem[&#39;x&#39;]]
+
+        cell_gem = os.path.join(out_path, f&#39;{filename}.gem&#39;)
+
+        cur_gem.to_csv(cell_gem, sep=&#39;\t&#39;, index=False)
+        # os.system(&#39;gzip {}&#39;.format(os.path.join(out_path, f&#39;{filename}.gem&#39;)))
+        with open(cell_gem, &#39;rb&#39;) as f_in:
+            with gzip.open(cell_gem + &#39;.gz&#39;, &#39;wb&#39;) as f_out:
+                shutil.copyfileobj(f_in, f_out)
+        os.remove(cell_gem)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.imagespath2dict"><code class="name flex">
+<span>def <span class="ident">imagespath2dict</span></span>(<span>images_path)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def imagespath2dict(images_path):
+    fov_images = search_files(images_path, exts=IMAGE_SUPPORT)
+    src_fovs = dict()
+    for it in fov_images:
+        col, row = file_rc_index(it)
+        src_fovs[rc_key(row, col)] = it
+
+    return src_fovs</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.json_serialize"><code class="name flex">
+<span>def <span class="ident">json_serialize</span></span>(<span>obj, file_path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def json_serialize(obj, file_path: str):
+    with open(file_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as fd:
+        str_dct = dumps(obj, default=lambda o: o.__dict__)
+        dump(loads(str_dct), fd, indent=2, ensure_ascii=False)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>args, para)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(args, para):
+    clog.log2file(
+        out_dir=args.output,
+    )
+    clog.set_level()
+
+    try:
+        clog.info(f&#34;Cellbin Version {version(&#39;cell-bin&#39;)}&#34;)
+    except Exception:
+        clog.error(traceback.format_exc())
+
+    clog.info(args)
+    try:
+        run_pipeline(
+            input_=args.input,
+            output=args.output,
+            ipr_path=args.ipr_path,
+            matrix=args.matrix,
+            cell_type=args.cell_type.upper(),
+            config=args.config,
+            zoo_dir=args.zoo_dir,
+            version=args.version
+        )
+    except Exception:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.outline"><code class="name flex">
+<span>def <span class="ident">outline</span></span>(<span>image, line_width)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def outline(image, line_width):
+    import cv2 as cv
+    image = np.where(image != 0, 1, 0).astype(np.uint8)
+    edge = np.zeros((image.shape), dtype=np.uint8)
+    contours, hierachy = cv.findContours(image, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+    r = cv.drawContours(edge, contours, -1, (255, 255, 255), line_width)
+    return r</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.run_pipeline"><code class="name flex">
+<span>def <span class="ident">run_pipeline</span></span>(<span>input_, output, ipr_path, matrix, cell_type, config, zoo_dir, version='SAP')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_pipeline(input_, output, ipr_path, matrix, cell_type, config, zoo_dir, version=&#39;SAP&#39;):
+    clog.info(&#34;--------------------------------start--------------------------------&#34;)
+    image_root = input_
+    output = output
+    ipr_path = ipr_path
+    gem_file = matrix
+    cell_type = cell_type.upper()
+
+    p = Pipeline()
+    p.set_cell_seg_type(cell_type)
+    p.set_config_file(config)
+    p.set_zoo_dir(zoo_dir)
+    p.set_version(version)
+
+    p.run_x_bin(gem_path=gem_file, input_path=image_root, ipr_path=ipr_path, output=output)
+    clog.info(&#34;--------------------------------end--------------------------------&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.splitImage"><code class="name flex">
+<span>def <span class="ident">splitImage</span></span>(<span>im, tag, imgSize, h5_path, bin_size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Split image into patches with imgSize and save to h5 file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def splitImage(im, tag, imgSize, h5_path, bin_size):
+    &#34;&#34;&#34; Split image into patches with imgSize and save to h5 file. &#34;&#34;&#34;
+    # get number of patches
+    height, width = im.shape[:2]
+    # num_x = int(width/imgSize) + 1
+    # num_y = int(height/imgSize) + 1
+    num_x = math.ceil(width / imgSize)
+    num_y = math.ceil(height / imgSize)
+
+    with h5py.File(h5_path, &#39;a&#39;) as out:
+        group = out.require_group(f&#39;{tag}/bin_{bin_size}&#39;)
+
+        # write attributes
+        attrs = {&#39;sizex&#39;: width,
+                 &#39;sizey&#39;: height,
+                 &#39;XimageNumber&#39;: num_x,
+                 &#39;YimageNumber&#39;: num_y}
+        _write_attrs(group, attrs)
+
+        # write dataset
+        for x in range(0, num_x):
+            for y in range(0, num_y):
+                # deal with last row/column images
+                x_end = min(((x + 1) * imgSize), width)
+                y_end = min(((y + 1) * imgSize), height)
+                if im.ndim == 3:
+                    small_im = im[y * imgSize:y_end, x * imgSize:x_end, :]
+                else:
+                    small_im = im[y * imgSize:y_end, x * imgSize:x_end]
+
+                data_name = f&#39;{x}/{y}&#39;
+                # h_, w_ = small_im.shape
+                # if h_ * w_ == 0: continue
+                try:
+                    # normal dataset creation
+                    group.create_dataset(data_name, data=small_im)
+                except Exception as e:
+                    # if dataset already exists, replace it with new data
+                    del group[data_name]
+                    group.create_dataset(data_name, data=small_im)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.test.scripts.pipeline.Pipeline"><code class="flex name class">
+<span>class <span class="ident">Pipeline</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Pipeline(object):
+    def __init__(self):
+        self._ipr_path = None
+        self._gem_path = None
+
+        self.t_seg = None
+        self.c_seg = None
+        self.clarity_eval = None
+        self.stitcher = Stitching()
+        self.registrator = Registration()
+        self.chip_template_getter = STOmicsChip()
+        self.bmr = binary_mask_rle()
+
+        self._input_path = None
+        self.image_paths = None
+        self._output_path = None
+        self.is_stitched = None
+
+        self._stereo_chip = None
+        self._stain_type = None
+        self._cell_seg_type = None
+        self.chip_name = None
+        self.config_file = None
+        self.zoo_dir = None
+        self.c_config = None
+        self.t_config = None
+        self.clarity_config = None
+        self.stitch_config = None
+        self.regist_config = None
+        self.weight_names = None
+        self.x_start = None
+        self.y_start = None
+
+        self._stitch_img = None
+        self._regist_img = None
+        # self._tissue_img = None
+        # self._cell_img = None
+        # self.log_file = None
+
+        self.mask = None
+
+        # self.file_name = None
+        self.version = None
+        self.debug_mode = False  # TODO: 后面这个需要加个接口! @dzh
+
+        # 命名
+        self.stitch_img_name = &#39;fov_stitched&#39;
+        self.stitch_template = &#39;stitch_template&#39;
+        self.gene_template = &#39;matrix_template&#39;
+        self.stitch_transform_name = &#39;fov_stitched_transformed&#39;
+        self.transform_template = &#39;transform_template&#39;
+        self.regist_img_name = &#39;regist&#39;
+        self.gene_img_name = &#39;gene&#39;
+        self.tissue_mask_name = &#39;tissue_cut&#39;
+        self.cell_mask_name = &#39;mask&#39;
+        self.cell_correct_mask_name = &#39;cell_mask_correct&#39;
+        self.clarity_eval_name = &#39;clarity_eval&#39;
+        self.filtered_cell_mask_name = &#39;cell_mask_filter&#39;
+        self.filtered_cell_correct_mask_name = &#39;cell_mask_correct_filter&#39;
+
+        self.img_ext = &#39;.tif&#39;
+        self.txt_ext = &#39;.txt&#39;
+
+        # time cost
+        self.stitch_time = 0
+        self.regist_time = 0
+        self.tissue_seg_time = 0
+        self.cell_seg_time = 0
+        self.cell_seg_correct_time = 0
+
+        # default init
+        self.set_cell_seg_type(DEFAULT_CELL_TYPE)
+        self.set_config_file(DEFAULT_CONFIG_PATH)
+        self.set_zoo_dir(DEFAULT_WEIGHTS_DIR)
+        self.set_version(DEFAULT_VERSION)
+
+        clog.info(&#34;Init success.&#34;)
+
+    def set_cell_seg_type(self, ct):
+        self._cell_seg_type = ct
+
+    def set_config_file(self, cf):
+        with open(cf, &#39;r&#39;) as f:
+            th_dict = json.load(f)
+        self.config_file = th_dict
+        self.c_config = self.config_file[&#39;cell_seg&#39;]
+        self.t_config = self.config_file[&#39;tissue_seg&#39;]
+        self.clarity_config = self.config_file[&#39;clarity_eval&#39;]
+        self.stitch_config = self.config_file[&#39;stitch&#39;]
+        self.regist_config = self.config_file.get(&#39;registration&#39;, {})
+        cpu_count = mp.cpu_count()
+        self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                                  self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;])
+        self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                              self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;])
+        clog.info(f&#34;Using threads for stitch  {self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;]}\n&#34;
+                  f&#34;using threads for  cell correct {self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;]}&#34;)
+        print(&#34;asd&#34;)
+
+    def set_zoo_dir(self, path: str):
+        self.zoo_dir = path
+
+    def set_version(self, v: str):
+        self.version = v
+
+    def auto_load_weights(self, ):
+        self.weight_names = [
+            self.c_config[self._cell_seg_type][self._stain_type],
+            self.t_config[self._stain_type],
+        ]
+        auto_download_weights(self.zoo_dir, self.weight_names)  # if empty, auto download weights
+
+    def prepare_input(self):
+        clog.info(f&#34;Preparing input for pipeline (images)&#34;)
+        fname, ext = os.path.splitext(self._input_path)
+        if ext == &#39;.gz&#39;:
+            # 解压文件 （延用开发版本）
+            with tarfile.open(self._input_path, &#39;r&#39;) as tfo:
+                for tarinfo in tfo:
+                    if tarinfo.name == &#39;&#39;:
+                        continue
+                    if os.path.splitext(tarinfo.name)[1] == &#39;&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tif&#39; or \
+                            os.path.splitext(tarinfo.name)[1] == &#39;.czi&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tiff&#39;:
+                        tfo.extract(tarinfo, self._output_path)
+            if not self.is_stitched:
+                # 找到小图路径
+                for name in os.listdir(self._output_path):
+                    cur_path = os.path.join(self._output_path, name)
+                    clog.info(f&#34;Current path -&gt; {cur_path}&#34;)
+                    if os.path.isdir(cur_path):
+                        img_dir = cur_path
+                        break
+                else:
+                    raise Exception(f&#34;Could not find fov directory&#34;)
+
+            else:
+                # 找到大图路径
+                for f in os.listdir(self._output_path):
+                    large_path = os.path.join(self._output_path, f)
+                    if large_path.endswith(&#39;.tif&#39;):
+                        img_dir = large_path
+
+        elif ext == &#39;&#39;:  # 小图路径
+            img_dir = self._input_path
+        elif ext in IMAGE_SUPPORT:  # 单张大图
+            self.is_stitched = True
+            img_dir = self._input_path
+        clog.info(f&#34;Source image path(dir) {img_dir}&#34;)
+        if not self.is_stitched:
+            self.image_paths = imagespath2dict(img_dir)
+        else:
+            self.image_paths = img_dir
+
+    def initialize_clarity_eval(self):
+        try:
+            clog.info(&#39;Initialize for clarity eval&#39;)
+            self.clarity_eval = ClarityQC()
+            self.clarity_eval.load_model(
+                model_path=os.path.join(self.zoo_dir, self.clarity_config[self._stain_type]),
+                batch_size=self.clarity_config[&#39;running_config&#39;][&#39;batch_size&#39;],
+                gpu=self.clarity_config[&#39;running_config&#39;][&#39;gpu&#39;]
+            )
+            clog.info(&#39;Load weights (Clarity Eval-{}) finished.&#39;.format(self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initialize_t_seg(self):
+        try:
+            clog.info(&#39;Initialize for tissue seg&#39;)
+            clog.info(f&#39;Tissue seg weight: {os.path.join(self.zoo_dir, self.t_config[self._stain_type])}&#39;)
+            self.t_seg = TissueSegmentation(
+                model_path=os.path.join(self.zoo_dir, self.t_config[self._stain_type]),
+                stype=self._stain_type,
+                gpu=self.t_config[&#39;running_config&#39;][&#39;gpu&#39;],
+                num_threads=self.t_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+            )
+            clog.info(&#39;Load weights (tissue-{}) finished.&#39;.format(self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initialize_c_seg(self):
+        try:
+            clog.info(&#39;Initialize for cell seg&#39;)
+            self.c_seg = CellSegmentation(
+                model_path=os.path.join(self.zoo_dir, self.c_config[self._cell_seg_type][self._stain_type]),
+                gpu=self.c_config[&#34;running_config&#34;][&#34;gpu&#34;],
+                num_threads=self.c_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+            )
+            clog.info(&#39;Load weights (cell-{}-{}) finished.&#39;.format(self._cell_seg_type, self._stain_type))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def load_initial_info(self, ):
+        try:
+            clog.info(&#39;Load initial info (StainType, ChipSN...)&#39;)
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                self._stain_type = conf[&#39;QCInfo&#39;].attrs[&#39;StainType&#39;]
+                self._stain_type = self._stain_type.upper()
+                self.chip_name = conf[&#39;ImageInfo&#39;].attrs[&#39;STOmicsChipSN&#39;]
+                if not self.chip_template_getter.is_chip_number_legal(self.chip_name):
+                    raise Exception(f&#34;{self.chip_name} not supported&#34;)
+                    # 获取芯片号对应的芯片模板
+                short_sn = self.chip_template_getter.get_valid_chip_no(self.chip_name)
+                self._stereo_chip = self.chip_template_getter.get_chip_grids(short_sn)
+                self.is_stitched = conf[&#39;ImageInfo&#39;].attrs[&#39;StitchedImage&#39;]
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def initial_ipr_attrs(self, ):
+        try:
+            clog.info(&#39;Initial some ipr attrs and datasets for pipeline (TissueSeg, CellSeg, ManualState...)&#39;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                if &#39;StereoResepVersion&#39; not in conf[&#39;ImageInfo&#39;].attrs.keys():
+                    conf[&#39;ImageInfo&#39;].attrs[&#39;StereoResepVersion&#39;] = PROG_VERSION
+                if &#34;IPRVersion&#34; not in conf.keys():
+                    conf.attrs[&#39;IPRVersion&#39;] = &#39;0.0.1&#39;
+                if &#34;StereoResepSwitch&#34; not in conf.keys():
+                    group = conf.create_group(&#39;StereoResepSwitch&#39;)
+                    group.attrs[&#39;stitch&#39;] = True
+                    group.attrs[&#39;tissueseg&#39;] = True
+                    group.attrs[&#39;cellseg&#39;] = True
+                    group.attrs[&#39;register&#39;] = True
+                if &#34;ManualState&#34; not in conf.keys():
+                    group = conf.create_group(&#39;ManualState&#39;)
+                    group.attrs[&#39;stitch&#39;] = False
+                    group.attrs[&#39;tissueseg&#39;] = False
+                    group.attrs[&#39;cellseg&#39;] = False
+                    group.attrs[&#39;register&#39;] = False
+                if &#39;TissueSeg&#39; not in conf.keys():
+                    conf.create_group(&#39;TissueSeg&#39;)
+                if &#39;CellSeg&#39; not in conf.keys():
+                    conf.create_group(&#39;CellSeg&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _stitching(self, ):
+        clog.info(&#39;Stitching&#39;)
+        try:
+            # TODO 替代io模块, ipr临时测通, 不涉及写入
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                research_stitch_module = conf[&#39;Research&#39;][&#39;Stitch&#39;]
+                location = research_stitch_module[&#39;StitchFovLocation&#39;][...]
+                track_template = research_stitch_module[&#39;GlobalTemplate&#39;][...]
+                microscope_stitch = research_stitch_module.attrs[&#39;MicroscopeStitch&#39;]
+                if microscope_stitch == 0:
+                    h_jitter = research_stitch_module[&#39;HorizontalJitter&#39;][...]
+                    v_jitter = research_stitch_module[&#39;VerticalJitter&#39;][...]
+
+                rows = conf[&#39;ImageInfo&#39;].attrs[&#39;ScanRows&#39;]
+                cols = conf[&#39;ImageInfo&#39;].attrs[&#39;ScanCols&#39;]
+
+            fov_stitched_path = os.path.join(self._output_path, self.stitch_img_name + self.img_ext)
+            #########
+            if not self.is_stitched:
+                self.stitcher.set_size(rows, cols)
+                self.stitcher.set_global_location(location)
+                self.stitcher.stitch(src_fovs=self.image_paths, output_path=self._output_path)
+
+                try:
+                    fft_detect_channel = self.stitch_config[&#39;fft_channel&#39;].get(self._stain_type, 0)
+                except Exception as e:
+                    fft_detect_channel = 0
+
+                clog.info(f&#39;Stitch module fft channel: {fft_detect_channel}&#39;)
+                # TODO 得到行向和列向拼接偏移量评估
+                if microscope_stitch == 0:
+                    self.stitcher.set_jitter(h_jitter, v_jitter)
+                    x_jitter_eval, y_jitter_eval = self.stitcher._get_stitch_eval()
+                else:
+                    self.stitcher._get_jitter(
+                        src_fovs=self.image_paths,
+                        process=self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;],
+                        fft_channel=fft_detect_channel
+                    )
+                    x_jitter_eval, y_jitter_eval = self.stitcher._get_jitter_eval()
+
+                self._stitch_img = self.stitcher.get_image()
+                Image.write_s(self._stitch_img, fov_stitched_path,
+                              compression=True)
+
+                with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                    # 适配stio ipr，image studio ipr
+                    stitch_module = conf[&#39;Stitch&#39;]
+                    stitch_module.attrs[&#39;StitchingScore&#39;] = -1
+                    bgi_stitch_module_name = &#39;BGIStitch&#39;
+                    if bgi_stitch_module_name not in stitch_module.keys():
+                        stitch_module.require_group(bgi_stitch_module_name)
+                    bgi_stitch_module = stitch_module[bgi_stitch_module_name]
+                    try:
+                        bgi_stitch_module.attrs[&#39;StitchedGlobalHeight&#39;] = self._stitch_img.shape[0]
+                        bgi_stitch_module.attrs[&#39;StitchedGlobalWidth&#39;] = self._stitch_img.shape[1]
+                        if &#39;StitchedGlobalLoc&#39; in bgi_stitch_module.keys():
+                            del bgi_stitch_module[&#39;StitchedGlobalLoc&#39;]
+                    except:
+                        pass
+                    bgi_stitch_module.create_dataset(&#39;StitchedGlobalLoc&#39;, data=np.array(location))
+                    stitch_eval_module_name = &#39;StitchEval&#39;
+                    if stitch_eval_module_name not in stitch_module.keys():
+                        stitch_module.require_group(stitch_eval_module_name)
+                    stitch_eval_module = stitch_module[stitch_eval_module_name]
+                    if &#39;StitchEvalH&#39; in stitch_eval_module.keys():
+                        del stitch_eval_module[&#39;StitchEvalH&#39;]
+                        del stitch_eval_module[&#39;StitchEvalV&#39;]
+                    stitch_eval_module.create_dataset(&#39;StitchEvalH&#39;, data=x_jitter_eval)
+                    stitch_eval_module.create_dataset(&#39;StitchEvalV&#39;, data=y_jitter_eval)
+                    conf[&#39;StereoResepSwitch&#39;].attrs[&#39;stitch&#39;] = False
+            else:
+                try:
+                    copyfile(self.image_paths, fov_stitched_path)  # TODO: 处理大图！！
+                except Exception as e:
+                    clog.error(traceback.format_exc())
+
+            np.savetxt(os.path.join(self._output_path, self.stitch_template + self.txt_ext), track_template)
+            clog.info(&#39;Stitching Done&#39;)
+
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _registration(self, ):
+        clog.info(&#39;Registration&#39;)
+        try:
+            # TODO 替代io模块, ipr临时测通, 不涉及写入
+            with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+                scale_x = conf[&#39;Register&#39;].attrs[&#39;ScaleX&#39;]
+                scale_y = conf[&#39;Register&#39;].attrs[&#39;ScaleY&#39;]
+                rotate = conf[&#39;Register&#39;].attrs[&#39;Rotation&#39;]
+                track_template = conf[&#39;Research&#39;][&#39;Stitch&#39;][&#39;GlobalTemplate&#39;][...]
+            rgb_image = None  # grayscale image is None, rgb image is not None
+            if self._stitch_img is None:
+                i = Image()
+                stitch_img_path = os.path.join(self._output_path, self.stitch_img_name + self.img_ext)
+                i.read(image=stitch_img_path)
+                self._stitch_img = i.image
+
+            if self._stitch_img.ndim == 3:
+                rgb_image = self._stitch_img.copy()
+                regist_channel = self.regist_config.get(&#39;channel&#39;, {}).get(&#39;HE&#39;, None)
+                if regist_channel is None:
+                    if self._stain_type == &#39;HE&#39;:
+                        clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel, stain type is HE and regist &#34;
+                                  f&#34;channel is None, convert, using cell seg rgb2gray method&#34;)
+                        self._stitch_img = f_rgb2gray(self._stitch_img, need_not=True)
+                    else:
+                        clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel and regist channel is None,&#34;
+                                  f&#34;convert using regular rgb2gray method&#34;)
+                        self._stitch_img = f_rgb2gray(self._stitch_img)
+                else:
+                    clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel and regist channel is {regist_channel},&#34;
+                              f&#34;using {regist_channel} as regist channel&#34;)
+                    self._stitch_img = self._stitch_img[:, :, regist_channel]
+            else:
+                clog.info(f&#34;Stitch image is {self._stitch_img.ndim} channel, no need to convert&#34;)
+
+            # _, _, x_start, y_start, gene_exp = gef2image(self._gem_path, self._output_path)
+            ml = MatrixLoader(self._gem_path, self._output_path)
+            gene_exp, self.x_start, self.y_start = ml.f_gene2img_pd()
+
+            #########
+            self.registrator.mass_registration_stitch(
+                fov_stitched=self._stitch_img,
+                vision_image=gene_exp,
+                chip_template=self._stereo_chip,
+                track_template=track_template,
+                scale_x=1 / scale_x,
+                scale_y=1 / scale_y,
+                rotation=rotate,
+                flip=True
+            )
+            vision_cp = self.registrator.vision_cp
+            self.registrator.transform_to_regist()
+            self._regist_img = self.registrator.regist_img  # TODO 配准图返回
+            regist_img_copy = self._regist_img.copy()
+            # regist_score = self.registrator.register_score(regist_img_copy, gene_exp)  # 会改变第一个入参
+            if rgb_image is not None:
+                clog.info(f&#34;Stitch image is rgb, generating rgb regist image&#34;)
+                fov_transform = self.registrator.stitch_to_transform(
+                    fov_stitch=rgb_image,
+                    scale_x=1 / scale_x,
+                    scale_y=1 / scale_y,
+                    rotation=rotate,
+                )
+                self.registrator.fov_transformed = fov_transform
+                self.registrator.transform_to_regist()
+                self._regist_img = self.registrator.regist_img  # 配准图返回
+
+            np.savetxt(os.path.join(self._output_path, self.gene_template + self.txt_ext), vision_cp)
+            regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+            Image.write_s(self._regist_img, regist_path, compression=True)
+            Image.write_s(
+                gene_exp,
+                os.path.join(self._output_path, f&#39;{self.chip_name}_{self.gene_img_name}&#39; + self.img_ext),
+                compression=True)
+
+            ####
+            # 适配流程
+            h_, w_ = self.registrator.fov_transformed.shape[:2]
+            json_serialize({&#39;height&#39;: h_, &#39;width&#39;: w_}, os.path.join(self._output_path, &#39;attrs.json&#39;))
+            if w_ &gt; h_:
+                thumb = f_resize(f_ij_16_to_8(self.registrator.fov_transformed.copy()), (1500, int(h_ * 1500 / w_)))
+            else:
+                thumb = f_resize(f_ij_16_to_8(self.registrator.fov_transformed.copy()), (int(w_ * 1500 / h_), 1500))
+            Image.write_s(thumb, os.path.join(self._output_path, &#39;transform_thumb.png&#39;))
+
+            # 组织最大外接矩阵
+            bbox = [0, 0, self._regist_img.shape[1], self._regist_img.shape[0]]
+            with open(os.path.join(self._output_path, f&#39;{self.chip_name}_tissue_bbox.csv&#39;), &#39;w&#39;) as f:
+                f.write(&#39;left\tupper\tright\tlower\n&#39;)
+                f.write(&#39;\t&#39;.join(list(map(str, bbox))))
+            ####
+
+            Image.write_s(
+                self.registrator.fov_transformed,
+                os.path.join(self._output_path, self.stitch_transform_name + self.img_ext),
+                compression=True)
+            np.savetxt(os.path.join(self._output_path, self.transform_template + self.txt_ext),
+                       self.registrator.adjusted_stitch_template_unflip)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                if &#39;MatrixTemplate&#39; in conf[&#39;Register&#39;].keys():
+                    del conf[&#39;Register&#39;][&#39;MatrixTemplate&#39;]
+                if &#39;TransformTemplate&#39; in conf[&#39;Stitch&#39;].keys():
+                    del conf[&#39;Stitch/TransformTemplate&#39;]
+                conf[&#39;Stitch&#39;].create_dataset(
+                    &#39;TransformTemplate&#39;,
+                    data=self.registrator.adjusted_stitch_template_unflip[:, :2]
+                )
+                conf[&#39;Register&#39;].create_dataset(&#39;MatrixTemplate&#39;, data=vision_cp[:, :2], compression=&#39;gzip&#39;)
+                conf[&#39;Register&#39;].attrs[&#39;CounterRot90&#39;] = self.registrator.rot90
+                conf[&#39;Register&#39;].attrs[&#39;OffsetX&#39;] = self.registrator.offset[0]
+                conf[&#39;Register&#39;].attrs[&#39;OffsetY&#39;] = self.registrator.offset[1]
+                # conf[&#39;Register&#39;].attrs[&#39;RegisterScore&#39;] = regist_score
+                conf[&#39;Register&#39;].attrs[&#39;MatrixShape&#39;] = gene_exp.shape
+                conf[&#39;Register&#39;].attrs[&#39;XStart&#39;] = self.x_start
+                conf[&#39;Register&#39;].attrs[&#39;YStart&#39;] = self.y_start
+                conf[&#39;Register&#39;].attrs[&#39;Flip&#39;] = True
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;register&#39;] = False
+
+            del self._stitch_img
+            del gene_exp
+            del self.registrator.fov_transformed
+            del self._regist_img
+            self._regist_img = None
+            clog.info(&#39;Registration Done&#39;)
+
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_regist_score(self):
+        try:
+            irt = Image()
+            irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_tissue_cut.tif&#39;))
+            tissue_mask = irt.image
+            irc = Image()
+            irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.gene_img_name}&#39; + self.img_ext))
+            gene_image = irc.image
+            regist_score = self.registrator.register_score(tissue_mask, gene_image)
+            clog.info(f&#34;Regist score is: {regist_score}&#34;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                conf[&#39;Register&#39;].attrs[&#39;RegisterScore&#39;] = regist_score
+            clog.info(&#34;Finish calculating regist score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_stitch_score(self):
+        try:
+            stitch_result_dict = {}
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                try:
+                    StitchEvalH = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalH&#39;]
+                    stitchevalH = np.array(StitchEvalH)
+                    stitch_result_dict[&#39;H_mean&#39;] = np.mean(stitchevalH[stitchevalH != -1])
+                    stitch_result_dict[&#39;H_max&#39;] = np.abs(stitchevalH).max()
+                except:
+                    stitch_result_dict[&#39;H_mean&#39;] = -1
+                    stitch_result_dict[&#39;H_max&#39;] = -1
+                try:
+                    StitchEvalV = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalV&#39;]
+                    stitchevalV = np.array(StitchEvalV)
+                    stitch_result_dict[&#39;V_mean&#39;] = np.mean(stitchevalV[stitchevalV != -1])
+                    stitch_result_dict[&#39;V_max&#39;] = np.abs(stitchevalV).max()
+                except:
+                    stitch_result_dict[&#39;V_mean&#39;] = -1
+                    stitch_result_dict[&#39;V_max&#39;] = -1
+                conf[&#39;Stitch&#39;][&#39;StitchEval&#39;].attrs[&#39;StitchScore&#39;] = &#34;_&#34;.join(map(str, stitch_result_dict.values()))
+            clog.info(&#34;Finish calculating stitch score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def get_cell_seg_score(self):
+        def check_wh(wh, bin):
+            cel_num = np.subtract(np.float32(wh), np.multiply(np.ones(wh.shape, dtype=np.float32), bin))
+            cel_num_01 = np.multiply(cel_num[:, 0], cel_num[:, 1]) &lt;= 0
+            cel_num_11 = np.bitwise_and(cel_num[:, 0] &gt; 0, cel_num[:, 1] &gt; 0)
+            return np.sum(np.bitwise_or(cel_num_01, cel_num_11))
+
+        try:
+            cell_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+            )
+            i = Image()
+            i.read(cell_mask_path)
+            cell_mask = i.image
+            mask = np.clip(cell_mask, 0, 1)
+            all_cell_area = np.sum(mask)
+            cell_num, _, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+            cell_num -= 1
+            stats = stats[1:, 2:5]
+            wh = stats[:, 0:2]
+            area = stats[:, 2]
+
+            cell_num_40 = check_wh(wh, 40)
+            result = [all_cell_area / cell_num, cell_num_40 / cell_num]
+
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                cell_seg = conf[&#39;Research&#39;].require_group(&#39;CellSeg&#39;)
+                cell_seg.attrs[&#39;CellSegScore&#39;] = &#34;_&#34;.join(map(str, result))
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _tissue_segmentation(self):
+        clog.info(&#39;Tissue Segmentation&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+
+            mask = self.t_seg.run(self._regist_img)
+            Image.write_s(
+                mask,
+                os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext),
+                compression=True
+            )
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                tissue_module = &#39;TissueSeg&#39;
+                if tissue_module not in conf.keys():
+                    conf.require_group(tissue_module)
+                conf[tissue_module].attrs[&#39;TissueSegShape&#39;] = mask.shape
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;tissueseg&#39;] = False
+            del mask
+            clog.info(&#39;Tissue Done&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _clarity_eval(self):
+        clog.info(&#39;Clarity Eval&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+            self.clarity_eval.set_enhance_func(clarity_enhance_method.get(self._stain_type, None))
+            self.clarity_eval.run(
+                img=self._regist_img,
+            )
+            self.clarity_eval.post_process()
+            clarity_mask = self.clarity_eval.black_img
+            Image.write_s(
+                clarity_mask,
+                os.path.join(self._output_path, f&#34;{self.chip_name}_clarity_mask&#34; + self.img_ext),
+                compression=True
+            )
+            clarity_heatmap = self.clarity_eval.draw_img
+            cv2.imwrite(
+                os.path.join(self._output_path, f&#34;{self.chip_name}_{self.clarity_eval_name}&#34; + self.img_ext),
+                clarity_heatmap,
+            )
+            clog.info(&#39;Clarity Eval Finished&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _cell_segmentation(self):
+        clog.info(&#39;Cell Segmentation&#39;)
+        try:
+            if self._regist_img is None:
+                regist_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext)
+                i = Image()
+                i.read(image=regist_path)
+                self._regist_img = i.image
+            self.mask = self.c_seg.run(self._regist_img)
+            trace = self.c_seg.get_trace(self.mask)
+            cell_mask_path = os.path.join(self._output_path, f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext)
+            Image.write_s(self.mask, cell_mask_path, compression=True)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                cell_seg = conf[&#39;Research&#39;].require_group(&#39;CellSeg&#39;)
+                # cell_seg.attrs[&#39;CellMaskPath&#39;] = cell_mask_path
+                cell_seg.create_dataset(&#39;CellSegTrace&#39;, data=np.array(trace), compression=&#39;gzip&#39;)
+                cell_seg_module = &#39;CellSeg&#39;
+                if cell_seg_module not in conf.keys():
+                    conf.require_group(cell_seg_module)
+                conf[cell_seg_module].attrs[&#39;CellSegShape&#39;] = self.mask.shape
+                conf[&#39;StereoResepSwitch&#39;].attrs[&#39;cellseg&#39;] = False
+            del self.c_seg
+            clog.info(&#39;Cell Segmentation Done&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _cell_labeling(self):
+        clog.info(&#39;Cell Labeling&#39;)
+        try:
+            if self.mask is None:
+                cell_mask_path = os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+                )
+                i = Image()
+                i.read(image=cell_mask_path)
+                mask = i.image
+            else:
+                mask = self.mask
+            ml = MatrixLoader(self._gem_path)
+            if self._gem_path.lower().endswith((&#39;.bgef&#39;, &#39;.gef&#39;)):
+                new_file = os.path.join(self._output_path, f&#34;{self.chip_name}_exp.gem&#34;)
+                ml.bgef2gem(bgef_file=self._gem_path, gem_file=new_file, binsize=1)
+            else:
+                # gem gz
+                new_file = self._gem_path
+            # 修正
+            cl = CellLabelling(
+                mask,
+                new_file
+            )
+            cl.set_process(self.config_file[&#34;cell_correct&#34;][&#39;num_threads&#39;])
+            correct_mask, self.exp_matrix = cl.run_fast(distance=10)
+
+            # mask写出
+            # correct_mask = cl.draw_corrected_mask(correct_mask)
+            correct_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_correct_mask_name}&#39; + self.img_ext
+            )
+            Image.write_s(correct_mask, correct_mask_path, compression=True)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def _iqc(self, ):
+        clog.info(&#39;Image QC&#39;)
+        pass
+
+    def _check_qc_flag(self, ):
+
+        with h5py.File(self._ipr_path) as conf:
+            qc_flag = conf[&#39;QCInfo&#39;].attrs[&#39;QCPassFlag&#39;]
+
+        return True if qc_flag == 1 else False
+
+    def save_preview(self):
+        try:
+            ir = Image()
+            ir.read(glob(os.path.join(self._output_path, &#39;*_transformed.tif&#39;))[0])
+            img = ir.image
+            if img.dtype != &#39;uint8&#39;:
+                img = f_ij_16_to_8(img)
+            irt = Image()
+            irt.read(glob(os.path.join(self._output_path, &#39;*_tissue_cut.tif&#39;))[0])
+            tissue = irt.image
+            if tissue.dtype != &#39;uint8&#39;:
+                tissue = f_ij_16_to_8(tissue)
+            tissue[tissue &gt; 0] = 255
+            img = f_resize(img)
+            h, w = img.shape[:2]
+            mask = f_resize(tissue, (w, h))
+            if img.ndim == 2:
+                img = f_gray2bgr(img)
+            contours, hierachy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            cv2.drawContours(img, contours, -1, (255, 255, 0), 1)
+            img = f_ij_auto_contrast(img)
+            with h5py.File(self._ipr_path, &#39;r+&#39;) as conf:
+                if &#39;Preview&#39; in conf.keys():
+                    del conf[&#39;Preview&#39;]
+                conf.create_dataset(&#39;Preview&#39;, data=img, compression=&#39;gzip&#39;)
+            clog.info(&#39;Success to create preview&#39;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def cell_mask_post_process(self):
+        &#34;&#34;&#34;
+        Based on cell mask and cell correct mask
+        Generate
+        - filtered cell mask
+        - filtered cell correct mask
+        &#34;&#34;&#34;
+        try:
+            clog.info(&#34;Filtering cell mask and correct mask based on tissue mask&#34;)
+            cell_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+            )
+            correct_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.cell_correct_mask_name}&#39; + self.img_ext
+            )
+            tissue_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext
+            )
+            i = Image()
+            i.read(cell_mask_path)
+            cell_mask = i.image
+            i.read(correct_mask_path)
+            correct_mask = i.image
+            i.read(tissue_mask_path)
+            tissue_mask = i.image
+            filtered_cell_mask = cell_mask * tissue_mask
+            filtered_cell_correct_mask = correct_mask * tissue_mask
+            i.write_s(
+                image=filtered_cell_mask,
+                output_path=os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.filtered_cell_mask_name}&#39; + self.img_ext
+                ),
+                compression=True
+            )
+            i.write_s(
+                image=filtered_cell_correct_mask,
+                output_path=os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{self.filtered_cell_correct_mask_name}&#39; + self.img_ext
+                ),
+                compression=True
+            )
+            clog.info(&#34;Finished filtering&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    def gem_file_post_process(self):
+        &#34;&#34;&#34;
+        Based on these four mask and input gene matrix (gem file)
+        Generate corresponding four gem file
+        &#34;&#34;&#34;
+        try:
+            clog.info(&#34;Generating new gene files based on different masks&#34;)
+            masks = [
+                self.cell_mask_name,
+                self.cell_correct_mask_name,
+                self.filtered_cell_mask_name,
+                self.filtered_cell_correct_mask_name
+            ]
+            if self._gem_path.lower().endswith((&#39;.bgef&#39;, &#39;.gef&#39;)):
+                gem_path = os.path.join(self._output_path, f&#34;{self.chip_name}_exp.gem&#34;)
+                if not os.path.exists(gem_path):
+                    ml = MatrixLoader(self._gem_path)
+                    ml.bgef2gem(bgef_file=self._gem_path, gem_file=gem_path, binsize=1)
+            else:
+                gem_path = self._gem_path
+
+            mask_paths = []
+            for mask_name in masks:
+                cur_mask_path = os.path.join(
+                    self._output_path,
+                    f&#39;{self.chip_name}_{mask_name}&#39; + self.img_ext
+                )
+                mask_paths.append(cur_mask_path)
+            generate_gem(
+                mask_paths=mask_paths,
+                gem_path=gem_path,
+                out_path=self._output_path
+            )
+            clog.info(&#34;Finished generating new gene files&#34;)
+        except Exception as e:
+            clog.error(str(e))
+
+    def run_x_bin(self, gem_path, input_path, ipr_path, output=None):
+        clog.info(f&#34;Using version {self.version}&#34;)
+        self._gem_path = gem_path
+        self._input_path = input_path
+        self._output_path = os.path.join(output, &#34;registration&#34;)
+        os.makedirs(self._output_path, exist_ok=True)
+        clog.info(f&#34;Pipeline output dir {self._output_path}&#34;)
+        ipr_name = os.path.split(ipr_path)[-1]
+        self._ipr_path = os.path.join(self._output_path, ipr_name)
+        copyfile(ipr_path, self._ipr_path)
+        if self._check_qc_flag():
+
+            clog.info(f&#34;Pipeline using ipr {self._ipr_path}&#34;)
+            self.load_initial_info()  # 初始化多个模块需要用到的信息from ipr，主要是读取
+            self.initial_ipr_attrs()  # 初始化pipeline需要用到的一些group，如果不用stio的话是需要pipeline自己生成的
+            self.prepare_input()  # 解压缩qc的targz，找到图片路径
+            clog.info(&#39;Start pipline&#39;)
+
+            if self.config_file[&#34;operation&#34;][&#34;Stitching&#34;]:
+                start = time()
+                self._stitching()
+                end = time()
+                self.stitch_time = end - start
+                clog.info(f&#34;Stitching module time cost: {self.stitch_time}&#34;)
+                self.get_stitch_score()
+            if self.config_file[&#34;operation&#34;][&#34;Register&#34;]:
+                start = time()
+                self._registration()
+                end = time()
+                self.regist_time = end - start
+                clog.info(f&#34;Registration module time cost: {self.regist_time}&#34;)
+            # 初始化分割模型
+            if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;]:
+                auto_download_weights(self.zoo_dir, [self.t_config[self._stain_type]])
+                start = time()
+                self.initialize_t_seg()
+                self._tissue_segmentation()
+                end = time()
+                self.tissue_seg_time = end - start
+                clog.info(f&#34;Tissue seg module time cost: {self.tissue_seg_time}&#34;)
+                auto_download_weights(self.zoo_dir, [self.clarity_config[self._stain_type]])
+                self.initialize_clarity_eval()
+                self._clarity_eval()
+                self._get_tissue_seg_score()
+                self.get_regist_score()
+                self.save_preview()
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+                auto_download_weights(self.zoo_dir, [self.c_config[self._cell_seg_type][self._stain_type]])
+                start = time()
+                self.initialize_c_seg()
+                self._cell_segmentation()
+                end = time()
+                self.cell_seg_time = end - start
+                clog.info(f&#34;Cell seg module time cost: {self.cell_seg_time}&#34;)
+                self.get_cell_seg_score()
+            if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+                self.regist_to_rpi()
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;]:
+                start = time()
+                self._cell_labeling()
+                end = time()
+                self.cell_seg_correct_time = end - start
+                clog.info(f&#34;Cell seg correct time cost: {self.cell_seg_correct_time}&#34;)
+            if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;] \
+                    and self.version.upper() == &#39;SAP&#39;:
+                self.cell_mask_post_process()
+                self.gem_file_post_process()
+            self.write_time_cost()
+        else:
+            clog.info(&#39;QC failed, skip pipeline.&#39;)
+
+    def write_time_cost(self):
+        with h5py.File(self._ipr_path, &#39;a&#39;) as f:
+            research_info = f[&#39;Research&#39;]
+            research_info.attrs[&#39;StitchTime&#39;] = self.stitch_time
+            research_info.attrs[&#39;RegistTime&#39;] = self.regist_time
+            research_info.attrs[&#39;TissueSegTime&#39;] = self.tissue_seg_time
+            research_info.attrs[&#39;CellSegTime&#39;] = self.cell_seg_time
+            research_info.attrs[&#39;CellSegCorrectTime&#39;] = self.cell_seg_correct_time
+
+    def encode_mask(self, mask):
+        encode_mask = self.bmr.encode(mask)
+        return encode_mask
+
+    def _get_tissue_seg_score(self):
+        try:
+            irt = Image()
+            irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext))
+            tissue_mask = irt.image
+            irc = Image()
+            irc.read(os.path.join(self._output_path, f&#34;{self.chip_name}_clarity_mask&#34; + self.img_ext))
+            clarity_mask = irc.image
+            iou_result = iou(clarity_mask, tissue_mask)
+            iou_result = round(iou_result, 3) * 100
+            clog.info(f&#34;Tissue seg score {iou_result}&#34;)
+            with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+                tissue_module = &#39;TissueSeg&#39;
+                if tissue_module not in conf.keys():
+                    conf.require_group(tissue_module)
+                conf[tissue_module].attrs[&#39;TissueSegScore&#39;] = iou_result
+            clog.info(&#34;Finish calculating tissue seg score&#34;)
+        except Exception as e:
+            clog.error(traceback.format_exc())
+
+    @staticmethod
+    def transform_to_rpi(transform_path, output_path, chip_name, img_size=256, x_start=0, y_start=0,
+                         mag=(2, 10, 50, 100, 150)):
+        import gc
+        def find_thresh(img: np.ndarray):
+            &#34;&#34;&#34;
+            :param img: gray image
+            :type img: numpy nd array
+            :return: hmin, hmax
+            :rtype: int, int
+            &#34;&#34;&#34;
+            if not isinstance(img, np.ndarray):
+                raise Exception(f&#34;Input must be numpy nd array&#34;)
+            input_dims = len(img.shape)
+            if input_dims != 2:
+                raise Exception(f&#34;Input should be 2 dimensional array, but input array is {input_dims} dimensions&#34;)
+
+            # Constants
+            limit = img.size / 10
+            threshold = img.size / 5000
+            n_bins = 256
+            if img.dtype != &#39;uint8&#39;:
+                bit_max = 65536
+            else:
+                bit_max = 256
+
+            hist_min = np.min(img)
+            hist_max = np.max(img)
+
+            bin_size = (hist_max - hist_min) / n_bins
+            hist, bins = np.histogram(img.flatten(), n_bins, [hist_min, hist_max])
+
+            hmin = 0
+            hmax = bit_max - 1
+
+            for i in range(1, len(hist) - 1):
+                count = hist[i]
+                if count &gt; limit:
+                    continue
+                if count &gt; threshold:
+                    hmin = i
+                    break
+            for i in range(len(hist) - 1, 0, -1):
+                count = hist[i]
+                if count &gt; limit:
+                    continue
+                if count &gt; threshold:
+                    hmax = i
+                    break
+
+            hmin = hist_min + hmin * bin_size
+            hmax = hist_min + hmax * bin_size
+
+            hmin, hmax = int(hmin), int(hmax)
+
+            hmin = max(0, hmin)
+            hmax = min(bit_max - 1, hmax)
+
+            if hmax &gt; hmin:
+                return hmin, hmax
+            else:
+                return 0, 0
+
+        def image_type_convert(img):
+            if img.ndim == 2:
+                arr = img
+            else:
+                if img.shape[0] in [1, 2, 3, 4]:
+                    img = img.transpose((1, 2, 0))
+
+                if img.shape[2] == 1:
+                    arr = img[:, :, 0]
+                elif img.shape[2] == 2:
+                    max_0 = np.sum(img[:, :, 0])
+                    max_1 = np.sum(img[:, :, 1])
+                    index = 0 if max_0 &gt; max_1 else 1
+                    arr = img[:, :, index]
+                else:
+                    arr = img
+            return arr
+
+        img_path = transform_path
+        trans_reader = Image()
+        trans_reader.read(img_path)
+        transform_image = trans_reader.image
+        t1 = time()
+        transform_rpi_path = os.path.join(output_path, f&#39;{chip_name}_fov_transformed.rpi&#39;)
+        # write image metadata
+        with h5py.File(transform_rpi_path, &#39;a&#39;) as h5_out:
+            clog.info(&#34;Create new rpi&#34;)
+            # get height and width
+            height, width = transform_image.shape[:2]
+            meta_group = h5_out.require_group(&#39;metaInfo&#39;)
+            info = {&#39;version&#39;: RPI_VERSION,
+                    &#39;imgSize&#39;: img_size,
+                    &#39;x_start&#39;: x_start,
+                    &#39;y_start&#39;: y_start,
+                    &#39;sizex&#39;: width,
+                    &#39;sizey&#39;: height}
+            _write_attrs(meta_group, info)
+            gc.collect()
+            h5_out.file.flush()
+
+            # write image pyramid of bin size
+            color = &#39;(255, 255, 255)&#39;
+            transform_image = image_type_convert(transform_image)
+            group_name = &#39;ssDNA/Image&#39;
+
+            # 给group name增加 Color, GrayLevelElbow(图像像素值拐点的下限值), MaxGrayLevel, TrackLayer 属性
+            tag = group_name
+            try:
+                track_group = tag.split(&#39;/&#39;)[0]
+            except:
+                clog.warning(&#39;track group must exist.&#39;)
+                track_group = &#39;&#39;
+            try:
+                key_group = tag.split(&#39;/&#39;)[1]
+            except:
+                key_group = &#39;Image&#39;
+                tag = f&#39;{track_group}/{key_group}&#39;
+            group_ = h5_out.require_group(tag)
+            if key_group == &#39;Image&#39;:
+                group_.attrs[&#39;TrackLayer&#39;] = True
+                group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+                if transform_image.ndim == 2:
+                    min_gray_value, max_gray_value = find_thresh(transform_image)
+                    group_.attrs[&#39;MinGrayLevel&#39;] = min_gray_value
+                    group_.attrs[&#39;MaxGrayLevel&#39;] = max_gray_value
+                else:
+                    group_.attrs[&#39;MinGrayLevel&#39;] = 0
+                    group_.attrs[&#39;MaxGrayLevel&#39;] = 0
+            else:
+                group_.attrs[&#39;TrackLayer&#39;] = False
+                group_.attrs[&#39;MinGrayLevel&#39;] = 0
+                group_.attrs[&#39;MaxGrayLevel&#39;] = 255
+                group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+            group_.attrs[&#39;Color&#39;] = color
+            h5_out.file.flush()
+
+        for bin_size in mag:
+            if transform_image.ndim == 3:
+                im_downsample = transform_image[::bin_size, ::bin_size, :]
+            else:
+                im_downsample = transform_image[::bin_size, ::bin_size]
+            splitImage(h5_path=transform_rpi_path, im=im_downsample, tag=group_name, imgSize=img_size, bin_size=bin_size)
+
+        t2 = time()
+        clog.info(f&#34;Save rpi: {t2 - t1:.2f} seconds.&#34;)
+
+    def regist_to_rpi(self):
+        clog.info(&#34;Saving tissue/cell mask to ipr, generate regist rpi&#34;)
+        # need regist, tissue mask, cell mask
+        irt = Image()
+        irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext))
+        tissue_mask = irt.image
+        irc = Image()
+        irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext))
+        cell_mask = irc.image
+        irg = Image()
+        irg.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext))
+        regist_tif = irg.image
+        with h5py.File(self._ipr_path, &#39;r+&#39;) as f:
+            if &#39;CellMask&#39; in f[&#39;CellSeg&#39;].keys():
+                del f[&#39;CellSeg&#39;][&#39;CellMask&#39;]
+            if &#39;TissueMask&#39; in f[&#39;TissueSeg&#39;].keys():
+                del f[&#39;TissueSeg&#39;][&#39;TissueMask&#39;]
+            f[&#39;TissueSeg&#39;].create_dataset(&#39;TissueMask&#39;, data=self.encode_mask(tissue_mask), compression=&#39;gzip&#39;)
+            f[&#39;CellSeg&#39;].create_dataset(&#39;CellMask&#39;, data=self.encode_mask(cell_mask), compression=&#39;gzip&#39;)
+        with h5py.File(self._ipr_path, &#39;r&#39;) as f:
+            x_start = f[&#39;Register&#39;].attrs[&#39;XStart&#39;]
+            y_start = f[&#39;Register&#39;].attrs[&#39;YStart&#39;]
+        result = dict()
+        if self._stain_type == &#39;HE&#39;:
+            s_type = &#39;HE&#39;
+        else:
+            s_type = &#39;ssDNA&#39;
+        result[f&#39;{s_type}&#39;] = regist_tif
+        result[&#39;TissueMask&#39;] = tissue_mask
+        result[&#39;CellMask&#39;] = cell_mask
+        rpi_path = os.path.join(self._output_path, f&#39;{self.chip_name}.rpi&#39;)
+        createPyramid(result, rpi_path, x_start=x_start, y_start=y_start, s_type=s_type)
+        clog.info(&#34;Finished regist to rpi&#34;)
+
+    @staticmethod
+    def get_time():
+        dt = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+        return dt</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.get_time"><code class="name flex">
+<span>def <span class="ident">get_time</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_time():
+    dt = datetime.now().strftime(&#34;%Y-%m-%d-%H-%M-%S&#34;)
+    return dt</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.transform_to_rpi"><code class="name flex">
+<span>def <span class="ident">transform_to_rpi</span></span>(<span>transform_path, output_path, chip_name, img_size=256, x_start=0, y_start=0, mag=(2, 10, 50, 100, 150))</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def transform_to_rpi(transform_path, output_path, chip_name, img_size=256, x_start=0, y_start=0,
+                     mag=(2, 10, 50, 100, 150)):
+    import gc
+    def find_thresh(img: np.ndarray):
+        &#34;&#34;&#34;
+        :param img: gray image
+        :type img: numpy nd array
+        :return: hmin, hmax
+        :rtype: int, int
+        &#34;&#34;&#34;
+        if not isinstance(img, np.ndarray):
+            raise Exception(f&#34;Input must be numpy nd array&#34;)
+        input_dims = len(img.shape)
+        if input_dims != 2:
+            raise Exception(f&#34;Input should be 2 dimensional array, but input array is {input_dims} dimensions&#34;)
+
+        # Constants
+        limit = img.size / 10
+        threshold = img.size / 5000
+        n_bins = 256
+        if img.dtype != &#39;uint8&#39;:
+            bit_max = 65536
+        else:
+            bit_max = 256
+
+        hist_min = np.min(img)
+        hist_max = np.max(img)
+
+        bin_size = (hist_max - hist_min) / n_bins
+        hist, bins = np.histogram(img.flatten(), n_bins, [hist_min, hist_max])
+
+        hmin = 0
+        hmax = bit_max - 1
+
+        for i in range(1, len(hist) - 1):
+            count = hist[i]
+            if count &gt; limit:
+                continue
+            if count &gt; threshold:
+                hmin = i
+                break
+        for i in range(len(hist) - 1, 0, -1):
+            count = hist[i]
+            if count &gt; limit:
+                continue
+            if count &gt; threshold:
+                hmax = i
+                break
+
+        hmin = hist_min + hmin * bin_size
+        hmax = hist_min + hmax * bin_size
+
+        hmin, hmax = int(hmin), int(hmax)
+
+        hmin = max(0, hmin)
+        hmax = min(bit_max - 1, hmax)
+
+        if hmax &gt; hmin:
+            return hmin, hmax
+        else:
+            return 0, 0
+
+    def image_type_convert(img):
+        if img.ndim == 2:
+            arr = img
+        else:
+            if img.shape[0] in [1, 2, 3, 4]:
+                img = img.transpose((1, 2, 0))
+
+            if img.shape[2] == 1:
+                arr = img[:, :, 0]
+            elif img.shape[2] == 2:
+                max_0 = np.sum(img[:, :, 0])
+                max_1 = np.sum(img[:, :, 1])
+                index = 0 if max_0 &gt; max_1 else 1
+                arr = img[:, :, index]
+            else:
+                arr = img
+        return arr
+
+    img_path = transform_path
+    trans_reader = Image()
+    trans_reader.read(img_path)
+    transform_image = trans_reader.image
+    t1 = time()
+    transform_rpi_path = os.path.join(output_path, f&#39;{chip_name}_fov_transformed.rpi&#39;)
+    # write image metadata
+    with h5py.File(transform_rpi_path, &#39;a&#39;) as h5_out:
+        clog.info(&#34;Create new rpi&#34;)
+        # get height and width
+        height, width = transform_image.shape[:2]
+        meta_group = h5_out.require_group(&#39;metaInfo&#39;)
+        info = {&#39;version&#39;: RPI_VERSION,
+                &#39;imgSize&#39;: img_size,
+                &#39;x_start&#39;: x_start,
+                &#39;y_start&#39;: y_start,
+                &#39;sizex&#39;: width,
+                &#39;sizey&#39;: height}
+        _write_attrs(meta_group, info)
+        gc.collect()
+        h5_out.file.flush()
+
+        # write image pyramid of bin size
+        color = &#39;(255, 255, 255)&#39;
+        transform_image = image_type_convert(transform_image)
+        group_name = &#39;ssDNA/Image&#39;
+
+        # 给group name增加 Color, GrayLevelElbow(图像像素值拐点的下限值), MaxGrayLevel, TrackLayer 属性
+        tag = group_name
+        try:
+            track_group = tag.split(&#39;/&#39;)[0]
+        except:
+            clog.warning(&#39;track group must exist.&#39;)
+            track_group = &#39;&#39;
+        try:
+            key_group = tag.split(&#39;/&#39;)[1]
+        except:
+            key_group = &#39;Image&#39;
+            tag = f&#39;{track_group}/{key_group}&#39;
+        group_ = h5_out.require_group(tag)
+        if key_group == &#39;Image&#39;:
+            group_.attrs[&#39;TrackLayer&#39;] = True
+            group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+            if transform_image.ndim == 2:
+                min_gray_value, max_gray_value = find_thresh(transform_image)
+                group_.attrs[&#39;MinGrayLevel&#39;] = min_gray_value
+                group_.attrs[&#39;MaxGrayLevel&#39;] = max_gray_value
+            else:
+                group_.attrs[&#39;MinGrayLevel&#39;] = 0
+                group_.attrs[&#39;MaxGrayLevel&#39;] = 0
+        else:
+            group_.attrs[&#39;TrackLayer&#39;] = False
+            group_.attrs[&#39;MinGrayLevel&#39;] = 0
+            group_.attrs[&#39;MaxGrayLevel&#39;] = 255
+            group_.attrs[&#39;GrayLevelElbow&#39;] = 0
+        group_.attrs[&#39;Color&#39;] = color
+        h5_out.file.flush()
+
+    for bin_size in mag:
+        if transform_image.ndim == 3:
+            im_downsample = transform_image[::bin_size, ::bin_size, :]
+        else:
+            im_downsample = transform_image[::bin_size, ::bin_size]
+        splitImage(h5_path=transform_rpi_path, im=im_downsample, tag=group_name, imgSize=img_size, bin_size=bin_size)
+
+    t2 = time()
+    clog.info(f&#34;Save rpi: {t2 - t1:.2f} seconds.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.auto_load_weights"><code class="name flex">
+<span>def <span class="ident">auto_load_weights</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def auto_load_weights(self, ):
+    self.weight_names = [
+        self.c_config[self._cell_seg_type][self._stain_type],
+        self.t_config[self._stain_type],
+    ]
+    auto_download_weights(self.zoo_dir, self.weight_names)  # if empty, auto download weights</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.cell_mask_post_process"><code class="name flex">
+<span>def <span class="ident">cell_mask_post_process</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Based on cell mask and cell correct mask
+Generate
+- filtered cell mask
+- filtered cell correct mask</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cell_mask_post_process(self):
+    &#34;&#34;&#34;
+    Based on cell mask and cell correct mask
+    Generate
+    - filtered cell mask
+    - filtered cell correct mask
+    &#34;&#34;&#34;
+    try:
+        clog.info(&#34;Filtering cell mask and correct mask based on tissue mask&#34;)
+        cell_mask_path = os.path.join(
+            self._output_path,
+            f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+        )
+        correct_mask_path = os.path.join(
+            self._output_path,
+            f&#39;{self.chip_name}_{self.cell_correct_mask_name}&#39; + self.img_ext
+        )
+        tissue_mask_path = os.path.join(
+            self._output_path,
+            f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext
+        )
+        i = Image()
+        i.read(cell_mask_path)
+        cell_mask = i.image
+        i.read(correct_mask_path)
+        correct_mask = i.image
+        i.read(tissue_mask_path)
+        tissue_mask = i.image
+        filtered_cell_mask = cell_mask * tissue_mask
+        filtered_cell_correct_mask = correct_mask * tissue_mask
+        i.write_s(
+            image=filtered_cell_mask,
+            output_path=os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.filtered_cell_mask_name}&#39; + self.img_ext
+            ),
+            compression=True
+        )
+        i.write_s(
+            image=filtered_cell_correct_mask,
+            output_path=os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{self.filtered_cell_correct_mask_name}&#39; + self.img_ext
+            ),
+            compression=True
+        )
+        clog.info(&#34;Finished filtering&#34;)
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.encode_mask"><code class="name flex">
+<span>def <span class="ident">encode_mask</span></span>(<span>self, mask)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encode_mask(self, mask):
+    encode_mask = self.bmr.encode(mask)
+    return encode_mask</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.gem_file_post_process"><code class="name flex">
+<span>def <span class="ident">gem_file_post_process</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Based on these four mask and input gene matrix (gem file)
+Generate corresponding four gem file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gem_file_post_process(self):
+    &#34;&#34;&#34;
+    Based on these four mask and input gene matrix (gem file)
+    Generate corresponding four gem file
+    &#34;&#34;&#34;
+    try:
+        clog.info(&#34;Generating new gene files based on different masks&#34;)
+        masks = [
+            self.cell_mask_name,
+            self.cell_correct_mask_name,
+            self.filtered_cell_mask_name,
+            self.filtered_cell_correct_mask_name
+        ]
+        if self._gem_path.lower().endswith((&#39;.bgef&#39;, &#39;.gef&#39;)):
+            gem_path = os.path.join(self._output_path, f&#34;{self.chip_name}_exp.gem&#34;)
+            if not os.path.exists(gem_path):
+                ml = MatrixLoader(self._gem_path)
+                ml.bgef2gem(bgef_file=self._gem_path, gem_file=gem_path, binsize=1)
+        else:
+            gem_path = self._gem_path
+
+        mask_paths = []
+        for mask_name in masks:
+            cur_mask_path = os.path.join(
+                self._output_path,
+                f&#39;{self.chip_name}_{mask_name}&#39; + self.img_ext
+            )
+            mask_paths.append(cur_mask_path)
+        generate_gem(
+            mask_paths=mask_paths,
+            gem_path=gem_path,
+            out_path=self._output_path
+        )
+        clog.info(&#34;Finished generating new gene files&#34;)
+    except Exception as e:
+        clog.error(str(e))</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.get_cell_seg_score"><code class="name flex">
+<span>def <span class="ident">get_cell_seg_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_cell_seg_score(self):
+    def check_wh(wh, bin):
+        cel_num = np.subtract(np.float32(wh), np.multiply(np.ones(wh.shape, dtype=np.float32), bin))
+        cel_num_01 = np.multiply(cel_num[:, 0], cel_num[:, 1]) &lt;= 0
+        cel_num_11 = np.bitwise_and(cel_num[:, 0] &gt; 0, cel_num[:, 1] &gt; 0)
+        return np.sum(np.bitwise_or(cel_num_01, cel_num_11))
+
+    try:
+        cell_mask_path = os.path.join(
+            self._output_path,
+            f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext
+        )
+        i = Image()
+        i.read(cell_mask_path)
+        cell_mask = i.image
+        mask = np.clip(cell_mask, 0, 1)
+        all_cell_area = np.sum(mask)
+        cell_num, _, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+        cell_num -= 1
+        stats = stats[1:, 2:5]
+        wh = stats[:, 0:2]
+        area = stats[:, 2]
+
+        cell_num_40 = check_wh(wh, 40)
+        result = [all_cell_area / cell_num, cell_num_40 / cell_num]
+
+        with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+            cell_seg = conf[&#39;Research&#39;].require_group(&#39;CellSeg&#39;)
+            cell_seg.attrs[&#39;CellSegScore&#39;] = &#34;_&#34;.join(map(str, result))
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.get_regist_score"><code class="name flex">
+<span>def <span class="ident">get_regist_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_regist_score(self):
+    try:
+        irt = Image()
+        irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_tissue_cut.tif&#39;))
+        tissue_mask = irt.image
+        irc = Image()
+        irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.gene_img_name}&#39; + self.img_ext))
+        gene_image = irc.image
+        regist_score = self.registrator.register_score(tissue_mask, gene_image)
+        clog.info(f&#34;Regist score is: {regist_score}&#34;)
+        with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+            conf[&#39;Register&#39;].attrs[&#39;RegisterScore&#39;] = regist_score
+        clog.info(&#34;Finish calculating regist score&#34;)
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.get_stitch_score"><code class="name flex">
+<span>def <span class="ident">get_stitch_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_stitch_score(self):
+    try:
+        stitch_result_dict = {}
+        with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+            try:
+                StitchEvalH = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalH&#39;]
+                stitchevalH = np.array(StitchEvalH)
+                stitch_result_dict[&#39;H_mean&#39;] = np.mean(stitchevalH[stitchevalH != -1])
+                stitch_result_dict[&#39;H_max&#39;] = np.abs(stitchevalH).max()
+            except:
+                stitch_result_dict[&#39;H_mean&#39;] = -1
+                stitch_result_dict[&#39;H_max&#39;] = -1
+            try:
+                StitchEvalV = conf[&#39;Stitch&#39;][&#39;StitchEval&#39;][&#39;StitchEvalV&#39;]
+                stitchevalV = np.array(StitchEvalV)
+                stitch_result_dict[&#39;V_mean&#39;] = np.mean(stitchevalV[stitchevalV != -1])
+                stitch_result_dict[&#39;V_max&#39;] = np.abs(stitchevalV).max()
+            except:
+                stitch_result_dict[&#39;V_mean&#39;] = -1
+                stitch_result_dict[&#39;V_max&#39;] = -1
+            conf[&#39;Stitch&#39;][&#39;StitchEval&#39;].attrs[&#39;StitchScore&#39;] = &#34;_&#34;.join(map(str, stitch_result_dict.values()))
+        clog.info(&#34;Finish calculating stitch score&#34;)
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.initial_ipr_attrs"><code class="name flex">
+<span>def <span class="ident">initial_ipr_attrs</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initial_ipr_attrs(self, ):
+    try:
+        clog.info(&#39;Initial some ipr attrs and datasets for pipeline (TissueSeg, CellSeg, ManualState...)&#39;)
+        with h5py.File(self._ipr_path, &#39;a&#39;) as conf:
+            if &#39;StereoResepVersion&#39; not in conf[&#39;ImageInfo&#39;].attrs.keys():
+                conf[&#39;ImageInfo&#39;].attrs[&#39;StereoResepVersion&#39;] = PROG_VERSION
+            if &#34;IPRVersion&#34; not in conf.keys():
+                conf.attrs[&#39;IPRVersion&#39;] = &#39;0.0.1&#39;
+            if &#34;StereoResepSwitch&#34; not in conf.keys():
+                group = conf.create_group(&#39;StereoResepSwitch&#39;)
+                group.attrs[&#39;stitch&#39;] = True
+                group.attrs[&#39;tissueseg&#39;] = True
+                group.attrs[&#39;cellseg&#39;] = True
+                group.attrs[&#39;register&#39;] = True
+            if &#34;ManualState&#34; not in conf.keys():
+                group = conf.create_group(&#39;ManualState&#39;)
+                group.attrs[&#39;stitch&#39;] = False
+                group.attrs[&#39;tissueseg&#39;] = False
+                group.attrs[&#39;cellseg&#39;] = False
+                group.attrs[&#39;register&#39;] = False
+            if &#39;TissueSeg&#39; not in conf.keys():
+                conf.create_group(&#39;TissueSeg&#39;)
+            if &#39;CellSeg&#39; not in conf.keys():
+                conf.create_group(&#39;CellSeg&#39;)
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.initialize_c_seg"><code class="name flex">
+<span>def <span class="ident">initialize_c_seg</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_c_seg(self):
+    try:
+        clog.info(&#39;Initialize for cell seg&#39;)
+        self.c_seg = CellSegmentation(
+            model_path=os.path.join(self.zoo_dir, self.c_config[self._cell_seg_type][self._stain_type]),
+            gpu=self.c_config[&#34;running_config&#34;][&#34;gpu&#34;],
+            num_threads=self.c_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+        )
+        clog.info(&#39;Load weights (cell-{}-{}) finished.&#39;.format(self._cell_seg_type, self._stain_type))
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.initialize_clarity_eval"><code class="name flex">
+<span>def <span class="ident">initialize_clarity_eval</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_clarity_eval(self):
+    try:
+        clog.info(&#39;Initialize for clarity eval&#39;)
+        self.clarity_eval = ClarityQC()
+        self.clarity_eval.load_model(
+            model_path=os.path.join(self.zoo_dir, self.clarity_config[self._stain_type]),
+            batch_size=self.clarity_config[&#39;running_config&#39;][&#39;batch_size&#39;],
+            gpu=self.clarity_config[&#39;running_config&#39;][&#39;gpu&#39;]
+        )
+        clog.info(&#39;Load weights (Clarity Eval-{}) finished.&#39;.format(self._stain_type))
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.initialize_t_seg"><code class="name flex">
+<span>def <span class="ident">initialize_t_seg</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_t_seg(self):
+    try:
+        clog.info(&#39;Initialize for tissue seg&#39;)
+        clog.info(f&#39;Tissue seg weight: {os.path.join(self.zoo_dir, self.t_config[self._stain_type])}&#39;)
+        self.t_seg = TissueSegmentation(
+            model_path=os.path.join(self.zoo_dir, self.t_config[self._stain_type]),
+            stype=self._stain_type,
+            gpu=self.t_config[&#39;running_config&#39;][&#39;gpu&#39;],
+            num_threads=self.t_config[&#39;running_config&#39;][&#39;num_threads&#39;]
+        )
+        clog.info(&#39;Load weights (tissue-{}) finished.&#39;.format(self._stain_type))
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.load_initial_info"><code class="name flex">
+<span>def <span class="ident">load_initial_info</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_initial_info(self, ):
+    try:
+        clog.info(&#39;Load initial info (StainType, ChipSN...)&#39;)
+        with h5py.File(self._ipr_path, &#39;r&#39;) as conf:
+            self._stain_type = conf[&#39;QCInfo&#39;].attrs[&#39;StainType&#39;]
+            self._stain_type = self._stain_type.upper()
+            self.chip_name = conf[&#39;ImageInfo&#39;].attrs[&#39;STOmicsChipSN&#39;]
+            if not self.chip_template_getter.is_chip_number_legal(self.chip_name):
+                raise Exception(f&#34;{self.chip_name} not supported&#34;)
+                # 获取芯片号对应的芯片模板
+            short_sn = self.chip_template_getter.get_valid_chip_no(self.chip_name)
+            self._stereo_chip = self.chip_template_getter.get_chip_grids(short_sn)
+            self.is_stitched = conf[&#39;ImageInfo&#39;].attrs[&#39;StitchedImage&#39;]
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.prepare_input"><code class="name flex">
+<span>def <span class="ident">prepare_input</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prepare_input(self):
+    clog.info(f&#34;Preparing input for pipeline (images)&#34;)
+    fname, ext = os.path.splitext(self._input_path)
+    if ext == &#39;.gz&#39;:
+        # 解压文件 （延用开发版本）
+        with tarfile.open(self._input_path, &#39;r&#39;) as tfo:
+            for tarinfo in tfo:
+                if tarinfo.name == &#39;&#39;:
+                    continue
+                if os.path.splitext(tarinfo.name)[1] == &#39;&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tif&#39; or \
+                        os.path.splitext(tarinfo.name)[1] == &#39;.czi&#39; or os.path.splitext(tarinfo.name)[1] == &#39;.tiff&#39;:
+                    tfo.extract(tarinfo, self._output_path)
+        if not self.is_stitched:
+            # 找到小图路径
+            for name in os.listdir(self._output_path):
+                cur_path = os.path.join(self._output_path, name)
+                clog.info(f&#34;Current path -&gt; {cur_path}&#34;)
+                if os.path.isdir(cur_path):
+                    img_dir = cur_path
+                    break
+            else:
+                raise Exception(f&#34;Could not find fov directory&#34;)
+
+        else:
+            # 找到大图路径
+            for f in os.listdir(self._output_path):
+                large_path = os.path.join(self._output_path, f)
+                if large_path.endswith(&#39;.tif&#39;):
+                    img_dir = large_path
+
+    elif ext == &#39;&#39;:  # 小图路径
+        img_dir = self._input_path
+    elif ext in IMAGE_SUPPORT:  # 单张大图
+        self.is_stitched = True
+        img_dir = self._input_path
+    clog.info(f&#34;Source image path(dir) {img_dir}&#34;)
+    if not self.is_stitched:
+        self.image_paths = imagespath2dict(img_dir)
+    else:
+        self.image_paths = img_dir</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.regist_to_rpi"><code class="name flex">
+<span>def <span class="ident">regist_to_rpi</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def regist_to_rpi(self):
+    clog.info(&#34;Saving tissue/cell mask to ipr, generate regist rpi&#34;)
+    # need regist, tissue mask, cell mask
+    irt = Image()
+    irt.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.tissue_mask_name}&#39; + self.img_ext))
+    tissue_mask = irt.image
+    irc = Image()
+    irc.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.cell_mask_name}&#39; + self.img_ext))
+    cell_mask = irc.image
+    irg = Image()
+    irg.read(os.path.join(self._output_path, f&#39;{self.chip_name}_{self.regist_img_name}&#39; + self.img_ext))
+    regist_tif = irg.image
+    with h5py.File(self._ipr_path, &#39;r+&#39;) as f:
+        if &#39;CellMask&#39; in f[&#39;CellSeg&#39;].keys():
+            del f[&#39;CellSeg&#39;][&#39;CellMask&#39;]
+        if &#39;TissueMask&#39; in f[&#39;TissueSeg&#39;].keys():
+            del f[&#39;TissueSeg&#39;][&#39;TissueMask&#39;]
+        f[&#39;TissueSeg&#39;].create_dataset(&#39;TissueMask&#39;, data=self.encode_mask(tissue_mask), compression=&#39;gzip&#39;)
+        f[&#39;CellSeg&#39;].create_dataset(&#39;CellMask&#39;, data=self.encode_mask(cell_mask), compression=&#39;gzip&#39;)
+    with h5py.File(self._ipr_path, &#39;r&#39;) as f:
+        x_start = f[&#39;Register&#39;].attrs[&#39;XStart&#39;]
+        y_start = f[&#39;Register&#39;].attrs[&#39;YStart&#39;]
+    result = dict()
+    if self._stain_type == &#39;HE&#39;:
+        s_type = &#39;HE&#39;
+    else:
+        s_type = &#39;ssDNA&#39;
+    result[f&#39;{s_type}&#39;] = regist_tif
+    result[&#39;TissueMask&#39;] = tissue_mask
+    result[&#39;CellMask&#39;] = cell_mask
+    rpi_path = os.path.join(self._output_path, f&#39;{self.chip_name}.rpi&#39;)
+    createPyramid(result, rpi_path, x_start=x_start, y_start=y_start, s_type=s_type)
+    clog.info(&#34;Finished regist to rpi&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.run_x_bin"><code class="name flex">
+<span>def <span class="ident">run_x_bin</span></span>(<span>self, gem_path, input_path, ipr_path, output=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_x_bin(self, gem_path, input_path, ipr_path, output=None):
+    clog.info(f&#34;Using version {self.version}&#34;)
+    self._gem_path = gem_path
+    self._input_path = input_path
+    self._output_path = os.path.join(output, &#34;registration&#34;)
+    os.makedirs(self._output_path, exist_ok=True)
+    clog.info(f&#34;Pipeline output dir {self._output_path}&#34;)
+    ipr_name = os.path.split(ipr_path)[-1]
+    self._ipr_path = os.path.join(self._output_path, ipr_name)
+    copyfile(ipr_path, self._ipr_path)
+    if self._check_qc_flag():
+
+        clog.info(f&#34;Pipeline using ipr {self._ipr_path}&#34;)
+        self.load_initial_info()  # 初始化多个模块需要用到的信息from ipr，主要是读取
+        self.initial_ipr_attrs()  # 初始化pipeline需要用到的一些group，如果不用stio的话是需要pipeline自己生成的
+        self.prepare_input()  # 解压缩qc的targz，找到图片路径
+        clog.info(&#39;Start pipline&#39;)
+
+        if self.config_file[&#34;operation&#34;][&#34;Stitching&#34;]:
+            start = time()
+            self._stitching()
+            end = time()
+            self.stitch_time = end - start
+            clog.info(f&#34;Stitching module time cost: {self.stitch_time}&#34;)
+            self.get_stitch_score()
+        if self.config_file[&#34;operation&#34;][&#34;Register&#34;]:
+            start = time()
+            self._registration()
+            end = time()
+            self.regist_time = end - start
+            clog.info(f&#34;Registration module time cost: {self.regist_time}&#34;)
+        # 初始化分割模型
+        if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;]:
+            auto_download_weights(self.zoo_dir, [self.t_config[self._stain_type]])
+            start = time()
+            self.initialize_t_seg()
+            self._tissue_segmentation()
+            end = time()
+            self.tissue_seg_time = end - start
+            clog.info(f&#34;Tissue seg module time cost: {self.tissue_seg_time}&#34;)
+            auto_download_weights(self.zoo_dir, [self.clarity_config[self._stain_type]])
+            self.initialize_clarity_eval()
+            self._clarity_eval()
+            self._get_tissue_seg_score()
+            self.get_regist_score()
+            self.save_preview()
+        if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+            auto_download_weights(self.zoo_dir, [self.c_config[self._cell_seg_type][self._stain_type]])
+            start = time()
+            self.initialize_c_seg()
+            self._cell_segmentation()
+            end = time()
+            self.cell_seg_time = end - start
+            clog.info(f&#34;Cell seg module time cost: {self.cell_seg_time}&#34;)
+            self.get_cell_seg_score()
+        if self.config_file[&#34;operation&#34;][&#34;Tissue_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;]:
+            self.regist_to_rpi()
+        if self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;]:
+            start = time()
+            self._cell_labeling()
+            end = time()
+            self.cell_seg_correct_time = end - start
+            clog.info(f&#34;Cell seg correct time cost: {self.cell_seg_correct_time}&#34;)
+        if self.config_file[&#34;operation&#34;][&#34;Cell_Segment&#34;] and self.config_file[&#34;operation&#34;][&#34;Cell_Correct&#34;] \
+                and self.version.upper() == &#39;SAP&#39;:
+            self.cell_mask_post_process()
+            self.gem_file_post_process()
+        self.write_time_cost()
+    else:
+        clog.info(&#39;QC failed, skip pipeline.&#39;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.save_preview"><code class="name flex">
+<span>def <span class="ident">save_preview</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_preview(self):
+    try:
+        ir = Image()
+        ir.read(glob(os.path.join(self._output_path, &#39;*_transformed.tif&#39;))[0])
+        img = ir.image
+        if img.dtype != &#39;uint8&#39;:
+            img = f_ij_16_to_8(img)
+        irt = Image()
+        irt.read(glob(os.path.join(self._output_path, &#39;*_tissue_cut.tif&#39;))[0])
+        tissue = irt.image
+        if tissue.dtype != &#39;uint8&#39;:
+            tissue = f_ij_16_to_8(tissue)
+        tissue[tissue &gt; 0] = 255
+        img = f_resize(img)
+        h, w = img.shape[:2]
+        mask = f_resize(tissue, (w, h))
+        if img.ndim == 2:
+            img = f_gray2bgr(img)
+        contours, hierachy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.drawContours(img, contours, -1, (255, 255, 0), 1)
+        img = f_ij_auto_contrast(img)
+        with h5py.File(self._ipr_path, &#39;r+&#39;) as conf:
+            if &#39;Preview&#39; in conf.keys():
+                del conf[&#39;Preview&#39;]
+            conf.create_dataset(&#39;Preview&#39;, data=img, compression=&#39;gzip&#39;)
+        clog.info(&#39;Success to create preview&#39;)
+    except Exception as e:
+        clog.error(traceback.format_exc())</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.set_cell_seg_type"><code class="name flex">
+<span>def <span class="ident">set_cell_seg_type</span></span>(<span>self, ct)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_cell_seg_type(self, ct):
+    self._cell_seg_type = ct</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.set_config_file"><code class="name flex">
+<span>def <span class="ident">set_config_file</span></span>(<span>self, cf)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_config_file(self, cf):
+    with open(cf, &#39;r&#39;) as f:
+        th_dict = json.load(f)
+    self.config_file = th_dict
+    self.c_config = self.config_file[&#39;cell_seg&#39;]
+    self.t_config = self.config_file[&#39;tissue_seg&#39;]
+    self.clarity_config = self.config_file[&#39;clarity_eval&#39;]
+    self.stitch_config = self.config_file[&#39;stitch&#39;]
+    self.regist_config = self.config_file.get(&#39;registration&#39;, {})
+    cpu_count = mp.cpu_count()
+    self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                              self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;])
+    self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;] = min(cpu_count // 2,
+                                                          self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;])
+    clog.info(f&#34;Using threads for stitch  {self.stitch_config[&#39;running_config&#39;][&#39;num_threads&#39;]}\n&#34;
+              f&#34;using threads for  cell correct {self.config_file[&#39;cell_correct&#39;][&#39;num_threads&#39;]}&#34;)
+    print(&#34;asd&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.set_version"><code class="name flex">
+<span>def <span class="ident">set_version</span></span>(<span>self, v: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_version(self, v: str):
+    self.version = v</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.set_zoo_dir"><code class="name flex">
+<span>def <span class="ident">set_zoo_dir</span></span>(<span>self, path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_zoo_dir(self, path: str):
+    self.zoo_dir = path</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.Pipeline.write_time_cost"><code class="name flex">
+<span>def <span class="ident">write_time_cost</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_time_cost(self):
+    with h5py.File(self._ipr_path, &#39;a&#39;) as f:
+        research_info = f[&#39;Research&#39;]
+        research_info.attrs[&#39;StitchTime&#39;] = self.stitch_time
+        research_info.attrs[&#39;RegistTime&#39;] = self.regist_time
+        research_info.attrs[&#39;TissueSegTime&#39;] = self.tissue_seg_time
+        research_info.attrs[&#39;CellSegTime&#39;] = self.cell_seg_time
+        research_info.attrs[&#39;CellSegCorrectTime&#39;] = self.cell_seg_correct_time</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.binary_mask_rle"><code class="flex name class">
+<span>class <span class="ident">binary_mask_rle</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>ref.: <a href="https://en.wikipedia.org/wiki/Run-length_encoding">https://en.wikipedia.org/wiki/Run-length_encoding</a></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class binary_mask_rle(object):
+    &#34;&#34;&#34;
+    ref.: https://en.wikipedia.org/wiki/Run-length_encoding
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        pass
+
+    def encode(self, binary_mask):
+        &#39;&#39;&#39;
+        binary_mask: numpy array, 1 - mask, 0 - background
+        Returns run length as string formated
+        &#39;&#39;&#39;
+        binary_mask[binary_mask &gt;= 1] = 1
+        pixels = binary_mask.flatten()
+        pixels = np.concatenate([[0], pixels, [0]])
+        runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
+        runs[1::2] -= runs[::2]
+        runs = np.reshape(runs, (-1, 2))
+        return runs
+
+    def decode(self, mask_rle, shape):
+        &#39;&#39;&#39;
+        mask_rle: run-length as string formated (start length)
+        shape: (height,width) of array to return
+        Returns numpy array, 1 - mask, 0 - background
+        &#39;&#39;&#39;
+        # s = mask_rle.split()
+        # starts, lengths = [np.asarray(x, dtype=int) for x in (s[0:][::2], s[1:][::2])]
+        starts = mask_rle[:, 0]
+        lengths = mask_rle[:, 1]
+        starts -= 1
+        ends = starts + lengths
+        binary_mask = np.zeros(shape[0] * shape[1], dtype=np.uint8)
+        for lo, hi in zip(starts, ends):
+            binary_mask[lo:hi] = 1
+        return binary_mask.reshape(shape)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.test.scripts.pipeline.binary_mask_rle.decode"><code class="name flex">
+<span>def <span class="ident">decode</span></span>(<span>self, mask_rle, shape)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mask_rle: run-length as string formated (start length)
+shape: (height,width) of array to return
+Returns numpy array, 1 - mask, 0 - background</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decode(self, mask_rle, shape):
+    &#39;&#39;&#39;
+    mask_rle: run-length as string formated (start length)
+    shape: (height,width) of array to return
+    Returns numpy array, 1 - mask, 0 - background
+    &#39;&#39;&#39;
+    # s = mask_rle.split()
+    # starts, lengths = [np.asarray(x, dtype=int) for x in (s[0:][::2], s[1:][::2])]
+    starts = mask_rle[:, 0]
+    lengths = mask_rle[:, 1]
+    starts -= 1
+    ends = starts + lengths
+    binary_mask = np.zeros(shape[0] * shape[1], dtype=np.uint8)
+    for lo, hi in zip(starts, ends):
+        binary_mask[lo:hi] = 1
+    return binary_mask.reshape(shape)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.test.scripts.pipeline.binary_mask_rle.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>self, binary_mask)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>binary_mask: numpy array, 1 - mask, 0 - background
+Returns run length as string formated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encode(self, binary_mask):
+    &#39;&#39;&#39;
+    binary_mask: numpy array, 1 - mask, 0 - background
+    Returns run length as string formated
+    &#39;&#39;&#39;
+    binary_mask[binary_mask &gt;= 1] = 1
+    pixels = binary_mask.flatten()
+    pixels = np.concatenate([[0], pixels, [0]])
+    runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
+    runs[1::2] -= runs[::2]
+    runs = np.reshape(runs, (-1, 2))
+    return runs</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.test.scripts" href="index.html">cellbin.test.scripts</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="cellbin.test.scripts.pipeline.arg_parser" href="#cellbin.test.scripts.pipeline.arg_parser">arg_parser</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.createPyramid" href="#cellbin.test.scripts.pipeline.createPyramid">createPyramid</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.file_rc_index" href="#cellbin.test.scripts.pipeline.file_rc_index">file_rc_index</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.generate_gem" href="#cellbin.test.scripts.pipeline.generate_gem">generate_gem</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.imagespath2dict" href="#cellbin.test.scripts.pipeline.imagespath2dict">imagespath2dict</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.json_serialize" href="#cellbin.test.scripts.pipeline.json_serialize">json_serialize</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.main" href="#cellbin.test.scripts.pipeline.main">main</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.outline" href="#cellbin.test.scripts.pipeline.outline">outline</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.run_pipeline" href="#cellbin.test.scripts.pipeline.run_pipeline">run_pipeline</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.splitImage" href="#cellbin.test.scripts.pipeline.splitImage">splitImage</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.test.scripts.pipeline.Pipeline" href="#cellbin.test.scripts.pipeline.Pipeline">Pipeline</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.auto_load_weights" href="#cellbin.test.scripts.pipeline.Pipeline.auto_load_weights">auto_load_weights</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.cell_mask_post_process" href="#cellbin.test.scripts.pipeline.Pipeline.cell_mask_post_process">cell_mask_post_process</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.encode_mask" href="#cellbin.test.scripts.pipeline.Pipeline.encode_mask">encode_mask</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.gem_file_post_process" href="#cellbin.test.scripts.pipeline.Pipeline.gem_file_post_process">gem_file_post_process</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.get_cell_seg_score" href="#cellbin.test.scripts.pipeline.Pipeline.get_cell_seg_score">get_cell_seg_score</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.get_regist_score" href="#cellbin.test.scripts.pipeline.Pipeline.get_regist_score">get_regist_score</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.get_stitch_score" href="#cellbin.test.scripts.pipeline.Pipeline.get_stitch_score">get_stitch_score</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.get_time" href="#cellbin.test.scripts.pipeline.Pipeline.get_time">get_time</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.initial_ipr_attrs" href="#cellbin.test.scripts.pipeline.Pipeline.initial_ipr_attrs">initial_ipr_attrs</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.initialize_c_seg" href="#cellbin.test.scripts.pipeline.Pipeline.initialize_c_seg">initialize_c_seg</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.initialize_clarity_eval" href="#cellbin.test.scripts.pipeline.Pipeline.initialize_clarity_eval">initialize_clarity_eval</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.initialize_t_seg" href="#cellbin.test.scripts.pipeline.Pipeline.initialize_t_seg">initialize_t_seg</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.load_initial_info" href="#cellbin.test.scripts.pipeline.Pipeline.load_initial_info">load_initial_info</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.prepare_input" href="#cellbin.test.scripts.pipeline.Pipeline.prepare_input">prepare_input</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.regist_to_rpi" href="#cellbin.test.scripts.pipeline.Pipeline.regist_to_rpi">regist_to_rpi</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.run_x_bin" href="#cellbin.test.scripts.pipeline.Pipeline.run_x_bin">run_x_bin</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.save_preview" href="#cellbin.test.scripts.pipeline.Pipeline.save_preview">save_preview</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.set_cell_seg_type" href="#cellbin.test.scripts.pipeline.Pipeline.set_cell_seg_type">set_cell_seg_type</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.set_config_file" href="#cellbin.test.scripts.pipeline.Pipeline.set_config_file">set_config_file</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.set_version" href="#cellbin.test.scripts.pipeline.Pipeline.set_version">set_version</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.set_zoo_dir" href="#cellbin.test.scripts.pipeline.Pipeline.set_zoo_dir">set_zoo_dir</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.transform_to_rpi" href="#cellbin.test.scripts.pipeline.Pipeline.transform_to_rpi">transform_to_rpi</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.Pipeline.write_time_cost" href="#cellbin.test.scripts.pipeline.Pipeline.write_time_cost">write_time_cost</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="cellbin.test.scripts.pipeline.binary_mask_rle" href="#cellbin.test.scripts.pipeline.binary_mask_rle">binary_mask_rle</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.test.scripts.pipeline.binary_mask_rle.decode" href="#cellbin.test.scripts.pipeline.binary_mask_rle.decode">decode</a></code></li>
+<li><code><a title="cellbin.test.scripts.pipeline.binary_mask_rle.encode" href="#cellbin.test.scripts.pipeline.binary_mask_rle.encode">encode</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

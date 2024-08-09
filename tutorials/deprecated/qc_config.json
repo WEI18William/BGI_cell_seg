@@ -1,0 +1,89 @@
+{
+  "track_pt_config": {
+    "track_point_score_threshold": 0.1,
+    "track_point_first_level_threshold": 5,
+    "track_point_second_level_threshold": 20,
+    "track_point_good_threshold": 5,
+    "most_freq_angle_threshold": 0.05
+},
+  "track_line_config": {
+    "track_line_score_threshold": 0,
+     "track_line_topk": 10
+  },
+  "clarity_config": {
+    "clarity_threshold": 0.85,
+    "cluster_area_threshold": 0.05,
+    "cluster_width_threshold": 0.2,
+    "cluster_height_threshold": 0.2
+},
+  "global_template_config": {
+    "template_pair_points_threshold": 10,
+    "template_pair_points_qc_threshold": 5,
+    "template_range_image_size_threshold": 5000,
+    "template_pair_correct_threshold": 20,
+    "template_cluster_num_threshold": 10,
+    "template_v2_scale_range_threshold": 0.9,
+    "template_v2_rotate_range_threshold": 35,
+    "template_v2_search_range_threshold": 500,
+    "template_v2_rotate_fov_min_threshold": 7
+  },
+  "channel_config": {
+      "SSDNA": {
+        "pt_detect": -1,
+        "tissue_seg": -1,
+        "line_detect": -1,
+        "fft": 0,
+        "clarity": -1
+      },
+      "DAPI": {
+        "pt_detect": -1,
+        "tissue_seg": -1,
+        "line_detect": -1,
+        "fft": 0,
+        "clarity": -1
+      },
+      "HE": {
+        "pt_detect": -1,
+        "tissue_seg": 0,
+        "line_detect": -1,
+        "fft": 1,
+        "clarity": -1
+      },
+      "CZI": {
+        "pt_detect": 1,
+        "tissue_seg": 0,
+        "line_detect": 1,
+        "fft": 0,
+        "clarity": 0
+      }
+
+  },
+  "running_config": {
+    "pt_running_process": 5,
+    "stitch_running_process": 5
+  },
+  "operation": {
+    "tissue_segment": false,
+    "track_pt_detect": true,
+    "track_line_detect": false,
+    "stitch_qc": true,
+    "clarity_qc": false
+  },
+  "model_weights_config": {
+    "SSDNA": {
+      "track_pt_detect": "points_detect_yolov5obb_SSDNA_20220513_pytorch.onnx",
+      "tissue_seg": "tissueseg_yolo_SH_20230131_th.onnx",
+      "clarity_eval": "clarity_eval_mobilev3small05064_DAPI_20230608_pytorch.onnx"
+    },
+    "DAPI": {
+      "track_pt_detect": "points_detect_yolov5obb_SSDNA_20220513_pytorch.onnx",
+      "tissue_seg": "tissueseg_yolo_SH_20230131_th.onnx",
+      "clarity_eval": "clarity_eval_mobilev3small05064_DAPI_20230608_pytorch.onnx"
+    },
+    "HE": {
+      "track_pt_detect": "points_detect_yolov5obb_SSDNA_20220513_pytorch.onnx",
+      "tissue_seg": "tissueseg_yolo_SH_20230131_th.onnx",
+      "clarity_eval": "clarity_eval_mobilev3small05064_DAPI_20230608_pytorch.onnx"
+    }
+  }
+}

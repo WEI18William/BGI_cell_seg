@@ -1,0 +1,1725 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.modules.image_qc API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.modules.image_qc</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import numpy as np
+from typing import Union
+import time
+
+from cellbin.utils.file_manager import rc_key
+from cellbin.modules import CellBinElement, StainType
+from cellbin.modules.iqc.classify_fov import ClassifyFOV
+from cellbin.dnn.tseg.yolo.detector import TissueSegmentationYolo
+from cellbin.image.augmentation import pt_enhance_method, line_enhance_method, clarity_enhance_method
+from cellbin.modules.iqc.regist_qc import RegistQC
+from cellbin.modules.iqc.clarity_qc import ClarityQC
+from cellbin.image.wsi_split import SplitWSI
+from cellbin.modules.iqc.stitch_qc import StitchQC
+from cellbin.image.wsi_stitch import StitchingWSI
+from cellbin.contrib.track_roi_picker import TrackROIPicker
+from cellbin.image import Image
+from cellbin.image.mask import iou
+from cellbin.utils import clog
+from cellbin.contrib.fov_aligner import FOVAligner
+from cellbin.utils.json_config import ConfigReader
+from cellbin.utils.json_config import Channels
+from cellbin.dnn.weights import auto_download_weights
+
+
+class ImageQualityControl(CellBinElement):
+    def __init__(self, ):
+        super(ImageQualityControl, self).__init__()
+        self._tissue_detector = TissueSegmentationYolo()
+        self._rqc = RegistQC()
+        self._cqc = ClarityQC()
+        self._cl_fov = ClassifyFOV()
+        self.config = ConfigReader()
+
+        self.debug = False
+        self.detect_channel = Channels()
+        self.weight_names: list = []
+        self.zoo_dir: str = &#34;&#34;
+        self.stain_weights: list = []
+
+        self.image_root: str = &#34;&#34;
+        self.image_map: Union[dict, str] = {}
+        self._stain_type: str = &#34;&#34;
+        self._stereo_chip: list = []
+        self._fov_rows: int = -1
+        self._fov_cols: int = -1
+        self._is_stitched: bool = False
+        self._fov_size: tuple = ()
+        self._magnification: int = -1
+
+        self._mosaic: np.ndarray = np.array([])
+        self._fovs_loc: np.ndarray = np.array([])
+
+        # flag
+        self.tissue_cut_flag: bool = False
+        self.pt_qc_flag: bool = False
+        self.line_qc_flag: bool = False
+        self.regist_qc_flag: bool = False  # pt_qc pass + line_qc pass = regist_qc pass
+        self.clarity_flag: bool = False  # clarity pass or failed
+        self.global_template_flag: bool = False  # global template eval success or fail
+        self.microscope_stitch: bool = False
+
+        # output
+        # Image info
+        self.total_fov_count: int = -1
+
+        # tissue qc output
+        self._box_mosaic: list = [-1, -1, -1, -1]  # bounding box coord on stitched image, [0, 4830, 27924, 24395], list
+        self._fov_tissue_mask: np.ndarray = np.array([])  # r x c, 2d array
+        self.stitch_roi: tuple = ()  # bounding box coord on fov, (0, 2, 9, 9), tuple
+        self._tissue_mask: np.ndarray = np.array([])  # stitched image size, 2d array
+        self.tissue_mask_score: float = -1.0  # float
+        self.tissue_area: int = -1  # tissue mask area, int
+
+        # regist qc output
+        self.track_score: float = -1.0
+        self.track_line_score: float = -1.0
+        self.track_pts: dict = {}
+        self.rotation: float = -1.0
+        self.scale_x: float = -1.0
+        self.scale_y: float = -1.0
+        self.good_fov_count: int = -1
+
+        self.track_pt_fov_mask: np.ndarray = np.array([])
+        self.track_line_best_match: list = []
+        self._src_fov_info: list = []  # template fov for stitch, [k, template_pts, x_scale, y_scale, rotation]
+
+        # clarity qc output
+        self.clarity_score = -1.0  # float，清晰度得分
+        self.clarity_preds_arr = -1
+        self.clarity_heatmap = np.array([])  # numpy array，清晰度结果呈现在原图上
+        self.clarity_cluster = None  # plt plot object，清晰度成团聚类结果
+
+        self.clarity_topk_result = []
+        self.clarity_counts = {}
+
+        # stitch qc + global template qc output
+        self.stitch_diff = -1  # np ndarray
+        self.jitter_diff = -1  # np ndarray
+        self.stitch_diff_max = -1.0  # float
+        self.jitter_diff_max = -1.0  # float
+        self.template_max = -1.0  # float
+        self.template_mean = -1.0  # float
+        self.template_std = -1.0  # float
+        self.template_qc_precision = -1.0  # float
+        self.template_qc_recall = -1.0  # float
+        self.global_template = -1  # list
+        self.jitter = [-1, -1]
+        self.stitch_fov_loc = -1
+        self.stitch_template_global = -1  # global heatmap, r x c x 1
+
+        # 2023/08/28新增 用于开发对接track线模板FOV信息
+        self.stitch_fov_index = -1
+        self.stitch_fov_best_point = -1
+
+        # time cost
+        self.prepare_time = 0
+        self.tissue_seg_time = 0
+        self.track_detect_time = 0
+        self.track_line_time = 0
+        self.stitch_qc_time = 0
+        self.clarity_qc_time = 0
+
+    def auto_load_weights(self, ):
+        self.stain_weights = getattr(self.config.model_weights_config, self._stain_type)
+        self.weight_names = [
+            self.stain_weights.track_pt_detect,
+            self.stain_weights.tissue_seg,
+            self.stain_weights.clarity_eval
+        ]
+        auto_download_weights(self.zoo_dir, self.weight_names)
+
+    def initialize(self):
+        &#34;&#34;&#34;
+        Initialize dnn model
+
+        &#34;&#34;&#34;
+        # 导入模型权重
+        tissue_detector_file = os.path.join(self.zoo_dir, self.stain_weights.tissue_seg)
+        pt_detector_file = os.path.join(self.zoo_dir, self.stain_weights.track_pt_detect)
+        clarity_file = os.path.join(self.zoo_dir, self.stain_weights.clarity_eval)
+        try:
+            self._tissue_detector.f_init_model(tissue_detector_file)
+            self._rqc.track_pt_qc.ci.load_model(pt_detector_file)
+            self._cqc.load_model(clarity_file)
+        except Exception as e:
+            clog.error(f&#34;{e}&#34;)
+            clog.error(f&#34;dnn model weights load failed&#34;)
+            return 1
+        return 0
+
+    def initialize_json(self, json_path: str):
+        &#34;&#34;&#34;
+        Initialize config file, will initialize all the thresholds and
+
+        Args:
+            json_path (): config json path
+
+        Returns:
+
+        &#34;&#34;&#34;
+        self.config.load_from_json(json_path)
+        self.detect_channel = getattr(self.config.channel_config, self._stain_type)
+
+    @staticmethod
+    def iou_calculation(clarity_mask, tissue_mask):
+        iou_result = iou(clarity_mask, tissue_mask)
+        return iou_result
+
+    def _fov_box(self, b):
+        w, h = self._fov_size
+        y_begin, y_end, x_begin, x_end = b
+        row = y_begin // h
+        col = x_begin // w
+        self._fovs_loc[row, col] = [x_begin, y_begin]
+        self.image_map[rc_key(row, col)] = b
+
+    def _get_jitter(self, ):
+        if not self._is_stitched:
+            r, c = self._fovs_loc.shape[:2]
+            clog.info(f&#34;Fov aligner using channel: {self.detect_channel.fft}&#34;)
+            fa = FOVAligner(
+                images_path=self.image_map,
+                rows=r,
+                cols=c,
+                channel=self.detect_channel.fft
+            )
+            fa.set_process(self.config.running_config.stitch_running_process)
+            fa.create_jitter()
+            self.jitter = [fa.horizontal_jitter, fa.vertical_jitter]
+
+    def _prepare(self, ):
+        &#34;&#34;&#34;
+        This func is mainly used to deal with
+        - split large tif to fovs
+
+        Returns:
+
+        &#34;&#34;&#34;
+        if self._is_stitched:
+            image_reader = Image()
+            img_path = os.path.join(self.image_root, self.image_map)
+            image_reader.read(img_path)
+            self._mosaic = image_reader.image
+            # h_, w_ = image_reader.height, image_reader.width
+            w, h = self._fov_size
+            # self._fov_rows, self._fov_cols = [(h_ // h) + 1, (w_ // w) + 1]
+            self.image_map = dict()
+            wsi = SplitWSI(img=self._mosaic, win_shape=(h, w),
+                           overlap=0, batch_size=1, need_fun_ret=False, need_combine_ret=False)
+            _box_lst, _fun_ret, _dst = wsi.f_split2run()
+            self._fov_rows, self._fov_cols = wsi.y_nums, wsi.x_nums
+            self._fovs_loc = np.zeros((self._fov_rows, self._fov_cols, 2), dtype=int)
+            for b in _box_lst:
+                self._fov_box(b)
+        else:
+            wsi = StitchingWSI()
+            self._fov_rows, self._fov_cols = self._fovs_loc.shape[:2]
+            wsi.mosaic(src_image=self.image_map, loc=self._fovs_loc, downsample=1)
+            self._mosaic = wsi.buffer
+        self.total_fov_count = len(self.image_map)  # 大图需要从这里获取total fov count
+
+    def _classify_fov(self, ):
+        &#34;&#34;&#34;
+        This func will do:
+        - tissue cut based on &#34;stitched&#34; image
+        - classify fovs based on tissue cut result
+        - classified result will contain
+            - tissue fov
+            - non tissue fov
+
+        Returns:
+            self._fov_tissue_mask: classified fov result mask
+            self._tissue_mask : tissue mask
+            self._box_mosaic: tissue bounding box on stitched image
+            self.stitch_roi: stitched roi. col, row, col, row
+            self.tissue_area: sum of tissue mask
+
+        &#34;&#34;&#34;
+        self._cl_fov.set_detector(self._tissue_detector)
+        self._cl_fov.classify(
+            mosaic=self._mosaic,
+            fov_loc=self._fovs_loc,
+            fov_size=self._fov_size,
+            expand=1,
+            ch=self.detect_channel.fft
+        )
+        self.tissue_cut_flag = self._cl_fov.success
+        self._tissue_mask = self._cl_fov.tissue_mask  # stitched image size, 2d array
+        if self.tissue_cut_flag:
+            self._fov_tissue_mask = self._cl_fov.tissue_fov_map  # r x c, 2d array
+            # bounding box coord on stitched image, [0, 4830, 27924, 24395], list
+            self._box_mosaic = self._cl_fov.tissue_bbox_in_mosaic()
+            self.stitch_roi = self._cl_fov.tissue_fov_roi  # bounding box coord on fov, (0, 2, 9, 9), tuple
+            self.tissue_area = self._cl_fov.tissue_detector.mask_num  # tissue cut area, int
+
+    def track_pt_qc(self, ):
+        &#34;&#34;&#34;
+        This func will do
+        - track pt detect
+        - track line detect
+        - track line result match
+
+        Returns:
+
+        &#34;&#34;&#34;
+        # set threshold
+        self._rqc.set_chip_template(self._stereo_chip)
+        self._rqc.set_track_pt_thresh(
+            th=self.config.track_pt_config.track_point_first_level_threshold,
+            th2=self.config.track_pt_config.track_point_second_level_threshold,
+            good_thresh=self.config.track_pt_config.track_point_good_threshold,
+        )
+        self._rqc.set_topk(self.config.track_line_config.track_line_topk)
+        self._rqc.set_track_pt_process(self.config.running_config.pt_running_process)
+
+        # start
+        buffer = None
+        if self._is_stitched:
+            buffer = self._mosaic
+
+        # Track点检测
+        self._rqc.run_pt_qc(
+            fovs=self.image_map,
+            enhance_func=pt_enhance_method.get(self._stain_type, None),
+            detect_channel=self.detect_channel.pt_detect,
+            buffer=buffer
+        )
+
+    def track_line_qc(self):
+        # Track线检测
+        buffer = None
+        if self._is_stitched:
+            buffer = self._mosaic
+        if self._magnification &lt;= 15:
+            line_fovs = None
+        else:
+            trp = TrackROIPicker(
+                images_path=self.image_map, jitter_list=self.jitter,
+                tissue_mask=self._fov_tissue_mask,
+                track_points=self._rqc.track_pt_qc.track_result()
+            )
+            line_fovs = trp.getRoiImages()
+
+        self._rqc.run_line_qc(
+            line_fovs=line_fovs,
+            detect_channel=self.detect_channel.line_detect,
+            magnification=self._magnification,
+            buffer=buffer,
+            enhance_func=line_enhance_method.get(self._stain_type, None),
+        )
+
+    def _get_stitch_inputs(self):
+        stitch_inputs = {
+            &#34;template_pts&#34;: None,
+            &#34;x_scale&#34;: None,
+            &#34;y_scale&#34;: None,
+            &#34;rotation&#34;: None,
+            &#34;fov_index&#34;: None,
+        }
+        self.track_score = self._rqc.pt_score
+        # 1. pt pass -&gt; angle provided
+        if self.track_score &gt; self.config.track_pt_config.track_point_score_threshold:
+            self.pt_qc_flag = True
+            most_angle, count = self._rqc.track_pt_qc.most_freq_angle
+            if count / self.total_fov_count &gt; self.config.track_pt_config.track_point_good_threshold:
+                stitch_inputs[&#39;rotation&#39;] = most_angle
+        else:
+            self.pt_qc_flag = False
+        self.track_pts = self._rqc.pt_result  # 未检测到为空
+
+        # 2. track line pass -&gt; all provided
+        self.track_line_score = self._rqc.line_score
+        if self.track_line_score &gt; self.config.track_line_config.track_line_score_threshold:
+            self.line_qc_flag = True
+            self._src_fov_info = self._rqc.best_match
+            self.rotation = self._src_fov_info[-1]
+            self.scale_x = self._src_fov_info[-3]
+            self.scale_y = self._src_fov_info[-2]
+            src_fov, template_pts, x_scale, y_scale, rotation = self._src_fov_info
+            stitch_inputs[&#39;template_pts&#39;] = template_pts
+            stitch_inputs[&#39;x_scale&#39;] = x_scale
+            stitch_inputs[&#39;y_scale&#39;] = y_scale
+            stitch_inputs[&#39;rotation&#39;] = rotation
+            stitch_inputs[&#39;fov_index&#39;] = src_fov
+        else:
+            self.line_qc_flag = False
+
+        # Track点 + Track线通过 = regist qc通过
+        if self.pt_qc_flag and self.line_qc_flag:
+            self.regist_qc_flag = True
+        else:
+            self.regist_qc_flag = False
+
+        self.track_pt_fov_mask = self._rqc.track_pt_qc.fov_mask
+        self.track_line_best_match = self._rqc.best_match
+        self.good_fov_count = self._rqc.good_fov_count
+
+        return stitch_inputs
+
+    def _stitch_template(self, template_config, total_cross_pt, stitch_inputs):
+        &#34;&#34;&#34;
+        track线检测版本模板推导
+        Args:
+            template_config:
+            total_cross_pt:
+            stitch_inputs:
+
+        Returns:
+
+        &#34;&#34;&#34;
+        sth_qc = StitchQC(
+            is_stitched=self._is_stitched,
+            src_fovs=self.image_map,
+            pts=total_cross_pt,
+            scale_x=stitch_inputs[&#34;x_scale&#34;],
+            scale_y=stitch_inputs[&#34;y_scale&#34;],
+            rotate=stitch_inputs[&#34;rotation&#34;],
+            chipno=self._stereo_chip,
+            index=stitch_inputs[&#34;fov_index&#34;],
+            correct_points=stitch_inputs[&#34;template_pts&#34;],
+            pair_thresh=template_config.template_pair_points_threshold,
+            qc_thresh=template_config.template_pair_points_qc_threshold,
+            range_thresh=template_config.template_range_image_size_threshold,
+            correct_thresh=template_config.template_pair_correct_threshold,
+            cluster_num=template_config.template_cluster_num_threshold,
+            scale_range=template_config.template_v2_scale_range_threshold,
+            rotate_range=template_config.template_v2_rotate_range_threshold,
+            search_thresh=template_config.template_v2_search_range_threshold,
+            rotate_fov_min=template_config.template_v2_rotate_fov_min_threshold,
+            fft_channel=self.detect_channel.fft
+        )
+
+        # 代入初始的拼接坐标
+        if self._fovs_loc is not None:
+            sth_qc.set_location(self._fovs_loc)
+        sth_qc.set_size(self._fov_rows, self._fov_cols)
+
+        # 下列此处开始推导模板
+        dct, template_global = sth_qc.run_qc()
+        self.microscope_stitch = True  # 显微镜拼接flag
+
+        # 若模板推导结果小于0.1或者直接为-1，则说明要么是track点不太行，要么是拼接坐标有点问题，所以用FFT计算相邻FOV的真实偏差，并重推拼接坐标
+        # 以及再来一边模板推导
+        if -1 &lt;= dct.get(&#39;template_re_conf&#39;, -1.0) &lt; 0.1 \
+                and not self._is_stitched \
+                and self._rqc.line_score != 0:
+            clog.info(&#34;Microscope coordinates have significant errors, use BGI stitching algo&#34;)
+            self.microscope_stitch = False
+            if isinstance(self.jitter[0], int) or isinstance(self.jitter[1], int):
+                self._get_jitter()
+            self._get_jitter()  # FFT计算过相邻FOV偏差矩阵 分别时行向和列向[h_j, v_j] -- 均为 r * c * 2 矩阵
+            sth_qc.set_jitter(self.jitter)
+            sth_qc.fov_location = None
+            dct, template_global = sth_qc.run_qc()
+
+        return sth_qc, dct, template_global
+
+    def _stitching_qc(self, ):
+        &#34;&#34;&#34;
+        拼接总体QC模块 主要调用 StitchQC 实现拼接坐标计算以及模板推导计算
+        并包含各类评估指标信息
+        &#34;&#34;&#34;
+        template_config = self.config.global_template_config
+        clog.info(f&#34;Stitch qc using channel: {self.detect_channel.fft}&#34;)
+        total_cross_pt = dict()
+
+        for k, v in self._rqc.pt_result.items():
+            total_cross_pt[k] = v[0]
+
+        # 第一次推导模板使用新算法
+        stitch_inputs = self._get_stitch_inputs()
+        sth_qc, dct, template_global = self._stitch_template(template_config, total_cross_pt, stitch_inputs)
+        #新算法不行 老算法来一遍
+        if -1 &lt;= dct.get(&#39;template_re_conf&#39;, -1.0) &lt; 0.1:
+            self.track_line_qc()
+            stitch_inputs = self._get_stitch_inputs()
+            if self.line_qc_flag:
+                total_cross_pt[stitch_inputs[&#34;fov_index&#34;]] = stitch_inputs[&#34;template_pts&#34;]
+                sth_qc, dct, template_global = self._stitch_template(template_config, total_cross_pt, stitch_inputs)
+            else:
+                # 老算法也无能为力(^_^)
+                clog.info(f&#34;Can not found template points.&#34;)
+
+        # 如果track线检测开启，则不会在拼接qc模块获取到模板fov信息
+        _fov_index, _fov_best_point = sth_qc.get_fov_info()
+        if stitch_inputs[&#39;fov_index&#39;] is not None and stitch_inputs[&#39;template_pts&#39;] is not None:
+            self.stitch_fov_index = stitch_inputs[&#39;fov_index&#39;]
+            self.stitch_fov_best_point = stitch_inputs[&#39;template_pts&#39;]
+        elif _fov_index is not None and _fov_best_point is not None:
+            self.stitch_fov_index, self.stitch_fov_best_point = _fov_index, _fov_best_point
+
+        # stitch module
+        self.stitch_template_global = template_global  # 全局模板偏差，即track点坐标与模板推导坐标的距离标量值，r * c矩阵
+        self.stitch_fov_loc = sth_qc.fov_location  # 最终的拼接坐标，显微镜坐标 | 自研拼接坐标
+        self.stitch_diff = dct.get(&#39;stitch_diff&#39;, -1.0)  # 自研拼接误差矩阵（r * c）,在计算了自研拼接坐标时才有值，否则-1
+        self.jitter_diff = dct.get(&#39;jitter_diff&#39;, -1.0)  # 显微镜拼接误差矩阵（r * c）, 在计算了自研拼接坐标时才有值，否则-1
+        self.stitch_diff_max = dct.get(&#39;stitch_diff_max&#39;, -1.0)  # stitch_diff的最大值，float
+        self.jitter_diff_max = dct.get(&#39;jitter_diff_max&#39;, -1.0)  # jitter_diff的最大值，float
+
+        # 异常值填充
+        if self.stitch_diff is None:
+            self.stitch_diff = self.jitter_diff = -1
+            self.stitch_diff_max = self.jitter_diff_max = -1
+
+        # template module
+        self.scale_x, self.scale_y, self.rotation = sth_qc.get_scale_and_rotation()  # float类型 scale rotate 基本值
+        self.global_template = sth_qc.template  # 模板[x, y, index_x, index_y]
+        self.template_max = dct.get(&#39;template_max&#39;, -1.0)  # 模板区域面积占比 有用
+        self.template_mean = dct.get(&#39;template_mean&#39;, -1.0)  # 无用
+        self.template_std = dct.get(&#39;template_std&#39;, -1.0)  # 无用
+        self.template_qc_precision = dct.get(&#39;template_qc_conf&#39;, -1.0)  # 无用
+        self.template_qc_recall = dct.get(&#39;template_re_conf&#39;, -1.0)  # 模板召回率值 有用
+        if self.template_max == -1 or self.template_mean == -1 or self.template_std == -1:
+            self.global_template_flag = False
+        else:
+            self.global_template_flag = True
+
+    def _clarity_qc(self, ):
+        &#34;&#34;&#34;
+        This func will do clarity eval on stitched image
+
+        Returns:
+
+        &#34;&#34;&#34;
+        if self.tissue_cut_flag:
+            x0, y0, x1, y1 = self._box_mosaic
+            clarity_input = self._mosaic[y0: y1, x0: x1]
+        else:
+            clarity_input = self._mosaic
+        clog.info(f&#34;Mosaic size: {self._mosaic.shape}, clarity input: {clarity_input.shape}&#34;)
+        self._cqc.set_enhance_func(clarity_enhance_method.get(self._stain_type, None))
+        self._cqc.run(
+            img=clarity_input,
+            detect_channel=self.detect_channel.clarity
+        )
+
+        self._cqc.cluster()
+        self.clarity_cluster = self._cqc.fig  # plt plot object，清晰度成团聚类结果
+        self.clarity_topk_result = self._cqc.topk_result
+
+        # clarity qc output
+        self._cqc.post_process()
+        self.clarity_cut_size = self._cqc.cl_classify.img_size
+        self.clarity_overlap = self._cqc.cl_classify.overlap
+        self.clarity_score = self._cqc.score  # float，清晰度得分
+        self.clarity_heatmap = self._cqc.draw_img  # numpy array，清晰度结果呈现在原图上
+        self.clarity_preds_arr = self._cqc.preds  # clarity predictions array
+
+        self.clarity_counts = self._cqc.counts
+
+    def set_is_stitched(self, stitched):
+        self._is_stitched = stitched
+
+    def set_fov_loc(self, loc):
+        self._fovs_loc = loc
+
+    def set_fov_size(self, s):
+        self._fov_size = s
+
+    def set_stereo_chip(self, c):
+        self._stereo_chip = c
+
+    def set_stain_type(self, s):
+        self._stain_type = s
+
+    def set_magnification(self, m):
+        assert m in [10, 20, 40]
+        self._magnification = m
+
+    def set_zoo_dir(self, z):
+        self.zoo_dir = z
+
+    def set_debug_mode(self, d):
+        self.debug = d
+
+    def run(self, image_root: str, image_map):
+        &#34;&#34;&#34;
+        image_root:
+            - fovs: the directory where microscope config file locate (str)
+            - stitched: the directory where the stitched image locate (str)
+        image_map:
+            - fovs: relative image path of each fov (dict)
+            - stitched: relative image path of stitched image (str)
+        &#34;&#34;&#34;
+        clog.info(&#34;-------------------Start QC-------------------&#34;)
+        clog.info(f&#34;Is_stitched: {self._is_stitched}, fov size: {self._fov_size}, stain_type: {self._stain_type} \n&#34;
+                  f&#34;Magnification: {self._magnification}, debug mode: {self.debug}, chip: {self._stereo_chip}&#34;)
+
+        start_time = time.time()
+        clog.info(f&#39;Image QC start time: {start_time}&#39;)
+
+        self.image_root = image_root
+        self.image_map = image_map
+        clog.info(f&#34;Image root : {self.image_root}&#34;)
+        self._prepare()
+        end_time = time.time()
+        self.prepare_time = end_time - start_time
+        clog.info(f&#39;Prepare time cost: {self.prepare_time}&#39;)
+        start_time = end_time
+
+        if self.config.operation.tissue_segment:
+            self._classify_fov()
+            end_time = time.time()
+            self.tissue_seg_time = end_time - start_time
+            clog.info(f&#39;Classify time cost: {self.tissue_seg_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.track_pt_detect:
+            self.track_pt_qc()
+            end_time = time.time()
+            self.track_detect_time = end_time - start_time
+            clog.info(f&#39;Track_pt time cost: {self.track_detect_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.track_line_detect:
+            self.track_line_qc()
+            end_time = time.time()
+            self.track_line_time = end_time - start_time
+            clog.info(f&#39;Track_line time cost: {self.track_line_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.stitch_qc:
+            self._stitching_qc()
+            end_time = time.time()
+            self.stitch_qc_time = end_time - start_time
+            clog.info(f&#39;Stitching time cost: {self.stitch_qc_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.clarity_qc:
+            self._clarity_qc()
+            end_time = time.time()
+            self.clarity_qc_time = end_time - start_time
+            clog.info(f&#39;Clarity time cost: {self.clarity_qc_time}&#39;)
+            start_time = end_time
+
+            # self.tissue_mask_score = self.iou_calculation(
+            #     clarity_mask=self._cqc.black_img,
+            #     tissue_mask=self._tissue_mask
+            # )
+        clog.info(&#34;-------------------End QC-------------------&#34;)
+
+    @property
+    def src_fov_info(self):
+        return self._src_fov_info
+
+    @property
+    def box_mosaic(self):
+        return self._box_mosaic
+
+    @property
+    def fov_tissue_mask(self):
+        return self._fov_tissue_mask
+
+    @property
+    def tissue_mask(self):
+        return self._tissue_mask</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.modules.image_qc.ImageQualityControl"><code class="flex name class">
+<span>class <span class="ident">ImageQualityControl</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ImageQualityControl(CellBinElement):
+    def __init__(self, ):
+        super(ImageQualityControl, self).__init__()
+        self._tissue_detector = TissueSegmentationYolo()
+        self._rqc = RegistQC()
+        self._cqc = ClarityQC()
+        self._cl_fov = ClassifyFOV()
+        self.config = ConfigReader()
+
+        self.debug = False
+        self.detect_channel = Channels()
+        self.weight_names: list = []
+        self.zoo_dir: str = &#34;&#34;
+        self.stain_weights: list = []
+
+        self.image_root: str = &#34;&#34;
+        self.image_map: Union[dict, str] = {}
+        self._stain_type: str = &#34;&#34;
+        self._stereo_chip: list = []
+        self._fov_rows: int = -1
+        self._fov_cols: int = -1
+        self._is_stitched: bool = False
+        self._fov_size: tuple = ()
+        self._magnification: int = -1
+
+        self._mosaic: np.ndarray = np.array([])
+        self._fovs_loc: np.ndarray = np.array([])
+
+        # flag
+        self.tissue_cut_flag: bool = False
+        self.pt_qc_flag: bool = False
+        self.line_qc_flag: bool = False
+        self.regist_qc_flag: bool = False  # pt_qc pass + line_qc pass = regist_qc pass
+        self.clarity_flag: bool = False  # clarity pass or failed
+        self.global_template_flag: bool = False  # global template eval success or fail
+        self.microscope_stitch: bool = False
+
+        # output
+        # Image info
+        self.total_fov_count: int = -1
+
+        # tissue qc output
+        self._box_mosaic: list = [-1, -1, -1, -1]  # bounding box coord on stitched image, [0, 4830, 27924, 24395], list
+        self._fov_tissue_mask: np.ndarray = np.array([])  # r x c, 2d array
+        self.stitch_roi: tuple = ()  # bounding box coord on fov, (0, 2, 9, 9), tuple
+        self._tissue_mask: np.ndarray = np.array([])  # stitched image size, 2d array
+        self.tissue_mask_score: float = -1.0  # float
+        self.tissue_area: int = -1  # tissue mask area, int
+
+        # regist qc output
+        self.track_score: float = -1.0
+        self.track_line_score: float = -1.0
+        self.track_pts: dict = {}
+        self.rotation: float = -1.0
+        self.scale_x: float = -1.0
+        self.scale_y: float = -1.0
+        self.good_fov_count: int = -1
+
+        self.track_pt_fov_mask: np.ndarray = np.array([])
+        self.track_line_best_match: list = []
+        self._src_fov_info: list = []  # template fov for stitch, [k, template_pts, x_scale, y_scale, rotation]
+
+        # clarity qc output
+        self.clarity_score = -1.0  # float，清晰度得分
+        self.clarity_preds_arr = -1
+        self.clarity_heatmap = np.array([])  # numpy array，清晰度结果呈现在原图上
+        self.clarity_cluster = None  # plt plot object，清晰度成团聚类结果
+
+        self.clarity_topk_result = []
+        self.clarity_counts = {}
+
+        # stitch qc + global template qc output
+        self.stitch_diff = -1  # np ndarray
+        self.jitter_diff = -1  # np ndarray
+        self.stitch_diff_max = -1.0  # float
+        self.jitter_diff_max = -1.0  # float
+        self.template_max = -1.0  # float
+        self.template_mean = -1.0  # float
+        self.template_std = -1.0  # float
+        self.template_qc_precision = -1.0  # float
+        self.template_qc_recall = -1.0  # float
+        self.global_template = -1  # list
+        self.jitter = [-1, -1]
+        self.stitch_fov_loc = -1
+        self.stitch_template_global = -1  # global heatmap, r x c x 1
+
+        # 2023/08/28新增 用于开发对接track线模板FOV信息
+        self.stitch_fov_index = -1
+        self.stitch_fov_best_point = -1
+
+        # time cost
+        self.prepare_time = 0
+        self.tissue_seg_time = 0
+        self.track_detect_time = 0
+        self.track_line_time = 0
+        self.stitch_qc_time = 0
+        self.clarity_qc_time = 0
+
+    def auto_load_weights(self, ):
+        self.stain_weights = getattr(self.config.model_weights_config, self._stain_type)
+        self.weight_names = [
+            self.stain_weights.track_pt_detect,
+            self.stain_weights.tissue_seg,
+            self.stain_weights.clarity_eval
+        ]
+        auto_download_weights(self.zoo_dir, self.weight_names)
+
+    def initialize(self):
+        &#34;&#34;&#34;
+        Initialize dnn model
+
+        &#34;&#34;&#34;
+        # 导入模型权重
+        tissue_detector_file = os.path.join(self.zoo_dir, self.stain_weights.tissue_seg)
+        pt_detector_file = os.path.join(self.zoo_dir, self.stain_weights.track_pt_detect)
+        clarity_file = os.path.join(self.zoo_dir, self.stain_weights.clarity_eval)
+        try:
+            self._tissue_detector.f_init_model(tissue_detector_file)
+            self._rqc.track_pt_qc.ci.load_model(pt_detector_file)
+            self._cqc.load_model(clarity_file)
+        except Exception as e:
+            clog.error(f&#34;{e}&#34;)
+            clog.error(f&#34;dnn model weights load failed&#34;)
+            return 1
+        return 0
+
+    def initialize_json(self, json_path: str):
+        &#34;&#34;&#34;
+        Initialize config file, will initialize all the thresholds and
+
+        Args:
+            json_path (): config json path
+
+        Returns:
+
+        &#34;&#34;&#34;
+        self.config.load_from_json(json_path)
+        self.detect_channel = getattr(self.config.channel_config, self._stain_type)
+
+    @staticmethod
+    def iou_calculation(clarity_mask, tissue_mask):
+        iou_result = iou(clarity_mask, tissue_mask)
+        return iou_result
+
+    def _fov_box(self, b):
+        w, h = self._fov_size
+        y_begin, y_end, x_begin, x_end = b
+        row = y_begin // h
+        col = x_begin // w
+        self._fovs_loc[row, col] = [x_begin, y_begin]
+        self.image_map[rc_key(row, col)] = b
+
+    def _get_jitter(self, ):
+        if not self._is_stitched:
+            r, c = self._fovs_loc.shape[:2]
+            clog.info(f&#34;Fov aligner using channel: {self.detect_channel.fft}&#34;)
+            fa = FOVAligner(
+                images_path=self.image_map,
+                rows=r,
+                cols=c,
+                channel=self.detect_channel.fft
+            )
+            fa.set_process(self.config.running_config.stitch_running_process)
+            fa.create_jitter()
+            self.jitter = [fa.horizontal_jitter, fa.vertical_jitter]
+
+    def _prepare(self, ):
+        &#34;&#34;&#34;
+        This func is mainly used to deal with
+        - split large tif to fovs
+
+        Returns:
+
+        &#34;&#34;&#34;
+        if self._is_stitched:
+            image_reader = Image()
+            img_path = os.path.join(self.image_root, self.image_map)
+            image_reader.read(img_path)
+            self._mosaic = image_reader.image
+            # h_, w_ = image_reader.height, image_reader.width
+            w, h = self._fov_size
+            # self._fov_rows, self._fov_cols = [(h_ // h) + 1, (w_ // w) + 1]
+            self.image_map = dict()
+            wsi = SplitWSI(img=self._mosaic, win_shape=(h, w),
+                           overlap=0, batch_size=1, need_fun_ret=False, need_combine_ret=False)
+            _box_lst, _fun_ret, _dst = wsi.f_split2run()
+            self._fov_rows, self._fov_cols = wsi.y_nums, wsi.x_nums
+            self._fovs_loc = np.zeros((self._fov_rows, self._fov_cols, 2), dtype=int)
+            for b in _box_lst:
+                self._fov_box(b)
+        else:
+            wsi = StitchingWSI()
+            self._fov_rows, self._fov_cols = self._fovs_loc.shape[:2]
+            wsi.mosaic(src_image=self.image_map, loc=self._fovs_loc, downsample=1)
+            self._mosaic = wsi.buffer
+        self.total_fov_count = len(self.image_map)  # 大图需要从这里获取total fov count
+
+    def _classify_fov(self, ):
+        &#34;&#34;&#34;
+        This func will do:
+        - tissue cut based on &#34;stitched&#34; image
+        - classify fovs based on tissue cut result
+        - classified result will contain
+            - tissue fov
+            - non tissue fov
+
+        Returns:
+            self._fov_tissue_mask: classified fov result mask
+            self._tissue_mask : tissue mask
+            self._box_mosaic: tissue bounding box on stitched image
+            self.stitch_roi: stitched roi. col, row, col, row
+            self.tissue_area: sum of tissue mask
+
+        &#34;&#34;&#34;
+        self._cl_fov.set_detector(self._tissue_detector)
+        self._cl_fov.classify(
+            mosaic=self._mosaic,
+            fov_loc=self._fovs_loc,
+            fov_size=self._fov_size,
+            expand=1,
+            ch=self.detect_channel.fft
+        )
+        self.tissue_cut_flag = self._cl_fov.success
+        self._tissue_mask = self._cl_fov.tissue_mask  # stitched image size, 2d array
+        if self.tissue_cut_flag:
+            self._fov_tissue_mask = self._cl_fov.tissue_fov_map  # r x c, 2d array
+            # bounding box coord on stitched image, [0, 4830, 27924, 24395], list
+            self._box_mosaic = self._cl_fov.tissue_bbox_in_mosaic()
+            self.stitch_roi = self._cl_fov.tissue_fov_roi  # bounding box coord on fov, (0, 2, 9, 9), tuple
+            self.tissue_area = self._cl_fov.tissue_detector.mask_num  # tissue cut area, int
+
+    def track_pt_qc(self, ):
+        &#34;&#34;&#34;
+        This func will do
+        - track pt detect
+        - track line detect
+        - track line result match
+
+        Returns:
+
+        &#34;&#34;&#34;
+        # set threshold
+        self._rqc.set_chip_template(self._stereo_chip)
+        self._rqc.set_track_pt_thresh(
+            th=self.config.track_pt_config.track_point_first_level_threshold,
+            th2=self.config.track_pt_config.track_point_second_level_threshold,
+            good_thresh=self.config.track_pt_config.track_point_good_threshold,
+        )
+        self._rqc.set_topk(self.config.track_line_config.track_line_topk)
+        self._rqc.set_track_pt_process(self.config.running_config.pt_running_process)
+
+        # start
+        buffer = None
+        if self._is_stitched:
+            buffer = self._mosaic
+
+        # Track点检测
+        self._rqc.run_pt_qc(
+            fovs=self.image_map,
+            enhance_func=pt_enhance_method.get(self._stain_type, None),
+            detect_channel=self.detect_channel.pt_detect,
+            buffer=buffer
+        )
+
+    def track_line_qc(self):
+        # Track线检测
+        buffer = None
+        if self._is_stitched:
+            buffer = self._mosaic
+        if self._magnification &lt;= 15:
+            line_fovs = None
+        else:
+            trp = TrackROIPicker(
+                images_path=self.image_map, jitter_list=self.jitter,
+                tissue_mask=self._fov_tissue_mask,
+                track_points=self._rqc.track_pt_qc.track_result()
+            )
+            line_fovs = trp.getRoiImages()
+
+        self._rqc.run_line_qc(
+            line_fovs=line_fovs,
+            detect_channel=self.detect_channel.line_detect,
+            magnification=self._magnification,
+            buffer=buffer,
+            enhance_func=line_enhance_method.get(self._stain_type, None),
+        )
+
+    def _get_stitch_inputs(self):
+        stitch_inputs = {
+            &#34;template_pts&#34;: None,
+            &#34;x_scale&#34;: None,
+            &#34;y_scale&#34;: None,
+            &#34;rotation&#34;: None,
+            &#34;fov_index&#34;: None,
+        }
+        self.track_score = self._rqc.pt_score
+        # 1. pt pass -&gt; angle provided
+        if self.track_score &gt; self.config.track_pt_config.track_point_score_threshold:
+            self.pt_qc_flag = True
+            most_angle, count = self._rqc.track_pt_qc.most_freq_angle
+            if count / self.total_fov_count &gt; self.config.track_pt_config.track_point_good_threshold:
+                stitch_inputs[&#39;rotation&#39;] = most_angle
+        else:
+            self.pt_qc_flag = False
+        self.track_pts = self._rqc.pt_result  # 未检测到为空
+
+        # 2. track line pass -&gt; all provided
+        self.track_line_score = self._rqc.line_score
+        if self.track_line_score &gt; self.config.track_line_config.track_line_score_threshold:
+            self.line_qc_flag = True
+            self._src_fov_info = self._rqc.best_match
+            self.rotation = self._src_fov_info[-1]
+            self.scale_x = self._src_fov_info[-3]
+            self.scale_y = self._src_fov_info[-2]
+            src_fov, template_pts, x_scale, y_scale, rotation = self._src_fov_info
+            stitch_inputs[&#39;template_pts&#39;] = template_pts
+            stitch_inputs[&#39;x_scale&#39;] = x_scale
+            stitch_inputs[&#39;y_scale&#39;] = y_scale
+            stitch_inputs[&#39;rotation&#39;] = rotation
+            stitch_inputs[&#39;fov_index&#39;] = src_fov
+        else:
+            self.line_qc_flag = False
+
+        # Track点 + Track线通过 = regist qc通过
+        if self.pt_qc_flag and self.line_qc_flag:
+            self.regist_qc_flag = True
+        else:
+            self.regist_qc_flag = False
+
+        self.track_pt_fov_mask = self._rqc.track_pt_qc.fov_mask
+        self.track_line_best_match = self._rqc.best_match
+        self.good_fov_count = self._rqc.good_fov_count
+
+        return stitch_inputs
+
+    def _stitch_template(self, template_config, total_cross_pt, stitch_inputs):
+        &#34;&#34;&#34;
+        track线检测版本模板推导
+        Args:
+            template_config:
+            total_cross_pt:
+            stitch_inputs:
+
+        Returns:
+
+        &#34;&#34;&#34;
+        sth_qc = StitchQC(
+            is_stitched=self._is_stitched,
+            src_fovs=self.image_map,
+            pts=total_cross_pt,
+            scale_x=stitch_inputs[&#34;x_scale&#34;],
+            scale_y=stitch_inputs[&#34;y_scale&#34;],
+            rotate=stitch_inputs[&#34;rotation&#34;],
+            chipno=self._stereo_chip,
+            index=stitch_inputs[&#34;fov_index&#34;],
+            correct_points=stitch_inputs[&#34;template_pts&#34;],
+            pair_thresh=template_config.template_pair_points_threshold,
+            qc_thresh=template_config.template_pair_points_qc_threshold,
+            range_thresh=template_config.template_range_image_size_threshold,
+            correct_thresh=template_config.template_pair_correct_threshold,
+            cluster_num=template_config.template_cluster_num_threshold,
+            scale_range=template_config.template_v2_scale_range_threshold,
+            rotate_range=template_config.template_v2_rotate_range_threshold,
+            search_thresh=template_config.template_v2_search_range_threshold,
+            rotate_fov_min=template_config.template_v2_rotate_fov_min_threshold,
+            fft_channel=self.detect_channel.fft
+        )
+
+        # 代入初始的拼接坐标
+        if self._fovs_loc is not None:
+            sth_qc.set_location(self._fovs_loc)
+        sth_qc.set_size(self._fov_rows, self._fov_cols)
+
+        # 下列此处开始推导模板
+        dct, template_global = sth_qc.run_qc()
+        self.microscope_stitch = True  # 显微镜拼接flag
+
+        # 若模板推导结果小于0.1或者直接为-1，则说明要么是track点不太行，要么是拼接坐标有点问题，所以用FFT计算相邻FOV的真实偏差，并重推拼接坐标
+        # 以及再来一边模板推导
+        if -1 &lt;= dct.get(&#39;template_re_conf&#39;, -1.0) &lt; 0.1 \
+                and not self._is_stitched \
+                and self._rqc.line_score != 0:
+            clog.info(&#34;Microscope coordinates have significant errors, use BGI stitching algo&#34;)
+            self.microscope_stitch = False
+            if isinstance(self.jitter[0], int) or isinstance(self.jitter[1], int):
+                self._get_jitter()
+            self._get_jitter()  # FFT计算过相邻FOV偏差矩阵 分别时行向和列向[h_j, v_j] -- 均为 r * c * 2 矩阵
+            sth_qc.set_jitter(self.jitter)
+            sth_qc.fov_location = None
+            dct, template_global = sth_qc.run_qc()
+
+        return sth_qc, dct, template_global
+
+    def _stitching_qc(self, ):
+        &#34;&#34;&#34;
+        拼接总体QC模块 主要调用 StitchQC 实现拼接坐标计算以及模板推导计算
+        并包含各类评估指标信息
+        &#34;&#34;&#34;
+        template_config = self.config.global_template_config
+        clog.info(f&#34;Stitch qc using channel: {self.detect_channel.fft}&#34;)
+        total_cross_pt = dict()
+
+        for k, v in self._rqc.pt_result.items():
+            total_cross_pt[k] = v[0]
+
+        # 第一次推导模板使用新算法
+        stitch_inputs = self._get_stitch_inputs()
+        sth_qc, dct, template_global = self._stitch_template(template_config, total_cross_pt, stitch_inputs)
+        #新算法不行 老算法来一遍
+        if -1 &lt;= dct.get(&#39;template_re_conf&#39;, -1.0) &lt; 0.1:
+            self.track_line_qc()
+            stitch_inputs = self._get_stitch_inputs()
+            if self.line_qc_flag:
+                total_cross_pt[stitch_inputs[&#34;fov_index&#34;]] = stitch_inputs[&#34;template_pts&#34;]
+                sth_qc, dct, template_global = self._stitch_template(template_config, total_cross_pt, stitch_inputs)
+            else:
+                # 老算法也无能为力(^_^)
+                clog.info(f&#34;Can not found template points.&#34;)
+
+        # 如果track线检测开启，则不会在拼接qc模块获取到模板fov信息
+        _fov_index, _fov_best_point = sth_qc.get_fov_info()
+        if stitch_inputs[&#39;fov_index&#39;] is not None and stitch_inputs[&#39;template_pts&#39;] is not None:
+            self.stitch_fov_index = stitch_inputs[&#39;fov_index&#39;]
+            self.stitch_fov_best_point = stitch_inputs[&#39;template_pts&#39;]
+        elif _fov_index is not None and _fov_best_point is not None:
+            self.stitch_fov_index, self.stitch_fov_best_point = _fov_index, _fov_best_point
+
+        # stitch module
+        self.stitch_template_global = template_global  # 全局模板偏差，即track点坐标与模板推导坐标的距离标量值，r * c矩阵
+        self.stitch_fov_loc = sth_qc.fov_location  # 最终的拼接坐标，显微镜坐标 | 自研拼接坐标
+        self.stitch_diff = dct.get(&#39;stitch_diff&#39;, -1.0)  # 自研拼接误差矩阵（r * c）,在计算了自研拼接坐标时才有值，否则-1
+        self.jitter_diff = dct.get(&#39;jitter_diff&#39;, -1.0)  # 显微镜拼接误差矩阵（r * c）, 在计算了自研拼接坐标时才有值，否则-1
+        self.stitch_diff_max = dct.get(&#39;stitch_diff_max&#39;, -1.0)  # stitch_diff的最大值，float
+        self.jitter_diff_max = dct.get(&#39;jitter_diff_max&#39;, -1.0)  # jitter_diff的最大值，float
+
+        # 异常值填充
+        if self.stitch_diff is None:
+            self.stitch_diff = self.jitter_diff = -1
+            self.stitch_diff_max = self.jitter_diff_max = -1
+
+        # template module
+        self.scale_x, self.scale_y, self.rotation = sth_qc.get_scale_and_rotation()  # float类型 scale rotate 基本值
+        self.global_template = sth_qc.template  # 模板[x, y, index_x, index_y]
+        self.template_max = dct.get(&#39;template_max&#39;, -1.0)  # 模板区域面积占比 有用
+        self.template_mean = dct.get(&#39;template_mean&#39;, -1.0)  # 无用
+        self.template_std = dct.get(&#39;template_std&#39;, -1.0)  # 无用
+        self.template_qc_precision = dct.get(&#39;template_qc_conf&#39;, -1.0)  # 无用
+        self.template_qc_recall = dct.get(&#39;template_re_conf&#39;, -1.0)  # 模板召回率值 有用
+        if self.template_max == -1 or self.template_mean == -1 or self.template_std == -1:
+            self.global_template_flag = False
+        else:
+            self.global_template_flag = True
+
+    def _clarity_qc(self, ):
+        &#34;&#34;&#34;
+        This func will do clarity eval on stitched image
+
+        Returns:
+
+        &#34;&#34;&#34;
+        if self.tissue_cut_flag:
+            x0, y0, x1, y1 = self._box_mosaic
+            clarity_input = self._mosaic[y0: y1, x0: x1]
+        else:
+            clarity_input = self._mosaic
+        clog.info(f&#34;Mosaic size: {self._mosaic.shape}, clarity input: {clarity_input.shape}&#34;)
+        self._cqc.set_enhance_func(clarity_enhance_method.get(self._stain_type, None))
+        self._cqc.run(
+            img=clarity_input,
+            detect_channel=self.detect_channel.clarity
+        )
+
+        self._cqc.cluster()
+        self.clarity_cluster = self._cqc.fig  # plt plot object，清晰度成团聚类结果
+        self.clarity_topk_result = self._cqc.topk_result
+
+        # clarity qc output
+        self._cqc.post_process()
+        self.clarity_cut_size = self._cqc.cl_classify.img_size
+        self.clarity_overlap = self._cqc.cl_classify.overlap
+        self.clarity_score = self._cqc.score  # float，清晰度得分
+        self.clarity_heatmap = self._cqc.draw_img  # numpy array，清晰度结果呈现在原图上
+        self.clarity_preds_arr = self._cqc.preds  # clarity predictions array
+
+        self.clarity_counts = self._cqc.counts
+
+    def set_is_stitched(self, stitched):
+        self._is_stitched = stitched
+
+    def set_fov_loc(self, loc):
+        self._fovs_loc = loc
+
+    def set_fov_size(self, s):
+        self._fov_size = s
+
+    def set_stereo_chip(self, c):
+        self._stereo_chip = c
+
+    def set_stain_type(self, s):
+        self._stain_type = s
+
+    def set_magnification(self, m):
+        assert m in [10, 20, 40]
+        self._magnification = m
+
+    def set_zoo_dir(self, z):
+        self.zoo_dir = z
+
+    def set_debug_mode(self, d):
+        self.debug = d
+
+    def run(self, image_root: str, image_map):
+        &#34;&#34;&#34;
+        image_root:
+            - fovs: the directory where microscope config file locate (str)
+            - stitched: the directory where the stitched image locate (str)
+        image_map:
+            - fovs: relative image path of each fov (dict)
+            - stitched: relative image path of stitched image (str)
+        &#34;&#34;&#34;
+        clog.info(&#34;-------------------Start QC-------------------&#34;)
+        clog.info(f&#34;Is_stitched: {self._is_stitched}, fov size: {self._fov_size}, stain_type: {self._stain_type} \n&#34;
+                  f&#34;Magnification: {self._magnification}, debug mode: {self.debug}, chip: {self._stereo_chip}&#34;)
+
+        start_time = time.time()
+        clog.info(f&#39;Image QC start time: {start_time}&#39;)
+
+        self.image_root = image_root
+        self.image_map = image_map
+        clog.info(f&#34;Image root : {self.image_root}&#34;)
+        self._prepare()
+        end_time = time.time()
+        self.prepare_time = end_time - start_time
+        clog.info(f&#39;Prepare time cost: {self.prepare_time}&#39;)
+        start_time = end_time
+
+        if self.config.operation.tissue_segment:
+            self._classify_fov()
+            end_time = time.time()
+            self.tissue_seg_time = end_time - start_time
+            clog.info(f&#39;Classify time cost: {self.tissue_seg_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.track_pt_detect:
+            self.track_pt_qc()
+            end_time = time.time()
+            self.track_detect_time = end_time - start_time
+            clog.info(f&#39;Track_pt time cost: {self.track_detect_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.track_line_detect:
+            self.track_line_qc()
+            end_time = time.time()
+            self.track_line_time = end_time - start_time
+            clog.info(f&#39;Track_line time cost: {self.track_line_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.stitch_qc:
+            self._stitching_qc()
+            end_time = time.time()
+            self.stitch_qc_time = end_time - start_time
+            clog.info(f&#39;Stitching time cost: {self.stitch_qc_time}&#39;)
+            start_time = end_time
+
+        if self.config.operation.clarity_qc:
+            self._clarity_qc()
+            end_time = time.time()
+            self.clarity_qc_time = end_time - start_time
+            clog.info(f&#39;Clarity time cost: {self.clarity_qc_time}&#39;)
+            start_time = end_time
+
+            # self.tissue_mask_score = self.iou_calculation(
+            #     clarity_mask=self._cqc.black_img,
+            #     tissue_mask=self._tissue_mask
+            # )
+        clog.info(&#34;-------------------End QC-------------------&#34;)
+
+    @property
+    def src_fov_info(self):
+        return self._src_fov_info
+
+    @property
+    def box_mosaic(self):
+        return self._box_mosaic
+
+    @property
+    def fov_tissue_mask(self):
+        return self._fov_tissue_mask
+
+    @property
+    def tissue_mask(self):
+        return self._tissue_mask</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="cellbin.modules.CellBinElement" href="index.html#cellbin.modules.CellBinElement">CellBinElement</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.iou_calculation"><code class="name flex">
+<span>def <span class="ident">iou_calculation</span></span>(<span>clarity_mask, tissue_mask)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def iou_calculation(clarity_mask, tissue_mask):
+    iou_result = iou(clarity_mask, tissue_mask)
+    return iou_result</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.box_mosaic"><code class="name">var <span class="ident">box_mosaic</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def box_mosaic(self):
+    return self._box_mosaic</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.fov_tissue_mask"><code class="name">var <span class="ident">fov_tissue_mask</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def fov_tissue_mask(self):
+    return self._fov_tissue_mask</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.src_fov_info"><code class="name">var <span class="ident">src_fov_info</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def src_fov_info(self):
+    return self._src_fov_info</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.tissue_mask"><code class="name">var <span class="ident">tissue_mask</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tissue_mask(self):
+    return self._tissue_mask</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.auto_load_weights"><code class="name flex">
+<span>def <span class="ident">auto_load_weights</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def auto_load_weights(self, ):
+    self.stain_weights = getattr(self.config.model_weights_config, self._stain_type)
+    self.weight_names = [
+        self.stain_weights.track_pt_detect,
+        self.stain_weights.tissue_seg,
+        self.stain_weights.clarity_eval
+    ]
+    auto_download_weights(self.zoo_dir, self.weight_names)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.initialize"><code class="name flex">
+<span>def <span class="ident">initialize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initialize dnn model</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize(self):
+    &#34;&#34;&#34;
+    Initialize dnn model
+
+    &#34;&#34;&#34;
+    # 导入模型权重
+    tissue_detector_file = os.path.join(self.zoo_dir, self.stain_weights.tissue_seg)
+    pt_detector_file = os.path.join(self.zoo_dir, self.stain_weights.track_pt_detect)
+    clarity_file = os.path.join(self.zoo_dir, self.stain_weights.clarity_eval)
+    try:
+        self._tissue_detector.f_init_model(tissue_detector_file)
+        self._rqc.track_pt_qc.ci.load_model(pt_detector_file)
+        self._cqc.load_model(clarity_file)
+    except Exception as e:
+        clog.error(f&#34;{e}&#34;)
+        clog.error(f&#34;dnn model weights load failed&#34;)
+        return 1
+    return 0</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.initialize_json"><code class="name flex">
+<span>def <span class="ident">initialize_json</span></span>(<span>self, json_path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initialize config file, will initialize all the thresholds and</p>
+<h2 id="args">Args</h2>
+<p>json_path (): config json path
+Returns:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_json(self, json_path: str):
+    &#34;&#34;&#34;
+    Initialize config file, will initialize all the thresholds and
+
+    Args:
+        json_path (): config json path
+
+    Returns:
+
+    &#34;&#34;&#34;
+    self.config.load_from_json(json_path)
+    self.detect_channel = getattr(self.config.channel_config, self._stain_type)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self, image_root: str, image_map)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>image_root:
+- fovs: the directory where microscope config file locate (str)
+- stitched: the directory where the stitched image locate (str)
+image_map:
+- fovs: relative image path of each fov (dict)
+- stitched: relative image path of stitched image (str)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self, image_root: str, image_map):
+    &#34;&#34;&#34;
+    image_root:
+        - fovs: the directory where microscope config file locate (str)
+        - stitched: the directory where the stitched image locate (str)
+    image_map:
+        - fovs: relative image path of each fov (dict)
+        - stitched: relative image path of stitched image (str)
+    &#34;&#34;&#34;
+    clog.info(&#34;-------------------Start QC-------------------&#34;)
+    clog.info(f&#34;Is_stitched: {self._is_stitched}, fov size: {self._fov_size}, stain_type: {self._stain_type} \n&#34;
+              f&#34;Magnification: {self._magnification}, debug mode: {self.debug}, chip: {self._stereo_chip}&#34;)
+
+    start_time = time.time()
+    clog.info(f&#39;Image QC start time: {start_time}&#39;)
+
+    self.image_root = image_root
+    self.image_map = image_map
+    clog.info(f&#34;Image root : {self.image_root}&#34;)
+    self._prepare()
+    end_time = time.time()
+    self.prepare_time = end_time - start_time
+    clog.info(f&#39;Prepare time cost: {self.prepare_time}&#39;)
+    start_time = end_time
+
+    if self.config.operation.tissue_segment:
+        self._classify_fov()
+        end_time = time.time()
+        self.tissue_seg_time = end_time - start_time
+        clog.info(f&#39;Classify time cost: {self.tissue_seg_time}&#39;)
+        start_time = end_time
+
+    if self.config.operation.track_pt_detect:
+        self.track_pt_qc()
+        end_time = time.time()
+        self.track_detect_time = end_time - start_time
+        clog.info(f&#39;Track_pt time cost: {self.track_detect_time}&#39;)
+        start_time = end_time
+
+    if self.config.operation.track_line_detect:
+        self.track_line_qc()
+        end_time = time.time()
+        self.track_line_time = end_time - start_time
+        clog.info(f&#39;Track_line time cost: {self.track_line_time}&#39;)
+        start_time = end_time
+
+    if self.config.operation.stitch_qc:
+        self._stitching_qc()
+        end_time = time.time()
+        self.stitch_qc_time = end_time - start_time
+        clog.info(f&#39;Stitching time cost: {self.stitch_qc_time}&#39;)
+        start_time = end_time
+
+    if self.config.operation.clarity_qc:
+        self._clarity_qc()
+        end_time = time.time()
+        self.clarity_qc_time = end_time - start_time
+        clog.info(f&#39;Clarity time cost: {self.clarity_qc_time}&#39;)
+        start_time = end_time
+
+        # self.tissue_mask_score = self.iou_calculation(
+        #     clarity_mask=self._cqc.black_img,
+        #     tissue_mask=self._tissue_mask
+        # )
+    clog.info(&#34;-------------------End QC-------------------&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_debug_mode"><code class="name flex">
+<span>def <span class="ident">set_debug_mode</span></span>(<span>self, d)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_debug_mode(self, d):
+    self.debug = d</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_fov_loc"><code class="name flex">
+<span>def <span class="ident">set_fov_loc</span></span>(<span>self, loc)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_fov_loc(self, loc):
+    self._fovs_loc = loc</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_fov_size"><code class="name flex">
+<span>def <span class="ident">set_fov_size</span></span>(<span>self, s)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_fov_size(self, s):
+    self._fov_size = s</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_is_stitched"><code class="name flex">
+<span>def <span class="ident">set_is_stitched</span></span>(<span>self, stitched)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_is_stitched(self, stitched):
+    self._is_stitched = stitched</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_magnification"><code class="name flex">
+<span>def <span class="ident">set_magnification</span></span>(<span>self, m)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_magnification(self, m):
+    assert m in [10, 20, 40]
+    self._magnification = m</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_stain_type"><code class="name flex">
+<span>def <span class="ident">set_stain_type</span></span>(<span>self, s)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_stain_type(self, s):
+    self._stain_type = s</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_stereo_chip"><code class="name flex">
+<span>def <span class="ident">set_stereo_chip</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_stereo_chip(self, c):
+    self._stereo_chip = c</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.set_zoo_dir"><code class="name flex">
+<span>def <span class="ident">set_zoo_dir</span></span>(<span>self, z)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_zoo_dir(self, z):
+    self.zoo_dir = z</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.track_line_qc"><code class="name flex">
+<span>def <span class="ident">track_line_qc</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def track_line_qc(self):
+    # Track线检测
+    buffer = None
+    if self._is_stitched:
+        buffer = self._mosaic
+    if self._magnification &lt;= 15:
+        line_fovs = None
+    else:
+        trp = TrackROIPicker(
+            images_path=self.image_map, jitter_list=self.jitter,
+            tissue_mask=self._fov_tissue_mask,
+            track_points=self._rqc.track_pt_qc.track_result()
+        )
+        line_fovs = trp.getRoiImages()
+
+    self._rqc.run_line_qc(
+        line_fovs=line_fovs,
+        detect_channel=self.detect_channel.line_detect,
+        magnification=self._magnification,
+        buffer=buffer,
+        enhance_func=line_enhance_method.get(self._stain_type, None),
+    )</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.image_qc.ImageQualityControl.track_pt_qc"><code class="name flex">
+<span>def <span class="ident">track_pt_qc</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This func will do
+- track pt detect
+- track line detect
+- track line result match</p>
+<p>Returns:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def track_pt_qc(self, ):
+    &#34;&#34;&#34;
+    This func will do
+    - track pt detect
+    - track line detect
+    - track line result match
+
+    Returns:
+
+    &#34;&#34;&#34;
+    # set threshold
+    self._rqc.set_chip_template(self._stereo_chip)
+    self._rqc.set_track_pt_thresh(
+        th=self.config.track_pt_config.track_point_first_level_threshold,
+        th2=self.config.track_pt_config.track_point_second_level_threshold,
+        good_thresh=self.config.track_pt_config.track_point_good_threshold,
+    )
+    self._rqc.set_topk(self.config.track_line_config.track_line_topk)
+    self._rqc.set_track_pt_process(self.config.running_config.pt_running_process)
+
+    # start
+    buffer = None
+    if self._is_stitched:
+        buffer = self._mosaic
+
+    # Track点检测
+    self._rqc.run_pt_qc(
+        fovs=self.image_map,
+        enhance_func=pt_enhance_method.get(self._stain_type, None),
+        detect_channel=self.detect_channel.pt_detect,
+        buffer=buffer
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.modules" href="index.html">cellbin.modules</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.modules.image_qc.ImageQualityControl" href="#cellbin.modules.image_qc.ImageQualityControl">ImageQualityControl</a></code></h4>
+<ul class="two-column">
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.auto_load_weights" href="#cellbin.modules.image_qc.ImageQualityControl.auto_load_weights">auto_load_weights</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.box_mosaic" href="#cellbin.modules.image_qc.ImageQualityControl.box_mosaic">box_mosaic</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.fov_tissue_mask" href="#cellbin.modules.image_qc.ImageQualityControl.fov_tissue_mask">fov_tissue_mask</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.initialize" href="#cellbin.modules.image_qc.ImageQualityControl.initialize">initialize</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.initialize_json" href="#cellbin.modules.image_qc.ImageQualityControl.initialize_json">initialize_json</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.iou_calculation" href="#cellbin.modules.image_qc.ImageQualityControl.iou_calculation">iou_calculation</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.run" href="#cellbin.modules.image_qc.ImageQualityControl.run">run</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_debug_mode" href="#cellbin.modules.image_qc.ImageQualityControl.set_debug_mode">set_debug_mode</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_fov_loc" href="#cellbin.modules.image_qc.ImageQualityControl.set_fov_loc">set_fov_loc</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_fov_size" href="#cellbin.modules.image_qc.ImageQualityControl.set_fov_size">set_fov_size</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_is_stitched" href="#cellbin.modules.image_qc.ImageQualityControl.set_is_stitched">set_is_stitched</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_magnification" href="#cellbin.modules.image_qc.ImageQualityControl.set_magnification">set_magnification</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_stain_type" href="#cellbin.modules.image_qc.ImageQualityControl.set_stain_type">set_stain_type</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_stereo_chip" href="#cellbin.modules.image_qc.ImageQualityControl.set_stereo_chip">set_stereo_chip</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.set_zoo_dir" href="#cellbin.modules.image_qc.ImageQualityControl.set_zoo_dir">set_zoo_dir</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.src_fov_info" href="#cellbin.modules.image_qc.ImageQualityControl.src_fov_info">src_fov_info</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.tissue_mask" href="#cellbin.modules.image_qc.ImageQualityControl.tissue_mask">tissue_mask</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.track_line_qc" href="#cellbin.modules.image_qc.ImageQualityControl.track_line_qc">track_line_qc</a></code></li>
+<li><code><a title="cellbin.modules.image_qc.ImageQualityControl.track_pt_qc" href="#cellbin.modules.image_qc.ImageQualityControl.track_pt_qc">track_pt_qc</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

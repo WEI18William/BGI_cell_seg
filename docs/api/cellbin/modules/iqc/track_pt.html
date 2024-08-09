@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.modules.iqc.track_pt API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.modules.iqc.track_pt</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import tqdm
+import multiprocessing as mp
+from collections import Counter
+
+from cellbin.image import Image
+from cellbin.dnn.pdetect.pt_detector import PointDetector
+from cellbin.utils import clog
+
+
+def no_enhance(img_obj):
+    return img_obj.image
+
+
+def divergence(shape):
+    rows, cols = shape
+    diver_origin = np.zeros((rows, cols, 2))
+    rows_arr = np.arange(1, rows + 1)
+    cols_arr = np.arange(1, cols + 1)
+    for col in range(cols):
+        for row in range(rows):
+            if row &lt; rows // 2:
+                r_value = -rows_arr[:rows // 2 - row].sum()
+            else:
+                if rows // 2 == 0:
+                    r_value = rows_arr[:row - rows // 2].sum()
+                else:
+                    r_value = rows_arr[:row - (rows - 1) // 2].sum()
+            if col &lt; cols // 2:
+                c_value = -cols_arr[:cols // 2 - col].sum()
+            else:
+                if cols // 2 == 0:
+                    c_value = cols_arr[:col - cols // 2].sum()
+                else:
+                    c_value = cols_arr[:col - (cols - 1) // 2].sum()
+            diver_origin[row, col] = np.array([r_value, c_value])
+
+    diver_map = np.abs(diver_origin[:, :, 0]) + np.abs(diver_origin[:, :, 1])
+    return diver_map
+
+
+class TrackPointQC(object):
+    def __init__(self, th=5, th2=20, good_thresh=5):
+        &#34;&#34;&#34;
+        This class is used to do track point detection (using deep learning object detection algo).
+        Will also do track point quality control based on the distribution among fovs, counts of
+        detections and the confidence score of prediction
+
+
+        Track Eval:
+
+        is used to evaluate the track points result from object detection algo.
+        Considering:
+            1. track pts count of each fov
+            2. track pts dets confidence score of each fov
+            3. fov position. further better
+
+
+        Args:
+            model_path (): detect weight path
+            enhance_func (): enhance method used to preprocess image
+            detect_channel ():
+                the channel you choose to do track detect if input is multichannel
+                default is -1 -&gt; just use the original image
+            th (): [th, th2) -&gt; track_point_score = 1
+            th2 (): [th2, inf) -&gt; track_point_score = 2
+
+        Result:
+            self.track_result: track point detection result by deep learning method
+                - {&#39;row_col&#39;: [[pt_x, pt_y, conf], angle]}
+                - no dets: {}
+
+            self.fov_mask: score for each fov
+                - numpy 2d array (success)
+                - np.array([]) (fail)
+
+            self.fovs_score (dict): score for all fovs in order (fov_score &gt; 0)
+                - {&#39;row_col&#39;: fov_score}
+                - {} if no fov_score is greater than 0
+
+            self.score: track_pts eval score, score interval is [0, 1], higher -&gt; better
+                - int
+                - Recommended score threshold for dapi is 0.4?
+
+        &#34;&#34;&#34;
+        self.detect_channel = -1
+        self.th = th
+        self.th2 = th2
+        self.good_thresh = good_thresh
+        self.ci = PointDetector()
+        self.track_result = dict()
+        self.score = 0
+        self.fov_mask = np.array([])
+        self.fovs_order = []
+        self.good_fov_count = 0
+
+        self.process = 5  # TODO: change this
+        self.most_freq_angle = None
+
+    def set_detect_channel(self, c):
+        self.detect_channel = c
+
+    def set_enhance_func(self, f):
+        self.ci.set_func(f)
+
+    def set_multi_process(self, n):
+        self.process = n
+
+    def set_threshold(self, th, th2, good_thresh):
+        self.th = th
+        self.th2 = th2
+        self.good_thresh = good_thresh
+
+    def img_read(self, img_path, buffer):
+        img_obj = Image()
+        img_obj.read(img_path, buffer)
+        if img_obj.ndim == 3 and self.detect_channel != -1:
+            img_obj.get_channel(ch=self.detect_channel)  # 2d array
+        return img_obj
+
+    def track_detect(self, img_dict: dict, buffer=None):
+        &#34;&#34;&#34;
+        This function will do track detection using object detection (deep learning) algo.
+        self.track_result will be empty if no detections
+
+        Args:
+            img_dict (dict): {&#39;row_col&#39;: img_path}
+
+        &#34;&#34;&#34;
+        self.track_result = dict()
+        if self.process &lt;= 1:
+            for key, img_path in tqdm.tqdm(img_dict.items(), file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+                img_obj = self.img_read(img_path, buffer)
+                cp, angle = self.ci.predict(img_obj)
+                if angle is None or len(cp) == 0:
+                    continue
+                self.track_result[key] = [cp, angle]
+        else:
+            processes = []
+            pool = mp.Pool(processes=self.process)
+            clog.info(f&#34;Track pt detect using {self.process} processes&#34;)
+            for key, img_path in tqdm.tqdm(img_dict.items(),  file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+                img_obj = self.img_read(img_path, buffer)
+                sub_process = pool.apply_async(self.ci.predict, args=(img_obj,))
+                processes.append([key, sub_process])
+            pool.close()
+            pool.join()
+            for key, p in processes:
+                cp, angle = p.get()
+                if angle is None or len(cp) == 0:
+                    continue
+                self.track_result[key] = [cp, angle]
+
+    def track_eval(self, ):
+        &#34;&#34;&#34;
+        This func will evaluate track cross quality for fovs
+
+        Returns:
+            self.score: fov track cross score
+            self.fov_mask: 2d array, contain score for each fov
+            self.fovs_order: rank all fovs based on score
+
+        &#34;&#34;&#34;
+        clog.info(f&#34;Track eval using threshold: 0 ~ {self.th} = 1, &#34;
+                  f&#34;{self.th} ~ {self.th2} = 2, &#34;
+                  f&#34;good fov thresh = {self.good_thresh}&#34;)
+        self.score = 0
+        self.fov_mask = np.array([])
+        self.fovs_order = []
+        self.good_fov_count = 0
+
+        if len(self.track_result) == 0:
+            return
+
+        max_row, max_col = -1, -1
+        for key in self.track_result.keys():
+            splits = key.split(&#39;_&#39;)
+            row, col = int(splits[0]), int(splits[1])
+            max_row = max(row, max_row)
+            max_col = max(col, max_col)
+
+        pt_score_1 = 1
+        pt_score_2 = 2
+        # pt_count_mask = np.zeros((max_row + 1, max_col + 1))  # val: count of cp * mean(conf)
+        conf_mask = np.zeros((max_row + 1, max_col + 1))  # no dets: 0
+        val_pt_mask = np.zeros_like(conf_mask)
+        max_pt_mask = np.ones_like(conf_mask) * pt_score_2
+        fovs_name = np.empty_like(conf_mask, dtype=&#39;object&#39;)
+        good_fov = 0
+        all_angles = []
+        for key, val in self.track_result.items():
+            splits = key.split(&#39;_&#39;)
+            row, col = int(splits[0]), int(splits[1])
+            cps, angle = val
+            if len(cps) &gt;= 5:
+                good_fov += 1
+                all_angles.append(angle)
+            cps_arr = np.array(cps)
+            cur_counts = len(cps_arr)
+            conf_mean = cps_arr.mean(axis=0)[-1]
+            # pt_count_mask[row, col] = cur_counts
+            if self.th &lt;= cur_counts &lt; self.th2:
+                val_pt_mask[row, col] = pt_score_1
+            elif cur_counts &gt;= self.th2:
+                val_pt_mask[row, col] = pt_score_2
+            conf_mask[row, col] = conf_mean
+            fovs_name[row, col] = key
+        if len(all_angles) != 0:
+            occurence_count = Counter(all_angles)
+            most_common_one = occurence_count.most_common(1)[0]
+            self.most_freq_angle = most_common_one
+        diver_map = divergence(val_pt_mask.shape)
+        # template_mask = diver_map * max_pt_mask
+        val_pt_mask_norm = val_pt_mask / max_pt_mask
+        result_mask = diver_map * val_pt_mask_norm * conf_mask
+        score = result_mask.sum() / diver_map.sum()
+
+        self.score = score
+        self.fov_mask = result_mask
+        self.good_fov_count = good_fov
+
+        fovs_score = {}
+        for row, col in np.ndindex(result_mask.shape):
+            cur_score = result_mask[row, col]
+            if cur_score &gt; 0:
+                cur_name = fovs_name[row, col]
+                fovs_score[cur_name] = cur_score
+
+        if len(fovs_score) != 0:
+            self.fovs_order = [k for k, v in sorted(fovs_score.items(), key=lambda item: item[1], reverse=True)]
+
+
+if __name__ == &#39;__main__&#39;:
+    import pickle
+
+    result = r&#34;D:\PycharmProjects\scripts\qc_scripts\saved_dictionary.pkl&#34;
+    with open(result, &#39;rb&#39;) as f:
+        loaded_dict = pickle.load(f)
+    track_qc = TrackPointQC(None, &#34;&#34;)
+    track_qc.track_result = loaded_dict
+    track_qc.track_eval()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="cellbin.modules.iqc.track_pt.divergence"><code class="name flex">
+<span>def <span class="ident">divergence</span></span>(<span>shape)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def divergence(shape):
+    rows, cols = shape
+    diver_origin = np.zeros((rows, cols, 2))
+    rows_arr = np.arange(1, rows + 1)
+    cols_arr = np.arange(1, cols + 1)
+    for col in range(cols):
+        for row in range(rows):
+            if row &lt; rows // 2:
+                r_value = -rows_arr[:rows // 2 - row].sum()
+            else:
+                if rows // 2 == 0:
+                    r_value = rows_arr[:row - rows // 2].sum()
+                else:
+                    r_value = rows_arr[:row - (rows - 1) // 2].sum()
+            if col &lt; cols // 2:
+                c_value = -cols_arr[:cols // 2 - col].sum()
+            else:
+                if cols // 2 == 0:
+                    c_value = cols_arr[:col - cols // 2].sum()
+                else:
+                    c_value = cols_arr[:col - (cols - 1) // 2].sum()
+            diver_origin[row, col] = np.array([r_value, c_value])
+
+    diver_map = np.abs(diver_origin[:, :, 0]) + np.abs(diver_origin[:, :, 1])
+    return diver_map</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.no_enhance"><code class="name flex">
+<span>def <span class="ident">no_enhance</span></span>(<span>img_obj)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def no_enhance(img_obj):
+    return img_obj.image</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC"><code class="flex name class">
+<span>class <span class="ident">TrackPointQC</span></span>
+<span>(</span><span>th=5, th2=20, good_thresh=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class is used to do track point detection (using deep learning object detection algo).
+Will also do track point quality control based on the distribution among fovs, counts of
+detections and the confidence score of prediction</p>
+<p>Track Eval:</p>
+<p>is used to evaluate the track points result from object detection algo.</p>
+<h2 id="considering">Considering</h2>
+<ol>
+<li>track pts count of each fov</li>
+<li>track pts dets confidence score of each fov</li>
+<li>fov position. further better</li>
+</ol>
+<h2 id="args">Args</h2>
+<p>model_path (): detect weight path
+enhance_func (): enhance method used to preprocess image
+detect_channel ():
+the channel you choose to do track detect if input is multichannel
+default is -1 -&gt; just use the original image
+th (): [th, th2) -&gt; track_point_score = 1
+th2 (): [th2, inf) -&gt; track_point_score = 2</p>
+<h2 id="result">Result</h2>
+<p>self.track_result: track point detection result by deep learning method
+- {'row_col': [[pt_x, pt_y, conf], angle]}
+- no dets: {}</p>
+<p>self.fov_mask: score for each fov
+- numpy 2d array (success)
+- np.array([]) (fail)</p>
+<p>self.fovs_score (dict): score for all fovs in order (fov_score &gt; 0)
+- {'row_col': fov_score}
+- {} if no fov_score is greater than 0</p>
+<p>self.score: track_pts eval score, score interval is [0, 1], higher -&gt; better
+- int
+- Recommended score threshold for dapi is 0.4?</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TrackPointQC(object):
+    def __init__(self, th=5, th2=20, good_thresh=5):
+        &#34;&#34;&#34;
+        This class is used to do track point detection (using deep learning object detection algo).
+        Will also do track point quality control based on the distribution among fovs, counts of
+        detections and the confidence score of prediction
+
+
+        Track Eval:
+
+        is used to evaluate the track points result from object detection algo.
+        Considering:
+            1. track pts count of each fov
+            2. track pts dets confidence score of each fov
+            3. fov position. further better
+
+
+        Args:
+            model_path (): detect weight path
+            enhance_func (): enhance method used to preprocess image
+            detect_channel ():
+                the channel you choose to do track detect if input is multichannel
+                default is -1 -&gt; just use the original image
+            th (): [th, th2) -&gt; track_point_score = 1
+            th2 (): [th2, inf) -&gt; track_point_score = 2
+
+        Result:
+            self.track_result: track point detection result by deep learning method
+                - {&#39;row_col&#39;: [[pt_x, pt_y, conf], angle]}
+                - no dets: {}
+
+            self.fov_mask: score for each fov
+                - numpy 2d array (success)
+                - np.array([]) (fail)
+
+            self.fovs_score (dict): score for all fovs in order (fov_score &gt; 0)
+                - {&#39;row_col&#39;: fov_score}
+                - {} if no fov_score is greater than 0
+
+            self.score: track_pts eval score, score interval is [0, 1], higher -&gt; better
+                - int
+                - Recommended score threshold for dapi is 0.4?
+
+        &#34;&#34;&#34;
+        self.detect_channel = -1
+        self.th = th
+        self.th2 = th2
+        self.good_thresh = good_thresh
+        self.ci = PointDetector()
+        self.track_result = dict()
+        self.score = 0
+        self.fov_mask = np.array([])
+        self.fovs_order = []
+        self.good_fov_count = 0
+
+        self.process = 5  # TODO: change this
+        self.most_freq_angle = None
+
+    def set_detect_channel(self, c):
+        self.detect_channel = c
+
+    def set_enhance_func(self, f):
+        self.ci.set_func(f)
+
+    def set_multi_process(self, n):
+        self.process = n
+
+    def set_threshold(self, th, th2, good_thresh):
+        self.th = th
+        self.th2 = th2
+        self.good_thresh = good_thresh
+
+    def img_read(self, img_path, buffer):
+        img_obj = Image()
+        img_obj.read(img_path, buffer)
+        if img_obj.ndim == 3 and self.detect_channel != -1:
+            img_obj.get_channel(ch=self.detect_channel)  # 2d array
+        return img_obj
+
+    def track_detect(self, img_dict: dict, buffer=None):
+        &#34;&#34;&#34;
+        This function will do track detection using object detection (deep learning) algo.
+        self.track_result will be empty if no detections
+
+        Args:
+            img_dict (dict): {&#39;row_col&#39;: img_path}
+
+        &#34;&#34;&#34;
+        self.track_result = dict()
+        if self.process &lt;= 1:
+            for key, img_path in tqdm.tqdm(img_dict.items(), file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+                img_obj = self.img_read(img_path, buffer)
+                cp, angle = self.ci.predict(img_obj)
+                if angle is None or len(cp) == 0:
+                    continue
+                self.track_result[key] = [cp, angle]
+        else:
+            processes = []
+            pool = mp.Pool(processes=self.process)
+            clog.info(f&#34;Track pt detect using {self.process} processes&#34;)
+            for key, img_path in tqdm.tqdm(img_dict.items(),  file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+                img_obj = self.img_read(img_path, buffer)
+                sub_process = pool.apply_async(self.ci.predict, args=(img_obj,))
+                processes.append([key, sub_process])
+            pool.close()
+            pool.join()
+            for key, p in processes:
+                cp, angle = p.get()
+                if angle is None or len(cp) == 0:
+                    continue
+                self.track_result[key] = [cp, angle]
+
+    def track_eval(self, ):
+        &#34;&#34;&#34;
+        This func will evaluate track cross quality for fovs
+
+        Returns:
+            self.score: fov track cross score
+            self.fov_mask: 2d array, contain score for each fov
+            self.fovs_order: rank all fovs based on score
+
+        &#34;&#34;&#34;
+        clog.info(f&#34;Track eval using threshold: 0 ~ {self.th} = 1, &#34;
+                  f&#34;{self.th} ~ {self.th2} = 2, &#34;
+                  f&#34;good fov thresh = {self.good_thresh}&#34;)
+        self.score = 0
+        self.fov_mask = np.array([])
+        self.fovs_order = []
+        self.good_fov_count = 0
+
+        if len(self.track_result) == 0:
+            return
+
+        max_row, max_col = -1, -1
+        for key in self.track_result.keys():
+            splits = key.split(&#39;_&#39;)
+            row, col = int(splits[0]), int(splits[1])
+            max_row = max(row, max_row)
+            max_col = max(col, max_col)
+
+        pt_score_1 = 1
+        pt_score_2 = 2
+        # pt_count_mask = np.zeros((max_row + 1, max_col + 1))  # val: count of cp * mean(conf)
+        conf_mask = np.zeros((max_row + 1, max_col + 1))  # no dets: 0
+        val_pt_mask = np.zeros_like(conf_mask)
+        max_pt_mask = np.ones_like(conf_mask) * pt_score_2
+        fovs_name = np.empty_like(conf_mask, dtype=&#39;object&#39;)
+        good_fov = 0
+        all_angles = []
+        for key, val in self.track_result.items():
+            splits = key.split(&#39;_&#39;)
+            row, col = int(splits[0]), int(splits[1])
+            cps, angle = val
+            if len(cps) &gt;= 5:
+                good_fov += 1
+                all_angles.append(angle)
+            cps_arr = np.array(cps)
+            cur_counts = len(cps_arr)
+            conf_mean = cps_arr.mean(axis=0)[-1]
+            # pt_count_mask[row, col] = cur_counts
+            if self.th &lt;= cur_counts &lt; self.th2:
+                val_pt_mask[row, col] = pt_score_1
+            elif cur_counts &gt;= self.th2:
+                val_pt_mask[row, col] = pt_score_2
+            conf_mask[row, col] = conf_mean
+            fovs_name[row, col] = key
+        if len(all_angles) != 0:
+            occurence_count = Counter(all_angles)
+            most_common_one = occurence_count.most_common(1)[0]
+            self.most_freq_angle = most_common_one
+        diver_map = divergence(val_pt_mask.shape)
+        # template_mask = diver_map * max_pt_mask
+        val_pt_mask_norm = val_pt_mask / max_pt_mask
+        result_mask = diver_map * val_pt_mask_norm * conf_mask
+        score = result_mask.sum() / diver_map.sum()
+
+        self.score = score
+        self.fov_mask = result_mask
+        self.good_fov_count = good_fov
+
+        fovs_score = {}
+        for row, col in np.ndindex(result_mask.shape):
+            cur_score = result_mask[row, col]
+            if cur_score &gt; 0:
+                cur_name = fovs_name[row, col]
+                fovs_score[cur_name] = cur_score
+
+        if len(fovs_score) != 0:
+            self.fovs_order = [k for k, v in sorted(fovs_score.items(), key=lambda item: item[1], reverse=True)]</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.img_read"><code class="name flex">
+<span>def <span class="ident">img_read</span></span>(<span>self, img_path, buffer)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def img_read(self, img_path, buffer):
+    img_obj = Image()
+    img_obj.read(img_path, buffer)
+    if img_obj.ndim == 3 and self.detect_channel != -1:
+        img_obj.get_channel(ch=self.detect_channel)  # 2d array
+    return img_obj</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.set_detect_channel"><code class="name flex">
+<span>def <span class="ident">set_detect_channel</span></span>(<span>self, c)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_detect_channel(self, c):
+    self.detect_channel = c</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.set_enhance_func"><code class="name flex">
+<span>def <span class="ident">set_enhance_func</span></span>(<span>self, f)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_enhance_func(self, f):
+    self.ci.set_func(f)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.set_multi_process"><code class="name flex">
+<span>def <span class="ident">set_multi_process</span></span>(<span>self, n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_multi_process(self, n):
+    self.process = n</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.set_threshold"><code class="name flex">
+<span>def <span class="ident">set_threshold</span></span>(<span>self, th, th2, good_thresh)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_threshold(self, th, th2, good_thresh):
+    self.th = th
+    self.th2 = th2
+    self.good_thresh = good_thresh</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.track_detect"><code class="name flex">
+<span>def <span class="ident">track_detect</span></span>(<span>self, img_dict: dict, buffer=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function will do track detection using object detection (deep learning) algo.
+self.track_result will be empty if no detections</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>{'row_col': img_path}</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def track_detect(self, img_dict: dict, buffer=None):
+    &#34;&#34;&#34;
+    This function will do track detection using object detection (deep learning) algo.
+    self.track_result will be empty if no detections
+
+    Args:
+        img_dict (dict): {&#39;row_col&#39;: img_path}
+
+    &#34;&#34;&#34;
+    self.track_result = dict()
+    if self.process &lt;= 1:
+        for key, img_path in tqdm.tqdm(img_dict.items(), file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+            img_obj = self.img_read(img_path, buffer)
+            cp, angle = self.ci.predict(img_obj)
+            if angle is None or len(cp) == 0:
+                continue
+            self.track_result[key] = [cp, angle]
+    else:
+        processes = []
+        pool = mp.Pool(processes=self.process)
+        clog.info(f&#34;Track pt detect using {self.process} processes&#34;)
+        for key, img_path in tqdm.tqdm(img_dict.items(),  file=clog.tqdm_out, mininterval=10, desc=&#39;Track points detect&#39;):
+            img_obj = self.img_read(img_path, buffer)
+            sub_process = pool.apply_async(self.ci.predict, args=(img_obj,))
+            processes.append([key, sub_process])
+        pool.close()
+        pool.join()
+        for key, p in processes:
+            cp, angle = p.get()
+            if angle is None or len(cp) == 0:
+                continue
+            self.track_result[key] = [cp, angle]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.modules.iqc.track_pt.TrackPointQC.track_eval"><code class="name flex">
+<span>def <span class="ident">track_eval</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This func will evaluate track cross quality for fovs</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>self.score</code></dt>
+<dd>fov track cross score</dd>
+<dt><code>self.fov_mask</code></dt>
+<dd>2d array, contain score for each fov</dd>
+<dt><code>self.fovs_order</code></dt>
+<dd>rank all fovs based on score</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def track_eval(self, ):
+    &#34;&#34;&#34;
+    This func will evaluate track cross quality for fovs
+
+    Returns:
+        self.score: fov track cross score
+        self.fov_mask: 2d array, contain score for each fov
+        self.fovs_order: rank all fovs based on score
+
+    &#34;&#34;&#34;
+    clog.info(f&#34;Track eval using threshold: 0 ~ {self.th} = 1, &#34;
+              f&#34;{self.th} ~ {self.th2} = 2, &#34;
+              f&#34;good fov thresh = {self.good_thresh}&#34;)
+    self.score = 0
+    self.fov_mask = np.array([])
+    self.fovs_order = []
+    self.good_fov_count = 0
+
+    if len(self.track_result) == 0:
+        return
+
+    max_row, max_col = -1, -1
+    for key in self.track_result.keys():
+        splits = key.split(&#39;_&#39;)
+        row, col = int(splits[0]), int(splits[1])
+        max_row = max(row, max_row)
+        max_col = max(col, max_col)
+
+    pt_score_1 = 1
+    pt_score_2 = 2
+    # pt_count_mask = np.zeros((max_row + 1, max_col + 1))  # val: count of cp * mean(conf)
+    conf_mask = np.zeros((max_row + 1, max_col + 1))  # no dets: 0
+    val_pt_mask = np.zeros_like(conf_mask)
+    max_pt_mask = np.ones_like(conf_mask) * pt_score_2
+    fovs_name = np.empty_like(conf_mask, dtype=&#39;object&#39;)
+    good_fov = 0
+    all_angles = []
+    for key, val in self.track_result.items():
+        splits = key.split(&#39;_&#39;)
+        row, col = int(splits[0]), int(splits[1])
+        cps, angle = val
+        if len(cps) &gt;= 5:
+            good_fov += 1
+            all_angles.append(angle)
+        cps_arr = np.array(cps)
+        cur_counts = len(cps_arr)
+        conf_mean = cps_arr.mean(axis=0)[-1]
+        # pt_count_mask[row, col] = cur_counts
+        if self.th &lt;= cur_counts &lt; self.th2:
+            val_pt_mask[row, col] = pt_score_1
+        elif cur_counts &gt;= self.th2:
+            val_pt_mask[row, col] = pt_score_2
+        conf_mask[row, col] = conf_mean
+        fovs_name[row, col] = key
+    if len(all_angles) != 0:
+        occurence_count = Counter(all_angles)
+        most_common_one = occurence_count.most_common(1)[0]
+        self.most_freq_angle = most_common_one
+    diver_map = divergence(val_pt_mask.shape)
+    # template_mask = diver_map * max_pt_mask
+    val_pt_mask_norm = val_pt_mask / max_pt_mask
+    result_mask = diver_map * val_pt_mask_norm * conf_mask
+    score = result_mask.sum() / diver_map.sum()
+
+    self.score = score
+    self.fov_mask = result_mask
+    self.good_fov_count = good_fov
+
+    fovs_score = {}
+    for row, col in np.ndindex(result_mask.shape):
+        cur_score = result_mask[row, col]
+        if cur_score &gt; 0:
+            cur_name = fovs_name[row, col]
+            fovs_score[cur_name] = cur_score
+
+    if len(fovs_score) != 0:
+        self.fovs_order = [k for k, v in sorted(fovs_score.items(), key=lambda item: item[1], reverse=True)]</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.modules.iqc" href="index.html">cellbin.modules.iqc</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="cellbin.modules.iqc.track_pt.divergence" href="#cellbin.modules.iqc.track_pt.divergence">divergence</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.no_enhance" href="#cellbin.modules.iqc.track_pt.no_enhance">no_enhance</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC" href="#cellbin.modules.iqc.track_pt.TrackPointQC">TrackPointQC</a></code></h4>
+<ul class="two-column">
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.img_read" href="#cellbin.modules.iqc.track_pt.TrackPointQC.img_read">img_read</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.set_detect_channel" href="#cellbin.modules.iqc.track_pt.TrackPointQC.set_detect_channel">set_detect_channel</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.set_enhance_func" href="#cellbin.modules.iqc.track_pt.TrackPointQC.set_enhance_func">set_enhance_func</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.set_multi_process" href="#cellbin.modules.iqc.track_pt.TrackPointQC.set_multi_process">set_multi_process</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.set_threshold" href="#cellbin.modules.iqc.track_pt.TrackPointQC.set_threshold">set_threshold</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.track_detect" href="#cellbin.modules.iqc.track_pt.TrackPointQC.track_detect">track_detect</a></code></li>
+<li><code><a title="cellbin.modules.iqc.track_pt.TrackPointQC.track_eval" href="#cellbin.modules.iqc.track_pt.TrackPointQC.track_eval">track_eval</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

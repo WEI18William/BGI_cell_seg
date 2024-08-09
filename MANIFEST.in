@@ -1,0 +1,3 @@
+include cellbin/test/scripts/qc_config.json
+include cellbin/test/scripts/pipeline_config.json
+include CHANGES.txt

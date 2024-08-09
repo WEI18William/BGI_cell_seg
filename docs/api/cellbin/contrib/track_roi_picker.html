@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.contrib.track_roi_picker API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.contrib.track_roi_picker</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import numpy as np
+import tifffile as tif
+from cellbin.utils.file_manager import rc_key
+
+
+class TrackROIPicker(object):
+    &#34;&#34;&#34;
+    20x或40x返回可用于做模板推导的图像
+    20x -- 返回三张FOV图
+    40x -- 返回七张FOV图
+    &#34;&#34;&#34;
+
+    def __init__(self, images_path,
+                 jitter_list: list() = None,
+                 tissue_mask: np.ndarray = None,
+                 track_points: dict() = None):
+
+        self.__init_value = 999
+        self.rows = None
+        self.cols = None
+
+        self.setImagesPath(images_path)
+        self.setJitter(jitter_list)
+        self.setTissueMask(tissue_mask)
+        self.setTrackPoints(track_points)
+        self.images_pair = list()
+
+    def setImagesPath(self, images_path):
+        &#34;&#34;&#34;
+        :param images_path:
+        &#34;&#34;&#34;
+        if isinstance(images_path, dict):
+            self.images_path = images_path
+        elif isinstance(images_path, str):
+            self.images_path = imagespath2dict(images_path)
+
+    def setTissueMask(self, tissue_mask):
+        &#34;&#34;&#34;
+        :param tissue_mask:
+        &#34;&#34;&#34;
+        assert tissue_mask.shape[0] == self.rows and \
+               tissue_mask.shape[1] == self.cols, &#34;Mask shape error.&#34;
+        self.tissue_mask = tissue_mask
+
+    def setTrackPoints(self, track_points):
+        &#34;&#34;&#34;
+        :param track_points: {&#39;r_c&#39;: [x, y]}
+        &#34;&#34;&#34;
+        self.track_points = track_points
+
+    def setJitter(self, jitter_list, confi_mask=None):
+        &#34;&#34;&#34;
+        :param jitter_list: [h_j, v_j]
+        &#34;&#34;&#34;
+        h_j, v_j = jitter_list
+        assert h_j.shape == v_j.shape, &#34;Jitter ndim is diffient.&#34;
+        h_j[np.where(h_j == -self.__init_value)] = self.__init_value
+        v_j[np.where(v_j == -self.__init_value)] = self.__init_value
+        self.horizontal_jitter = h_j
+        self.vertical_jitter = v_j
+        self.confi_mask = confi_mask
+
+        self.rows, self.cols = self.horizontal_jitter.shape[:2]
+
+    def getRoiImages(self, k=5, threold=None):
+        &#34;&#34;&#34;
+        :param k: 取前K对
+        :param threold: track点阈值
+        返回局部拼接好的图像对
+        &#34;&#34;&#34;
+        all_dst_list = list()
+        for row in range(self.rows):
+            for col in range(self.cols):
+                if self.tissue_mask[row, col] == 0:
+                    dst_list = self.__get_jitter(row, col)
+                    all_dst_list.extend(dst_list)
+
+        all_dst_list = sorted(all_dst_list, key=self.__get_score)[::-1]
+
+        images_pair = dict()
+        for dst_list in all_dst_list[:k]:
+            src = dst_list[0]
+            src_image = tif.imread(self.images_path[self.__list2str(src)])
+            _h, _w = src_image.shape[:2]
+            h_coord = list([[0, 0]])
+            v_coord = list([[0, 0]])
+
+            for dst in dst_list[1:]:
+                dst_image = tif.imread(self.images_path[self.__list2str(dst)])
+                if src[1] &gt; dst[1]:
+                    x, y = self.horizontal_jitter[src[0], src[1]]
+                    h_coord.append([-(_w + x), -y])
+                    h_coord = np.array(h_coord)
+                    h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+                elif src[1] &lt; dst[1]:
+                    x, y = self.horizontal_jitter[dst[0], dst[1]]
+                    h_coord.append([_w + x, y])
+                    h_coord = np.array(h_coord)
+                    h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+                elif src[0] &gt; dst[0]:
+                    x, y = self.vertical_jitter[src[0], src[1]]
+                    v_coord.append([-x, -(_h + y)])
+                    v_coord = np.array(v_coord)
+                    v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+                elif src[0] &lt; dst[0]:
+                    x, y = self.vertical_jitter[dst[0], dst[1]]
+                    v_coord.append([x, _h + y])
+                    v_coord = np.array(v_coord)
+                    v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+
+            name = &#39; &#39;.join([rc_key(i[0], i[1]) for i in dst_list])
+            images_pair[name] = [h_image, v_image]
+        return images_pair
+
+    def __set_image(self, coord, h, w, src, dst):
+        x0 = np.min(coord[:, 0])
+        y0 = np.min(coord[:, 1])
+        x1 = np.max(coord[:, 0])
+        y1 = np.max(coord[:, 1])
+        coord[:, 0] -= x0
+        coord[:, 1] -= y0
+        _w = x1 - x0 + w
+        _h = y1 - y0 + h
+
+        _image = np.zeros([int(_h), int(_w)], src.dtype)
+        for index, image in zip(coord, [src, dst]):
+            x, y = index
+            _image[y: y + h, x: x + w] = image
+
+        return _image
+
+    def __list2str(self, dst):
+        return &#34;_&#34;.join([str(i) for i in dst])
+
+    def __get_score(self, dst_list):
+        points_num = list()
+
+        d0 = &#34;_&#34;.join([str(i) for i in dst_list[0]])
+        d1 = &#34;_&#34;.join([str(i) for i in dst_list[1]])
+        d2 = &#34;_&#34;.join([str(i) for i in dst_list[2]])
+
+        for d in [d0, d1, d2]:
+            if d in self.track_points.keys():
+                points_num.append(len(self.track_points[d]))
+            else:
+                points_num.append(0)
+
+        return np.mean(points_num) + np.mean(points_num) / (np.std(points_num) + 1)
+
+    def __get_jitter(self, row, col):
+        h_list = list()
+        v_list = list()
+        dst_list = list()
+
+        for index in [col, col + 1]:
+            if index &lt; self.cols:
+                if self.horizontal_jitter[row, index, 0] != 999:
+                    if index == col:
+                        if self.tissue_mask[row, index - 1] == 0:
+                            h_list.append([row, index - 1])
+                    else:
+                        if self.tissue_mask[row, index] == 0:
+                            h_list.append([row, index])
+
+        for index in [row, row + 1]:
+            if index &lt; self.rows:
+                if self.vertical_jitter[index, col, 0] != 999:
+                    if index == row:
+                        if self.tissue_mask[index - 1, col] == 0:
+                            v_list.append([index - 1, col])
+                    else:
+                        if self.tissue_mask[index, col] == 0:
+                            v_list.append([index, col])
+
+        for h in h_list:
+            for v in v_list:
+                dst_list.append([[row, col], h, v])
+
+        return dst_list
+
+
+if __name__ == &#39;__main__&#39;:
+    import h5py
+    from cellbin.utils.file_manager import imagespath2dict
+
+    src = r&#39;D:\AllData\Big\2023-02-27\D01653A6B6\D01653A6B6&#39;
+    src_fovs = imagespath2dict(src)
+
+    ipr_path = r&#39;D:\AllData\Big\QC\D01653A6B6\D01653A6B6_20230227_175744_1.1.ipr&#39;
+    pts = {}
+    with h5py.File(ipr_path) as conf:
+        qc_pts = conf[&#39;QCInfo/CrossPoints/&#39;]
+        for i in qc_pts.keys():
+            pts[i] = conf[&#39;QCInfo/CrossPoints/&#39; + i][:]
+        h_j = conf[&#39;QCInfo&#39;][&#39;StitchEval&#39;][&#39;HorizontalJitter&#39;][...]
+        v_j = conf[&#39;QCInfo&#39;][&#39;StitchEval&#39;][&#39;VerticalJitter&#39;][...]
+        confi_mask = conf[&#39;QCInfo&#39;][&#39;StitchEval&#39;][&#39;FOVAlignConfidence&#39;][...]
+        tissue_mask = conf[&#39;QCInfo&#39;][&#39;StitchEval&#39;][&#39;FOVTissueType&#39;][...]
+
+    test = TrackROIPicker(images_path=src_fovs, jitter_list=[h_j, v_j], tissue_mask=tissue_mask, track_points=pts)
+    images_pair = test.getRoiImages()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker"><code class="flex name class">
+<span>class <span class="ident">TrackROIPicker</span></span>
+<span>(</span><span>images_path, jitter_list: [] = None, tissue_mask: numpy.ndarray = None, track_points: {} = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>20x或40x返回可用于做模板推导的图像
+20x &ndash; 返回三张FOV图
+40x &ndash; 返回七张FOV图</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TrackROIPicker(object):
+    &#34;&#34;&#34;
+    20x或40x返回可用于做模板推导的图像
+    20x -- 返回三张FOV图
+    40x -- 返回七张FOV图
+    &#34;&#34;&#34;
+
+    def __init__(self, images_path,
+                 jitter_list: list() = None,
+                 tissue_mask: np.ndarray = None,
+                 track_points: dict() = None):
+
+        self.__init_value = 999
+        self.rows = None
+        self.cols = None
+
+        self.setImagesPath(images_path)
+        self.setJitter(jitter_list)
+        self.setTissueMask(tissue_mask)
+        self.setTrackPoints(track_points)
+        self.images_pair = list()
+
+    def setImagesPath(self, images_path):
+        &#34;&#34;&#34;
+        :param images_path:
+        &#34;&#34;&#34;
+        if isinstance(images_path, dict):
+            self.images_path = images_path
+        elif isinstance(images_path, str):
+            self.images_path = imagespath2dict(images_path)
+
+    def setTissueMask(self, tissue_mask):
+        &#34;&#34;&#34;
+        :param tissue_mask:
+        &#34;&#34;&#34;
+        assert tissue_mask.shape[0] == self.rows and \
+               tissue_mask.shape[1] == self.cols, &#34;Mask shape error.&#34;
+        self.tissue_mask = tissue_mask
+
+    def setTrackPoints(self, track_points):
+        &#34;&#34;&#34;
+        :param track_points: {&#39;r_c&#39;: [x, y]}
+        &#34;&#34;&#34;
+        self.track_points = track_points
+
+    def setJitter(self, jitter_list, confi_mask=None):
+        &#34;&#34;&#34;
+        :param jitter_list: [h_j, v_j]
+        &#34;&#34;&#34;
+        h_j, v_j = jitter_list
+        assert h_j.shape == v_j.shape, &#34;Jitter ndim is diffient.&#34;
+        h_j[np.where(h_j == -self.__init_value)] = self.__init_value
+        v_j[np.where(v_j == -self.__init_value)] = self.__init_value
+        self.horizontal_jitter = h_j
+        self.vertical_jitter = v_j
+        self.confi_mask = confi_mask
+
+        self.rows, self.cols = self.horizontal_jitter.shape[:2]
+
+    def getRoiImages(self, k=5, threold=None):
+        &#34;&#34;&#34;
+        :param k: 取前K对
+        :param threold: track点阈值
+        返回局部拼接好的图像对
+        &#34;&#34;&#34;
+        all_dst_list = list()
+        for row in range(self.rows):
+            for col in range(self.cols):
+                if self.tissue_mask[row, col] == 0:
+                    dst_list = self.__get_jitter(row, col)
+                    all_dst_list.extend(dst_list)
+
+        all_dst_list = sorted(all_dst_list, key=self.__get_score)[::-1]
+
+        images_pair = dict()
+        for dst_list in all_dst_list[:k]:
+            src = dst_list[0]
+            src_image = tif.imread(self.images_path[self.__list2str(src)])
+            _h, _w = src_image.shape[:2]
+            h_coord = list([[0, 0]])
+            v_coord = list([[0, 0]])
+
+            for dst in dst_list[1:]:
+                dst_image = tif.imread(self.images_path[self.__list2str(dst)])
+                if src[1] &gt; dst[1]:
+                    x, y = self.horizontal_jitter[src[0], src[1]]
+                    h_coord.append([-(_w + x), -y])
+                    h_coord = np.array(h_coord)
+                    h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+                elif src[1] &lt; dst[1]:
+                    x, y = self.horizontal_jitter[dst[0], dst[1]]
+                    h_coord.append([_w + x, y])
+                    h_coord = np.array(h_coord)
+                    h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+                elif src[0] &gt; dst[0]:
+                    x, y = self.vertical_jitter[src[0], src[1]]
+                    v_coord.append([-x, -(_h + y)])
+                    v_coord = np.array(v_coord)
+                    v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+                elif src[0] &lt; dst[0]:
+                    x, y = self.vertical_jitter[dst[0], dst[1]]
+                    v_coord.append([x, _h + y])
+                    v_coord = np.array(v_coord)
+                    v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+
+            name = &#39; &#39;.join([rc_key(i[0], i[1]) for i in dst_list])
+            images_pair[name] = [h_image, v_image]
+        return images_pair
+
+    def __set_image(self, coord, h, w, src, dst):
+        x0 = np.min(coord[:, 0])
+        y0 = np.min(coord[:, 1])
+        x1 = np.max(coord[:, 0])
+        y1 = np.max(coord[:, 1])
+        coord[:, 0] -= x0
+        coord[:, 1] -= y0
+        _w = x1 - x0 + w
+        _h = y1 - y0 + h
+
+        _image = np.zeros([int(_h), int(_w)], src.dtype)
+        for index, image in zip(coord, [src, dst]):
+            x, y = index
+            _image[y: y + h, x: x + w] = image
+
+        return _image
+
+    def __list2str(self, dst):
+        return &#34;_&#34;.join([str(i) for i in dst])
+
+    def __get_score(self, dst_list):
+        points_num = list()
+
+        d0 = &#34;_&#34;.join([str(i) for i in dst_list[0]])
+        d1 = &#34;_&#34;.join([str(i) for i in dst_list[1]])
+        d2 = &#34;_&#34;.join([str(i) for i in dst_list[2]])
+
+        for d in [d0, d1, d2]:
+            if d in self.track_points.keys():
+                points_num.append(len(self.track_points[d]))
+            else:
+                points_num.append(0)
+
+        return np.mean(points_num) + np.mean(points_num) / (np.std(points_num) + 1)
+
+    def __get_jitter(self, row, col):
+        h_list = list()
+        v_list = list()
+        dst_list = list()
+
+        for index in [col, col + 1]:
+            if index &lt; self.cols:
+                if self.horizontal_jitter[row, index, 0] != 999:
+                    if index == col:
+                        if self.tissue_mask[row, index - 1] == 0:
+                            h_list.append([row, index - 1])
+                    else:
+                        if self.tissue_mask[row, index] == 0:
+                            h_list.append([row, index])
+
+        for index in [row, row + 1]:
+            if index &lt; self.rows:
+                if self.vertical_jitter[index, col, 0] != 999:
+                    if index == row:
+                        if self.tissue_mask[index - 1, col] == 0:
+                            v_list.append([index - 1, col])
+                    else:
+                        if self.tissue_mask[index, col] == 0:
+                            v_list.append([index, col])
+
+        for h in h_list:
+            for v in v_list:
+                dst_list.append([[row, col], h, v])
+
+        return dst_list</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker.getRoiImages"><code class="name flex">
+<span>def <span class="ident">getRoiImages</span></span>(<span>self, k=5, threold=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param k: 取前K对
+:param threold: track点阈值
+返回局部拼接好的图像对</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getRoiImages(self, k=5, threold=None):
+    &#34;&#34;&#34;
+    :param k: 取前K对
+    :param threold: track点阈值
+    返回局部拼接好的图像对
+    &#34;&#34;&#34;
+    all_dst_list = list()
+    for row in range(self.rows):
+        for col in range(self.cols):
+            if self.tissue_mask[row, col] == 0:
+                dst_list = self.__get_jitter(row, col)
+                all_dst_list.extend(dst_list)
+
+    all_dst_list = sorted(all_dst_list, key=self.__get_score)[::-1]
+
+    images_pair = dict()
+    for dst_list in all_dst_list[:k]:
+        src = dst_list[0]
+        src_image = tif.imread(self.images_path[self.__list2str(src)])
+        _h, _w = src_image.shape[:2]
+        h_coord = list([[0, 0]])
+        v_coord = list([[0, 0]])
+
+        for dst in dst_list[1:]:
+            dst_image = tif.imread(self.images_path[self.__list2str(dst)])
+            if src[1] &gt; dst[1]:
+                x, y = self.horizontal_jitter[src[0], src[1]]
+                h_coord.append([-(_w + x), -y])
+                h_coord = np.array(h_coord)
+                h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+            elif src[1] &lt; dst[1]:
+                x, y = self.horizontal_jitter[dst[0], dst[1]]
+                h_coord.append([_w + x, y])
+                h_coord = np.array(h_coord)
+                h_image = self.__set_image(h_coord, _h, _w, src_image, dst_image)
+            elif src[0] &gt; dst[0]:
+                x, y = self.vertical_jitter[src[0], src[1]]
+                v_coord.append([-x, -(_h + y)])
+                v_coord = np.array(v_coord)
+                v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+            elif src[0] &lt; dst[0]:
+                x, y = self.vertical_jitter[dst[0], dst[1]]
+                v_coord.append([x, _h + y])
+                v_coord = np.array(v_coord)
+                v_image = self.__set_image(v_coord, _h, _w, src_image, dst_image)
+
+        name = &#39; &#39;.join([rc_key(i[0], i[1]) for i in dst_list])
+        images_pair[name] = [h_image, v_image]
+    return images_pair</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker.setImagesPath"><code class="name flex">
+<span>def <span class="ident">setImagesPath</span></span>(<span>self, images_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param images_path:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setImagesPath(self, images_path):
+    &#34;&#34;&#34;
+    :param images_path:
+    &#34;&#34;&#34;
+    if isinstance(images_path, dict):
+        self.images_path = images_path
+    elif isinstance(images_path, str):
+        self.images_path = imagespath2dict(images_path)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker.setJitter"><code class="name flex">
+<span>def <span class="ident">setJitter</span></span>(<span>self, jitter_list, confi_mask=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param jitter_list: [h_j, v_j]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setJitter(self, jitter_list, confi_mask=None):
+    &#34;&#34;&#34;
+    :param jitter_list: [h_j, v_j]
+    &#34;&#34;&#34;
+    h_j, v_j = jitter_list
+    assert h_j.shape == v_j.shape, &#34;Jitter ndim is diffient.&#34;
+    h_j[np.where(h_j == -self.__init_value)] = self.__init_value
+    v_j[np.where(v_j == -self.__init_value)] = self.__init_value
+    self.horizontal_jitter = h_j
+    self.vertical_jitter = v_j
+    self.confi_mask = confi_mask
+
+    self.rows, self.cols = self.horizontal_jitter.shape[:2]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker.setTissueMask"><code class="name flex">
+<span>def <span class="ident">setTissueMask</span></span>(<span>self, tissue_mask)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param tissue_mask:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setTissueMask(self, tissue_mask):
+    &#34;&#34;&#34;
+    :param tissue_mask:
+    &#34;&#34;&#34;
+    assert tissue_mask.shape[0] == self.rows and \
+           tissue_mask.shape[1] == self.cols, &#34;Mask shape error.&#34;
+    self.tissue_mask = tissue_mask</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.track_roi_picker.TrackROIPicker.setTrackPoints"><code class="name flex">
+<span>def <span class="ident">setTrackPoints</span></span>(<span>self, track_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param track_points: {'r_c': [x, y]}</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setTrackPoints(self, track_points):
+    &#34;&#34;&#34;
+    :param track_points: {&#39;r_c&#39;: [x, y]}
+    &#34;&#34;&#34;
+    self.track_points = track_points</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.contrib" href="index.html">cellbin.contrib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker" href="#cellbin.contrib.track_roi_picker.TrackROIPicker">TrackROIPicker</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker.getRoiImages" href="#cellbin.contrib.track_roi_picker.TrackROIPicker.getRoiImages">getRoiImages</a></code></li>
+<li><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker.setImagesPath" href="#cellbin.contrib.track_roi_picker.TrackROIPicker.setImagesPath">setImagesPath</a></code></li>
+<li><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker.setJitter" href="#cellbin.contrib.track_roi_picker.TrackROIPicker.setJitter">setJitter</a></code></li>
+<li><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker.setTissueMask" href="#cellbin.contrib.track_roi_picker.TrackROIPicker.setTissueMask">setTissueMask</a></code></li>
+<li><code><a title="cellbin.contrib.track_roi_picker.TrackROIPicker.setTrackPoints" href="#cellbin.contrib.track_roi_picker.TrackROIPicker.setTrackPoints">setTrackPoints</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

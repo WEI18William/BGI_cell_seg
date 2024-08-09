@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.contrib.line_detector API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.contrib.line_detector</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+import random
+import copy
+import numpy as np
+from scipy.signal import argrelextrema
+from sklearn.linear_model import LinearRegression
+
+from cellbin.contrib import Line
+
+model = LinearRegression()
+
+
+def random_color():
+    b = random.randint(0, 256)
+    g = random.randint(0, 256)
+    r = random.randint(0, 256)
+    return b, g, r
+
+
+class TrackLineDetector(object):
+    def __init__(self):
+        self.grid = 100
+
+    def generate(self, arr):
+        &#34;&#34;&#34;
+        This algorithm will not work the angle of image is more than 8 degree
+
+        Args:
+            arr (): 2D array in uint 8 or uint 16
+
+        Returns:
+            h_lines: horizontal line
+            v_lines: vertical line
+
+        &#34;&#34;&#34;
+        h_lines, v_lines = [], []
+
+        # horizontal direction
+        horizontal_candidate_pts = self.create_candidate_pts(arr, &#39;x&#39;)
+        h_angle = self.integer_angle(horizontal_candidate_pts, &#39;x&#39;)
+        if h_angle != -1000:
+            horizontal_pts = self.select_pts_by_integer_angle(horizontal_candidate_pts, h_angle, tolerance=1)
+            if len(horizontal_pts) != 0:
+                horizontal_color_pts = self.classify_points(horizontal_pts, h_angle, tolerance=1)
+                h_lines = self.points_to_line(horizontal_color_pts, tolerance=3)
+
+        # vertical direction
+        vertical_candidate_pts = self.create_candidate_pts(arr, &#39;y&#39;)
+        v_angle = self.integer_angle(vertical_candidate_pts, &#39;y&#39;)
+        if v_angle != -1000:
+            vertical_pts = self.select_pts_by_integer_angle(vertical_candidate_pts, v_angle, tolerance=1)
+            if len(vertical_pts) != 0:
+                vertical_color_pts = self.classify_points(vertical_pts, v_angle, tolerance=1)
+                v_lines = self.points_to_line(vertical_color_pts, tolerance=3)
+
+        return h_lines, v_lines
+
+    @staticmethod
+    def points_to_line(dct, tolerance=2):
+        lines = list()
+        for k, v in dct.items():
+            # 少于两个的拟合不成直线
+            if len(v) &gt; tolerance:
+                tmp = np.array(v)
+                model.fit(tmp[:, 0].reshape(-1, 1), tmp[:, 1])  # TODO: 90度直线拟合会有问题, need to be fixed
+                line = Line()
+                # 一个点，加上coef拟合直线
+                line.init_by_point_k(v[0], model.coef_[0])
+                lines.append(line)
+        return lines
+
+    def classify_points(self, candidate_pts, base_angle, tolerance=2):
+        pts = copy.copy(candidate_pts)
+        ind = 0
+        dct = dict()
+        while (len(pts) &gt; 1):
+            pts_, index = self.angle_line(base_angle, pts, tolerance)
+            # 将找到的同一直线的点放入dct中
+            dct[ind] = pts_
+            # 根据angle_line中返回的index删除已找到的点
+            pts = np.delete(np.array(pts), index, axis=0).tolist()
+            ind += 1
+        # 返回存有点的分类的dct
+        return dct
+
+    @staticmethod
+    def angle_line(angle, points, tolerance=2):
+        # 找跟points[0]在一条直线的点
+        count = len(points)
+        orignal_point = points[0]
+        points_ = [points[0]]
+        index = [0]
+        for i in range(1, count):
+            p = points[i]
+            line = Line()
+            line.init_by_point_pair(orignal_point, p)
+            diff = abs(line.rotation() - angle)
+            diff = (diff &gt; 90) and (180 - diff) or diff
+            if diff &lt; tolerance:
+                points_.append(p)
+                index.append(i)
+        # 返回这条线的所有点，以及对应的index号，index用于之后删除array中已找到的点
+        return points_, index
+
+    @staticmethod
+    def select_pts_by_integer_angle(candidate_pts, base_angle, tolerance=2):
+        # 过滤
+        x_count = len(candidate_pts)
+        # pts用来储存该方向的所有点
+        pts = list()
+        for i in range(0, x_count - 1):
+            if len(candidate_pts[i]) &gt; 100:
+                continue
+            # 遍历所有的采样区域
+            pts_start = candidate_pts[i]
+            pts_end = candidate_pts[i + 1]
+            # 遍历pts_start中的所有的点
+            for p0 in pts_start:
+                # 遍历pts_end中所有点，计算p0与各点的距离
+                d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+                # 取绝对值
+                d_ = np.abs(d)
+                # 找到最短的距离的index
+                ind = np.where(d_ == np.min(d_))[0]
+                line = Line()
+                # 计算角度
+                line.init_by_point_pair(p0, pts_end[ind[0]])
+                # 如果角度小于tol，
+                if abs(line.rotation() - base_angle) &lt;= tolerance: pts.append(p0)
+        return pts
+
+    @staticmethod
+    def integer_angle(pts, derection=&#39;x&#39;):
+        angle = -1000
+        x_count = len(pts)
+        # angles将保存该方向上所有采样区域的角度
+        angles = list()
+        for i in range(0, x_count - 1):
+            if len(pts[i]) &gt; 100:
+                continue
+            # 相邻的两个采样区域
+            pts_start = pts[i]
+            pts_end = pts[i + 1]
+            for p0 in pts_start:
+                # pts_start中的一个点p0对应pts_end的所有点的euclidean distance
+                d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+                # 取绝对值
+                d_ = np.abs(d)
+                # 找到pts_start的该点的最小距离的index
+                ind = np.where(d_ == np.min(d_))[0]
+                line = Line()
+                # 将p0和对应的最小距离的点输入到line.init_by_point_pair
+                # 可以得到线的coef和bias
+                line.init_by_point_pair(p0, pts_end[ind[0]])
+                # rotation方法运用上面得到的coef计算该直线的角度
+                # 并将角度记录
+                angles.append(round(line.rotation()))
+        if len(angles) != 0:
+            x = np.array(angles) - np.min(angles)
+            # 得到该方向上的角度（出现最多的角度）
+            angle = np.argmax(np.bincount(x)) + np.min(angles)
+        return angle
+
+    def create_candidate_pts(self, mat, derection=&#39;x&#39;):
+        pts = list()
+        h, w = mat.shape
+        # direction x -&gt; h
+        # direction y -&gt; w
+        counter = (derection == &#39;x&#39; and h or w)
+        # self.grid -&gt; defined by user, 采样间隔
+        for i in range(0, counter, self.grid):
+            # i -&gt; 从0到h或者w
+            # 设置t为当前采样间隔的x或者y
+            t = i + self.grid / 2
+            if derection == &#39;x&#39;:
+                # 区域 -&gt; i到i+采样间隔的区域
+                region_mat = mat[i: i + self.grid, :w]
+                # 如果区域不是取样规定长度，继续
+                if region_mat.shape[0] != self.grid:
+                    continue
+                # 对y方向进行像素求和，并除以规定的采样间隔，可以看做成normalization
+                line = np.sum(region_mat, axis=0) / self.grid
+            else:
+                # 这里的处理与上述基本一样，只是这里是方向y的情况
+                region_mat = mat[:h, i: i + self.grid]
+                if region_mat.shape[1] != self.grid:
+                    continue
+                line = np.sum(region_mat, axis=1) / self.grid
+            # 找到该条线上的极值（最小值）
+            p = argrelextrema(line, np.less_equal, order=100)
+            # print(p[0].shape)
+            if derection == &#39;x&#39;:
+                pt = [[p, t] for p in p[0]]
+            else:
+                pt = [[t, p] for p in p[0]]
+            # pts中保存的为该方向的所有点
+            pts.append(pt)
+        return pts
+
+
+def main():
+    import cv2
+    image_path = r&#34;D:\Data\tmp\Y00035MD\Y00035MD\Y00035MD_0000_0004_2023-01-30_15-50-41-868.tif&#34;
+    arr = cv2.imread(image_path, -1)
+    ftl = TrackLineDetector()
+    result = ftl.generate(arr)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="cellbin.contrib.line_detector.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    import cv2
+    image_path = r&#34;D:\Data\tmp\Y00035MD\Y00035MD\Y00035MD_0000_0004_2023-01-30_15-50-41-868.tif&#34;
+    arr = cv2.imread(image_path, -1)
+    ftl = TrackLineDetector()
+    result = ftl.generate(arr)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.random_color"><code class="name flex">
+<span>def <span class="ident">random_color</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_color():
+    b = random.randint(0, 256)
+    g = random.randint(0, 256)
+    r = random.randint(0, 256)
+    return b, g, r</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector"><code class="flex name class">
+<span>class <span class="ident">TrackLineDetector</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TrackLineDetector(object):
+    def __init__(self):
+        self.grid = 100
+
+    def generate(self, arr):
+        &#34;&#34;&#34;
+        This algorithm will not work the angle of image is more than 8 degree
+
+        Args:
+            arr (): 2D array in uint 8 or uint 16
+
+        Returns:
+            h_lines: horizontal line
+            v_lines: vertical line
+
+        &#34;&#34;&#34;
+        h_lines, v_lines = [], []
+
+        # horizontal direction
+        horizontal_candidate_pts = self.create_candidate_pts(arr, &#39;x&#39;)
+        h_angle = self.integer_angle(horizontal_candidate_pts, &#39;x&#39;)
+        if h_angle != -1000:
+            horizontal_pts = self.select_pts_by_integer_angle(horizontal_candidate_pts, h_angle, tolerance=1)
+            if len(horizontal_pts) != 0:
+                horizontal_color_pts = self.classify_points(horizontal_pts, h_angle, tolerance=1)
+                h_lines = self.points_to_line(horizontal_color_pts, tolerance=3)
+
+        # vertical direction
+        vertical_candidate_pts = self.create_candidate_pts(arr, &#39;y&#39;)
+        v_angle = self.integer_angle(vertical_candidate_pts, &#39;y&#39;)
+        if v_angle != -1000:
+            vertical_pts = self.select_pts_by_integer_angle(vertical_candidate_pts, v_angle, tolerance=1)
+            if len(vertical_pts) != 0:
+                vertical_color_pts = self.classify_points(vertical_pts, v_angle, tolerance=1)
+                v_lines = self.points_to_line(vertical_color_pts, tolerance=3)
+
+        return h_lines, v_lines
+
+    @staticmethod
+    def points_to_line(dct, tolerance=2):
+        lines = list()
+        for k, v in dct.items():
+            # 少于两个的拟合不成直线
+            if len(v) &gt; tolerance:
+                tmp = np.array(v)
+                model.fit(tmp[:, 0].reshape(-1, 1), tmp[:, 1])  # TODO: 90度直线拟合会有问题, need to be fixed
+                line = Line()
+                # 一个点，加上coef拟合直线
+                line.init_by_point_k(v[0], model.coef_[0])
+                lines.append(line)
+        return lines
+
+    def classify_points(self, candidate_pts, base_angle, tolerance=2):
+        pts = copy.copy(candidate_pts)
+        ind = 0
+        dct = dict()
+        while (len(pts) &gt; 1):
+            pts_, index = self.angle_line(base_angle, pts, tolerance)
+            # 将找到的同一直线的点放入dct中
+            dct[ind] = pts_
+            # 根据angle_line中返回的index删除已找到的点
+            pts = np.delete(np.array(pts), index, axis=0).tolist()
+            ind += 1
+        # 返回存有点的分类的dct
+        return dct
+
+    @staticmethod
+    def angle_line(angle, points, tolerance=2):
+        # 找跟points[0]在一条直线的点
+        count = len(points)
+        orignal_point = points[0]
+        points_ = [points[0]]
+        index = [0]
+        for i in range(1, count):
+            p = points[i]
+            line = Line()
+            line.init_by_point_pair(orignal_point, p)
+            diff = abs(line.rotation() - angle)
+            diff = (diff &gt; 90) and (180 - diff) or diff
+            if diff &lt; tolerance:
+                points_.append(p)
+                index.append(i)
+        # 返回这条线的所有点，以及对应的index号，index用于之后删除array中已找到的点
+        return points_, index
+
+    @staticmethod
+    def select_pts_by_integer_angle(candidate_pts, base_angle, tolerance=2):
+        # 过滤
+        x_count = len(candidate_pts)
+        # pts用来储存该方向的所有点
+        pts = list()
+        for i in range(0, x_count - 1):
+            if len(candidate_pts[i]) &gt; 100:
+                continue
+            # 遍历所有的采样区域
+            pts_start = candidate_pts[i]
+            pts_end = candidate_pts[i + 1]
+            # 遍历pts_start中的所有的点
+            for p0 in pts_start:
+                # 遍历pts_end中所有点，计算p0与各点的距离
+                d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+                # 取绝对值
+                d_ = np.abs(d)
+                # 找到最短的距离的index
+                ind = np.where(d_ == np.min(d_))[0]
+                line = Line()
+                # 计算角度
+                line.init_by_point_pair(p0, pts_end[ind[0]])
+                # 如果角度小于tol，
+                if abs(line.rotation() - base_angle) &lt;= tolerance: pts.append(p0)
+        return pts
+
+    @staticmethod
+    def integer_angle(pts, derection=&#39;x&#39;):
+        angle = -1000
+        x_count = len(pts)
+        # angles将保存该方向上所有采样区域的角度
+        angles = list()
+        for i in range(0, x_count - 1):
+            if len(pts[i]) &gt; 100:
+                continue
+            # 相邻的两个采样区域
+            pts_start = pts[i]
+            pts_end = pts[i + 1]
+            for p0 in pts_start:
+                # pts_start中的一个点p0对应pts_end的所有点的euclidean distance
+                d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+                # 取绝对值
+                d_ = np.abs(d)
+                # 找到pts_start的该点的最小距离的index
+                ind = np.where(d_ == np.min(d_))[0]
+                line = Line()
+                # 将p0和对应的最小距离的点输入到line.init_by_point_pair
+                # 可以得到线的coef和bias
+                line.init_by_point_pair(p0, pts_end[ind[0]])
+                # rotation方法运用上面得到的coef计算该直线的角度
+                # 并将角度记录
+                angles.append(round(line.rotation()))
+        if len(angles) != 0:
+            x = np.array(angles) - np.min(angles)
+            # 得到该方向上的角度（出现最多的角度）
+            angle = np.argmax(np.bincount(x)) + np.min(angles)
+        return angle
+
+    def create_candidate_pts(self, mat, derection=&#39;x&#39;):
+        pts = list()
+        h, w = mat.shape
+        # direction x -&gt; h
+        # direction y -&gt; w
+        counter = (derection == &#39;x&#39; and h or w)
+        # self.grid -&gt; defined by user, 采样间隔
+        for i in range(0, counter, self.grid):
+            # i -&gt; 从0到h或者w
+            # 设置t为当前采样间隔的x或者y
+            t = i + self.grid / 2
+            if derection == &#39;x&#39;:
+                # 区域 -&gt; i到i+采样间隔的区域
+                region_mat = mat[i: i + self.grid, :w]
+                # 如果区域不是取样规定长度，继续
+                if region_mat.shape[0] != self.grid:
+                    continue
+                # 对y方向进行像素求和，并除以规定的采样间隔，可以看做成normalization
+                line = np.sum(region_mat, axis=0) / self.grid
+            else:
+                # 这里的处理与上述基本一样，只是这里是方向y的情况
+                region_mat = mat[:h, i: i + self.grid]
+                if region_mat.shape[1] != self.grid:
+                    continue
+                line = np.sum(region_mat, axis=1) / self.grid
+            # 找到该条线上的极值（最小值）
+            p = argrelextrema(line, np.less_equal, order=100)
+            # print(p[0].shape)
+            if derection == &#39;x&#39;:
+                pt = [[p, t] for p in p[0]]
+            else:
+                pt = [[t, p] for p in p[0]]
+            # pts中保存的为该方向的所有点
+            pts.append(pt)
+        return pts</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.angle_line"><code class="name flex">
+<span>def <span class="ident">angle_line</span></span>(<span>angle, points, tolerance=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def angle_line(angle, points, tolerance=2):
+    # 找跟points[0]在一条直线的点
+    count = len(points)
+    orignal_point = points[0]
+    points_ = [points[0]]
+    index = [0]
+    for i in range(1, count):
+        p = points[i]
+        line = Line()
+        line.init_by_point_pair(orignal_point, p)
+        diff = abs(line.rotation() - angle)
+        diff = (diff &gt; 90) and (180 - diff) or diff
+        if diff &lt; tolerance:
+            points_.append(p)
+            index.append(i)
+    # 返回这条线的所有点，以及对应的index号，index用于之后删除array中已找到的点
+    return points_, index</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.integer_angle"><code class="name flex">
+<span>def <span class="ident">integer_angle</span></span>(<span>pts, derection='x')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def integer_angle(pts, derection=&#39;x&#39;):
+    angle = -1000
+    x_count = len(pts)
+    # angles将保存该方向上所有采样区域的角度
+    angles = list()
+    for i in range(0, x_count - 1):
+        if len(pts[i]) &gt; 100:
+            continue
+        # 相邻的两个采样区域
+        pts_start = pts[i]
+        pts_end = pts[i + 1]
+        for p0 in pts_start:
+            # pts_start中的一个点p0对应pts_end的所有点的euclidean distance
+            d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+            # 取绝对值
+            d_ = np.abs(d)
+            # 找到pts_start的该点的最小距离的index
+            ind = np.where(d_ == np.min(d_))[0]
+            line = Line()
+            # 将p0和对应的最小距离的点输入到line.init_by_point_pair
+            # 可以得到线的coef和bias
+            line.init_by_point_pair(p0, pts_end[ind[0]])
+            # rotation方法运用上面得到的coef计算该直线的角度
+            # 并将角度记录
+            angles.append(round(line.rotation()))
+    if len(angles) != 0:
+        x = np.array(angles) - np.min(angles)
+        # 得到该方向上的角度（出现最多的角度）
+        angle = np.argmax(np.bincount(x)) + np.min(angles)
+    return angle</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.points_to_line"><code class="name flex">
+<span>def <span class="ident">points_to_line</span></span>(<span>dct, tolerance=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def points_to_line(dct, tolerance=2):
+    lines = list()
+    for k, v in dct.items():
+        # 少于两个的拟合不成直线
+        if len(v) &gt; tolerance:
+            tmp = np.array(v)
+            model.fit(tmp[:, 0].reshape(-1, 1), tmp[:, 1])  # TODO: 90度直线拟合会有问题, need to be fixed
+            line = Line()
+            # 一个点，加上coef拟合直线
+            line.init_by_point_k(v[0], model.coef_[0])
+            lines.append(line)
+    return lines</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.select_pts_by_integer_angle"><code class="name flex">
+<span>def <span class="ident">select_pts_by_integer_angle</span></span>(<span>candidate_pts, base_angle, tolerance=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def select_pts_by_integer_angle(candidate_pts, base_angle, tolerance=2):
+    # 过滤
+    x_count = len(candidate_pts)
+    # pts用来储存该方向的所有点
+    pts = list()
+    for i in range(0, x_count - 1):
+        if len(candidate_pts[i]) &gt; 100:
+            continue
+        # 遍历所有的采样区域
+        pts_start = candidate_pts[i]
+        pts_end = candidate_pts[i + 1]
+        # 遍历pts_start中的所有的点
+        for p0 in pts_start:
+            # 遍历pts_end中所有点，计算p0与各点的距离
+            d = [math.sqrt(pow(p0[0] - p1[0], 2) + pow(p0[1] - p1[1], 2)) for p1 in pts_end]
+            # 取绝对值
+            d_ = np.abs(d)
+            # 找到最短的距离的index
+            ind = np.where(d_ == np.min(d_))[0]
+            line = Line()
+            # 计算角度
+            line.init_by_point_pair(p0, pts_end[ind[0]])
+            # 如果角度小于tol，
+            if abs(line.rotation() - base_angle) &lt;= tolerance: pts.append(p0)
+    return pts</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.classify_points"><code class="name flex">
+<span>def <span class="ident">classify_points</span></span>(<span>self, candidate_pts, base_angle, tolerance=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def classify_points(self, candidate_pts, base_angle, tolerance=2):
+    pts = copy.copy(candidate_pts)
+    ind = 0
+    dct = dict()
+    while (len(pts) &gt; 1):
+        pts_, index = self.angle_line(base_angle, pts, tolerance)
+        # 将找到的同一直线的点放入dct中
+        dct[ind] = pts_
+        # 根据angle_line中返回的index删除已找到的点
+        pts = np.delete(np.array(pts), index, axis=0).tolist()
+        ind += 1
+    # 返回存有点的分类的dct
+    return dct</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.create_candidate_pts"><code class="name flex">
+<span>def <span class="ident">create_candidate_pts</span></span>(<span>self, mat, derection='x')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_candidate_pts(self, mat, derection=&#39;x&#39;):
+    pts = list()
+    h, w = mat.shape
+    # direction x -&gt; h
+    # direction y -&gt; w
+    counter = (derection == &#39;x&#39; and h or w)
+    # self.grid -&gt; defined by user, 采样间隔
+    for i in range(0, counter, self.grid):
+        # i -&gt; 从0到h或者w
+        # 设置t为当前采样间隔的x或者y
+        t = i + self.grid / 2
+        if derection == &#39;x&#39;:
+            # 区域 -&gt; i到i+采样间隔的区域
+            region_mat = mat[i: i + self.grid, :w]
+            # 如果区域不是取样规定长度，继续
+            if region_mat.shape[0] != self.grid:
+                continue
+            # 对y方向进行像素求和，并除以规定的采样间隔，可以看做成normalization
+            line = np.sum(region_mat, axis=0) / self.grid
+        else:
+            # 这里的处理与上述基本一样，只是这里是方向y的情况
+            region_mat = mat[:h, i: i + self.grid]
+            if region_mat.shape[1] != self.grid:
+                continue
+            line = np.sum(region_mat, axis=1) / self.grid
+        # 找到该条线上的极值（最小值）
+        p = argrelextrema(line, np.less_equal, order=100)
+        # print(p[0].shape)
+        if derection == &#39;x&#39;:
+            pt = [[p, t] for p in p[0]]
+        else:
+            pt = [[t, p] for p in p[0]]
+        # pts中保存的为该方向的所有点
+        pts.append(pt)
+    return pts</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.line_detector.TrackLineDetector.generate"><code class="name flex">
+<span>def <span class="ident">generate</span></span>(<span>self, arr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This algorithm will not work the angle of image is more than 8 degree</p>
+<h2 id="args">Args</h2>
+<p>arr (): 2D array in uint 8 or uint 16</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>h_lines</code></dt>
+<dd>horizontal line</dd>
+<dt><code>v_lines</code></dt>
+<dd>vertical line</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate(self, arr):
+    &#34;&#34;&#34;
+    This algorithm will not work the angle of image is more than 8 degree
+
+    Args:
+        arr (): 2D array in uint 8 or uint 16
+
+    Returns:
+        h_lines: horizontal line
+        v_lines: vertical line
+
+    &#34;&#34;&#34;
+    h_lines, v_lines = [], []
+
+    # horizontal direction
+    horizontal_candidate_pts = self.create_candidate_pts(arr, &#39;x&#39;)
+    h_angle = self.integer_angle(horizontal_candidate_pts, &#39;x&#39;)
+    if h_angle != -1000:
+        horizontal_pts = self.select_pts_by_integer_angle(horizontal_candidate_pts, h_angle, tolerance=1)
+        if len(horizontal_pts) != 0:
+            horizontal_color_pts = self.classify_points(horizontal_pts, h_angle, tolerance=1)
+            h_lines = self.points_to_line(horizontal_color_pts, tolerance=3)
+
+    # vertical direction
+    vertical_candidate_pts = self.create_candidate_pts(arr, &#39;y&#39;)
+    v_angle = self.integer_angle(vertical_candidate_pts, &#39;y&#39;)
+    if v_angle != -1000:
+        vertical_pts = self.select_pts_by_integer_angle(vertical_candidate_pts, v_angle, tolerance=1)
+        if len(vertical_pts) != 0:
+            vertical_color_pts = self.classify_points(vertical_pts, v_angle, tolerance=1)
+            v_lines = self.points_to_line(vertical_color_pts, tolerance=3)
+
+    return h_lines, v_lines</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.contrib" href="index.html">cellbin.contrib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="cellbin.contrib.line_detector.main" href="#cellbin.contrib.line_detector.main">main</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.random_color" href="#cellbin.contrib.line_detector.random_color">random_color</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.contrib.line_detector.TrackLineDetector" href="#cellbin.contrib.line_detector.TrackLineDetector">TrackLineDetector</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.angle_line" href="#cellbin.contrib.line_detector.TrackLineDetector.angle_line">angle_line</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.classify_points" href="#cellbin.contrib.line_detector.TrackLineDetector.classify_points">classify_points</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.create_candidate_pts" href="#cellbin.contrib.line_detector.TrackLineDetector.create_candidate_pts">create_candidate_pts</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.generate" href="#cellbin.contrib.line_detector.TrackLineDetector.generate">generate</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.integer_angle" href="#cellbin.contrib.line_detector.TrackLineDetector.integer_angle">integer_angle</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.points_to_line" href="#cellbin.contrib.line_detector.TrackLineDetector.points_to_line">points_to_line</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector.TrackLineDetector.select_pts_by_integer_angle" href="#cellbin.contrib.line_detector.TrackLineDetector.select_pts_by_integer_angle">select_pts_by_integer_angle</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.contrib.template_reference_v2 API documentation</title>
+<meta name="description" content="reference template v2 for image, must need QC data.
+create by lizepeng, 2023/4/13 14:09" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.contrib.template_reference_v2</code></h1>
+</header>
+<section id="section-intro">
+<p>reference template v2 for image, must need QC data.
+create by lizepeng, 2023/4/13 14:09</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">###################################################
+&#34;&#34;&#34;reference template v2 for image, must need QC data.
+create by lizepeng, 2023/4/13 14:09
+&#34;&#34;&#34;
+####################################################
+
+import numpy as np
+
+from sklearn.linear_model import LinearRegression
+from cellbin.contrib import TemplateReference
+from cellbin.utils import clog
+
+
+class TemplateReferenceV2(TemplateReference):
+    &#34;&#34;&#34;
+    模板推导算法V2
+    分别通过点来拟合大致角度和尺度
+    再通过初步校准得到局部区域的精确角度尺度值
+    最终全局推导模板
+    &#34;&#34;&#34;
+
+    MINIMIZE_METHOD = [&#39;nelder-mead&#39;, &#39;bfgs&#39;, &#39;slsqp&#39;]
+
+    def __init__(self, ):
+        super(TemplateReferenceV2, self).__init__()
+
+        self.scale_range = 0.7
+        self.rotate_range = 35
+        self.search_thresh = 500
+        self.rotate_fov_min = 7
+
+        self.set_scale_flag = False
+        self.set_rotate_flag = False
+
+        # 2023/08/28新增 用于开发对接track线模板FOV信息
+        self.fov_index = None
+        self.fov_best_point = None
+
+    def get_fov_info(self, ):
+        return self.fov_index, self.fov_best_point
+
+    def set_threshold_v2(self,
+                         scale_range=None,
+                         rotate_range=None,
+                         search_thresh=None,
+                         rotate_fov_min=None):
+        &#34;&#34;&#34;
+        模板推导V2阈值
+        &#34;&#34;&#34;
+        if scale_range is not None:
+            self.scale_range = scale_range
+        if rotate_range is not None:
+            self.rotate_range = rotate_range
+        if search_thresh is not None:
+            self.search_thresh = search_thresh
+        if rotate_fov_min is not None:
+            self.rotate_fov_min = rotate_fov_min
+
+    def set_scale(self, scale_x: float, scale_y: float):
+        self.scale_x = self._to_digit(scale_x)
+        self.scale_y = self._to_digit(scale_y)
+        assert self.scale_x is not None and self.scale_y is not None, &#34;Input is not a number.&#34;
+        self.set_scale_flag = True
+
+    def set_rotate(self, r: float):
+        self.rotation = self._to_digit(r)
+        assert self.rotation is not None, &#34;Input is not a number.&#34;
+        self.set_rotate_flag = True
+
+    def set_qc_points(self, pts):
+        &#34;&#34;&#34;
+        pts: {index: [x, y, ind_x, ind_y], ...}
+        &#34;&#34;&#34;
+        if self.fov_loc_array is None:
+            print(&#34;Please init global location.&#34;)
+            return
+
+        assert isinstance(pts, dict), &#34;QC Points is error.&#34;
+        for ind in pts.keys():
+            points = np.array(pts[ind])
+            points[:, :2] = np.round(points[:, :2], 2)
+            self.qc_pts[ind] = points
+
+    def _template_correct(self, qc_pts, n=5):
+        &#34;&#34;&#34;
+        Args:
+            qc_pts: 已按照点数排序的点集 max-&gt;min
+            n: track角度遍历搜索所需FOV数量
+        &#34;&#34;&#34;
+        rotate_list = list()
+        point_list = list()
+        best_point = None
+        index = 0
+
+        #####角度搜索
+        if not self.set_rotate_flag:
+            for pts in qc_pts[:n]:
+                target_points = pts[1]
+                rotate = self._rotate_search(target_points, self.rotate_range)
+                rotate_list.append(rotate)
+            self.rotation = max(rotate_list, key=rotate_list.count)
+            index = rotate_list.index(self.rotation)
+
+        #####尺度搜索
+        if not self.set_scale_flag:
+            scale, best_point = self._scale_search(qc_pts[index][1], self.scale_range)
+            self.scale_x = self.scale_y = scale
+        else:
+            _, best_point = self._index_search(qc_pts[index][1])
+
+        return index, best_point
+
+    def _rotate_search(self, target_points, rotate_range=15):
+        &#34;&#34;&#34;
+        角度搜索
+        遍历角度 通过求得横向匹配点对 拟合直线得到的最小误差距离
+        再和拟合直线的角度与当前角度相减 最小值即为大致角度
+
+        Args:
+            target_points:
+            rotate_range: -15 ~ 15
+        Return:
+            rotate:
+        &#34;&#34;&#34;
+
+        rotate = None
+        rotate_min = np.Inf
+        center_point = self._center_point_search(target_points)
+        dis_list = list()
+        rotate_dif_list = list()
+        for _rotate in range(-rotate_range, rotate_range):
+            line_points_x = self._cross_line_points(center_point, self.scale_x, _rotate, self.chip_no[0])
+            src_points_x, _ = self.pair_to_template(line_points_x, target_points, self.search_thresh)
+            src_points_x = np.unique(src_points_x, axis=0)
+            line_model = LinearRegression()
+            _x = src_points_x[:, 0].reshape(-1, 1)
+            _y = src_points_x[:, 1].reshape(-1, 1)
+
+            line_model.fit(_x, _y)
+            y_predict = line_model.predict(_x)
+            y_dis = np.sum((y_predict - _y) ** 2)
+            _k = line_model.coef_[0][0]
+            rotate_dif = np.abs(np.degrees(np.arctan(_k)) - _rotate)
+            rotate_dif_list.append(rotate_dif)
+            dis_list.append(y_dis)
+
+        indexs = [i for i, x in enumerate(dis_list) if x == np.min(dis_list)]
+        min_rotate_dif = np.array(rotate_dif_list)[indexs].min()
+        index = rotate_dif_list.index(min_rotate_dif)
+        return range(-rotate_range, rotate_range)[index]
+
+    def _scale_search(self, target_points, scale_range=0.3):
+        &#34;&#34;&#34;
+        尺度搜索
+        Args:
+            target_points:
+            scale_range: 1 - scale_range ~ 1 + scale_range
+        Return:
+            scale:
+            best_point:
+        &#34;&#34;&#34;
+        scale = None
+        distance = np.Inf
+        scale_list = [i / 10 for i in range(int(10 - scale_range * 10), int(10 + scale_range * 10 + 1))]
+        best_point = None
+        for _scale in scale_list:
+            self.scale_x = self.scale_y = _scale
+            _distance, _best_center_point = self._index_search(target_points)
+            if _distance &lt; distance:
+                distance = _distance
+                scale = self.scale_x
+                best_point = _best_center_point
+
+        return scale, best_point
+
+    def _index_search(self, target_points, center_point=None):
+        &#34;&#34;&#34;
+        Args:
+            target_points: 单个FOV的点集
+        Return:
+            best_center_point: FOV中心点的坐标及索引
+        &#34;&#34;&#34;
+        best_center_point = list()
+        if center_point is None:
+            center_point = self._center_point_search(target_points)
+        chip_len = len(self.chip_no[0])
+        _distance = np.Inf
+        for index_x in range(chip_len):
+            for index_y in range(chip_len):
+                _center_point = np.concatenate((center_point[:2], [index_x, index_y]))
+                self._point_inference(_center_point, (self._range_thresh, self._range_thresh))
+                distance = self.pair_to_template(target_points, self.template, self.search_thresh, dis=True)
+                _judge = self._valid_scale_judge(target_points)
+                if np.sum(distance) &lt; _distance and _judge:
+                    _distance = np.sum(distance)
+                    best_center_point = _center_point
+
+        return _distance, best_center_point
+
+    def _valid_scale_judge(self, target_points, rate=1.2):
+        &#34;&#34;&#34;
+        搜索尺度时，解决对于小scale尺度匹配距离过小问题
+        &#34;&#34;&#34;
+        point_re, point_qc = self.pair_to_template(target_points, self.template, self.search_thresh)
+
+        x_min = min(np.min(point_re[:, 0]), np.min(point_qc[:, 0]))
+        x_max = max(np.max(point_re[:, 0]), np.max(point_qc[:, 0]))
+        y_min = min(np.min(point_re[:, 1]), np.min(point_qc[:, 1]))
+        y_max = max(np.max(point_re[:, 1]), np.max(point_qc[:, 1]))
+
+        points_count = 0
+
+        for point in self.template:
+            if x_min &lt;= point[0] &lt;= x_max and \
+                y_min &lt;= point[1] &lt;= y_max:
+                points_count += 1
+
+        if points_count / len(target_points) &lt;= rate or \
+                points_count - len(target_points) &lt;= 10: #匹配点圈内点数量不多于1.2倍或不多于10个检点数
+            return True
+
+        return False
+
+    @staticmethod
+    def _gradient_std_search(src_points, dst_points, reci=False):
+        &#34;&#34;&#34;
+        对应点对的梯度标准差
+        &#34;&#34;&#34;
+        k_list = list()
+        for src_point, dst_point in zip(src_points, dst_points):
+            k = (src_point[1] - dst_point[1]) / (src_point[0] - dst_point[0])
+            if reci: k_list.append(1 / k)
+            else: k_list.append(k)
+        return np.std(k_list)
+
+    @staticmethod
+    def _center_point_search(target_points):
+        &#34;&#34;&#34;
+        中心点匹配
+        &#34;&#34;&#34;
+        target_points = np.array(target_points)
+        x_mean = np.mean(target_points[:, 0])
+        y_mean = np.mean(target_points[:, 1])
+        return sorted(target_points, key=lambda x: ((x[0] - x_mean) ** 2) + (x[1] - y_mean) ** 2)[0]
+
+    def _cross_line_points(self, center_point, scale, rotate, chip):
+        &#34;&#34;&#34;
+        中心点出发的十字线点集
+        &#34;&#34;&#34;
+        points = list()
+        temp = center_point
+
+        ind = 0
+        while 0 &lt; temp[0] &lt; self._range_thresh and 0 &lt; temp[1] &lt; self._range_thresh:
+            ind = int(ind % len(chip))
+            _x = (chip[ind] * scale) * np.cos(np.radians(rotate))
+            _y = (chip[ind] * scale) * np.sin(np.radians(rotate))
+            temp = [temp[0] + _x, temp[1] + _y]
+            points.append(temp)
+            ind += 1
+
+        ind = -1
+        temp = center_point
+        while 0 &lt; temp[0] &lt; self._range_thresh and 0 &lt; temp[1] &lt; self._range_thresh:
+            ind = int(ind % len(chip))
+            _x = (chip[ind] * scale) * np.cos(np.radians(rotate))
+            _y = (chip[ind] * scale) * np.sin(np.radians(rotate))
+            temp = [temp[0] - _x, temp[1] - _y]
+            points.append(temp)
+            ind -= 1
+
+        return points
+
+    def reference_template_v2(self, method_threshold=0.1):
+        &#34;&#34;&#34;模板推导算法V2&#34;&#34;&#34;
+        self._check_parm()
+        self._qc_points_to_gloabal(all_points=True)
+        if len(self.qc_pts) == 0:
+            self.flag_skip_reference = True
+            clog.info(&#34;QC track points is None, quit template reference.&#34;)
+            return
+        qc_pts = sorted(self.qc_pts.items(), key=lambda x: x[1].shape[0], reverse=True)
+        index, best_point = self._template_correct(qc_pts, self.rotate_fov_min)
+        self.fov_index = qc_pts[index][0]
+
+        if len(best_point) == 0:
+            clog.info(&#34;Reference template failed.&#34;)
+            return
+
+        correct_scale_x = self.scale_x
+        correct_scale_y = self.scale_y
+        correct_rotate = self.rotation
+
+        for method in self.MINIMIZE_METHOD:
+            self.set_minimize_method(method=method)
+            self.first_template_correct(target_points=qc_pts[index][1],
+                                        index=qc_pts[index][0],
+                                        center_points=best_point)
+
+            self.fov_best_point = self.template
+
+            clog.info(f&#34;Reference template use method {method}.&#34;)
+            self.reference_template(&#39;multi&#39;)
+
+            valid_area, _, _, _, re_conf = self.get_template_eval()
+            if valid_area &gt; method_threshold or re_conf &gt; method_threshold:
+                break
+            else:
+                self.scale_x = correct_scale_x
+                self.scale_y = correct_scale_y
+                self.rotation = correct_rotate
+                clog.info(&#34;Reference template method change and try again.&#34;)
+
+    @staticmethod
+    def pair_to_template(temp_qc, temp_re, threshold=10, dis=False):
+        &#34;&#34;&#34;
+        one point of temp0 map to only one point of temp1
+        Args:
+            dis: 距离测量
+        &#34;&#34;&#34;
+        import scipy.spatial as spt
+
+        temp_src = np.array(temp_re)[:, :2]
+        temp_dst = np.array(temp_qc)[:, :2]
+        tree = spt.cKDTree(data=temp_src)
+        distance, index = tree.query(temp_dst, k=1)
+
+        if isinstance(threshold, int):
+            thr_index = index[distance &lt; threshold]
+            points_qc = temp_dst[distance &lt; threshold]
+        elif isinstance(threshold, list):
+            threshold1, threshold2 = threshold
+            thr_index = index[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+            points_qc = temp_dst[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+
+        points_re = np.array(temp_re)[thr_index]
+
+        if dis:
+            return distance
+        else:
+            return [points_re, points_qc]
+
+
+if __name__ == &#39;__main__&#39;:
+    import h5py
+
+    ipr_path = r&#34;E:\hanqingju\BigChip_QC\SS200001018TR_C1D3\SS200001018TR_C1D3_20230524_175345_0.1.ipr&#34;
+    pts = {}
+    with h5py.File(ipr_path) as conf:
+        qc_pts = conf[&#39;QCInfo/CrossPoints/&#39;]
+        for i in qc_pts.keys():
+            pts[i] = conf[&#39;QCInfo/CrossPoints/&#39; + i][:]
+        loc = conf[&#39;Research/Stitch/StitchFovLocation&#39;][...]
+
+    chipno = [[240, 300, 330, 390, 390, 330, 300, 240, 420],
+              [240, 300, 330, 390, 390, 330, 300, 240, 420]]
+
+    # chipno = [[112, 144, 208, 224, 224, 208, 144, 112, 160],
+    #           [112, 144, 208, 224, 224, 208, 144, 112, 160]]
+
+    tr = TemplateReferenceV2()
+
+    tr.set_chipno(chipno)
+    tr.set_fov_location(loc)
+    tr.set_qc_points(pts)
+
+    tr.reference_template_v2()
+
+    dct = tr.get_template_eval()
+    mat = tr.get_global_eval()
+    print(1)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2"><code class="flex name class">
+<span>class <span class="ident">TemplateReferenceV2</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>模板推导算法V2
+分别通过点来拟合大致角度和尺度
+再通过初步校准得到局部区域的精确角度尺度值
+最终全局推导模板</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TemplateReferenceV2(TemplateReference):
+    &#34;&#34;&#34;
+    模板推导算法V2
+    分别通过点来拟合大致角度和尺度
+    再通过初步校准得到局部区域的精确角度尺度值
+    最终全局推导模板
+    &#34;&#34;&#34;
+
+    MINIMIZE_METHOD = [&#39;nelder-mead&#39;, &#39;bfgs&#39;, &#39;slsqp&#39;]
+
+    def __init__(self, ):
+        super(TemplateReferenceV2, self).__init__()
+
+        self.scale_range = 0.7
+        self.rotate_range = 35
+        self.search_thresh = 500
+        self.rotate_fov_min = 7
+
+        self.set_scale_flag = False
+        self.set_rotate_flag = False
+
+        # 2023/08/28新增 用于开发对接track线模板FOV信息
+        self.fov_index = None
+        self.fov_best_point = None
+
+    def get_fov_info(self, ):
+        return self.fov_index, self.fov_best_point
+
+    def set_threshold_v2(self,
+                         scale_range=None,
+                         rotate_range=None,
+                         search_thresh=None,
+                         rotate_fov_min=None):
+        &#34;&#34;&#34;
+        模板推导V2阈值
+        &#34;&#34;&#34;
+        if scale_range is not None:
+            self.scale_range = scale_range
+        if rotate_range is not None:
+            self.rotate_range = rotate_range
+        if search_thresh is not None:
+            self.search_thresh = search_thresh
+        if rotate_fov_min is not None:
+            self.rotate_fov_min = rotate_fov_min
+
+    def set_scale(self, scale_x: float, scale_y: float):
+        self.scale_x = self._to_digit(scale_x)
+        self.scale_y = self._to_digit(scale_y)
+        assert self.scale_x is not None and self.scale_y is not None, &#34;Input is not a number.&#34;
+        self.set_scale_flag = True
+
+    def set_rotate(self, r: float):
+        self.rotation = self._to_digit(r)
+        assert self.rotation is not None, &#34;Input is not a number.&#34;
+        self.set_rotate_flag = True
+
+    def set_qc_points(self, pts):
+        &#34;&#34;&#34;
+        pts: {index: [x, y, ind_x, ind_y], ...}
+        &#34;&#34;&#34;
+        if self.fov_loc_array is None:
+            print(&#34;Please init global location.&#34;)
+            return
+
+        assert isinstance(pts, dict), &#34;QC Points is error.&#34;
+        for ind in pts.keys():
+            points = np.array(pts[ind])
+            points[:, :2] = np.round(points[:, :2], 2)
+            self.qc_pts[ind] = points
+
+    def _template_correct(self, qc_pts, n=5):
+        &#34;&#34;&#34;
+        Args:
+            qc_pts: 已按照点数排序的点集 max-&gt;min
+            n: track角度遍历搜索所需FOV数量
+        &#34;&#34;&#34;
+        rotate_list = list()
+        point_list = list()
+        best_point = None
+        index = 0
+
+        #####角度搜索
+        if not self.set_rotate_flag:
+            for pts in qc_pts[:n]:
+                target_points = pts[1]
+                rotate = self._rotate_search(target_points, self.rotate_range)
+                rotate_list.append(rotate)
+            self.rotation = max(rotate_list, key=rotate_list.count)
+            index = rotate_list.index(self.rotation)
+
+        #####尺度搜索
+        if not self.set_scale_flag:
+            scale, best_point = self._scale_search(qc_pts[index][1], self.scale_range)
+            self.scale_x = self.scale_y = scale
+        else:
+            _, best_point = self._index_search(qc_pts[index][1])
+
+        return index, best_point
+
+    def _rotate_search(self, target_points, rotate_range=15):
+        &#34;&#34;&#34;
+        角度搜索
+        遍历角度 通过求得横向匹配点对 拟合直线得到的最小误差距离
+        再和拟合直线的角度与当前角度相减 最小值即为大致角度
+
+        Args:
+            target_points:
+            rotate_range: -15 ~ 15
+        Return:
+            rotate:
+        &#34;&#34;&#34;
+
+        rotate = None
+        rotate_min = np.Inf
+        center_point = self._center_point_search(target_points)
+        dis_list = list()
+        rotate_dif_list = list()
+        for _rotate in range(-rotate_range, rotate_range):
+            line_points_x = self._cross_line_points(center_point, self.scale_x, _rotate, self.chip_no[0])
+            src_points_x, _ = self.pair_to_template(line_points_x, target_points, self.search_thresh)
+            src_points_x = np.unique(src_points_x, axis=0)
+            line_model = LinearRegression()
+            _x = src_points_x[:, 0].reshape(-1, 1)
+            _y = src_points_x[:, 1].reshape(-1, 1)
+
+            line_model.fit(_x, _y)
+            y_predict = line_model.predict(_x)
+            y_dis = np.sum((y_predict - _y) ** 2)
+            _k = line_model.coef_[0][0]
+            rotate_dif = np.abs(np.degrees(np.arctan(_k)) - _rotate)
+            rotate_dif_list.append(rotate_dif)
+            dis_list.append(y_dis)
+
+        indexs = [i for i, x in enumerate(dis_list) if x == np.min(dis_list)]
+        min_rotate_dif = np.array(rotate_dif_list)[indexs].min()
+        index = rotate_dif_list.index(min_rotate_dif)
+        return range(-rotate_range, rotate_range)[index]
+
+    def _scale_search(self, target_points, scale_range=0.3):
+        &#34;&#34;&#34;
+        尺度搜索
+        Args:
+            target_points:
+            scale_range: 1 - scale_range ~ 1 + scale_range
+        Return:
+            scale:
+            best_point:
+        &#34;&#34;&#34;
+        scale = None
+        distance = np.Inf
+        scale_list = [i / 10 for i in range(int(10 - scale_range * 10), int(10 + scale_range * 10 + 1))]
+        best_point = None
+        for _scale in scale_list:
+            self.scale_x = self.scale_y = _scale
+            _distance, _best_center_point = self._index_search(target_points)
+            if _distance &lt; distance:
+                distance = _distance
+                scale = self.scale_x
+                best_point = _best_center_point
+
+        return scale, best_point
+
+    def _index_search(self, target_points, center_point=None):
+        &#34;&#34;&#34;
+        Args:
+            target_points: 单个FOV的点集
+        Return:
+            best_center_point: FOV中心点的坐标及索引
+        &#34;&#34;&#34;
+        best_center_point = list()
+        if center_point is None:
+            center_point = self._center_point_search(target_points)
+        chip_len = len(self.chip_no[0])
+        _distance = np.Inf
+        for index_x in range(chip_len):
+            for index_y in range(chip_len):
+                _center_point = np.concatenate((center_point[:2], [index_x, index_y]))
+                self._point_inference(_center_point, (self._range_thresh, self._range_thresh))
+                distance = self.pair_to_template(target_points, self.template, self.search_thresh, dis=True)
+                _judge = self._valid_scale_judge(target_points)
+                if np.sum(distance) &lt; _distance and _judge:
+                    _distance = np.sum(distance)
+                    best_center_point = _center_point
+
+        return _distance, best_center_point
+
+    def _valid_scale_judge(self, target_points, rate=1.2):
+        &#34;&#34;&#34;
+        搜索尺度时，解决对于小scale尺度匹配距离过小问题
+        &#34;&#34;&#34;
+        point_re, point_qc = self.pair_to_template(target_points, self.template, self.search_thresh)
+
+        x_min = min(np.min(point_re[:, 0]), np.min(point_qc[:, 0]))
+        x_max = max(np.max(point_re[:, 0]), np.max(point_qc[:, 0]))
+        y_min = min(np.min(point_re[:, 1]), np.min(point_qc[:, 1]))
+        y_max = max(np.max(point_re[:, 1]), np.max(point_qc[:, 1]))
+
+        points_count = 0
+
+        for point in self.template:
+            if x_min &lt;= point[0] &lt;= x_max and \
+                y_min &lt;= point[1] &lt;= y_max:
+                points_count += 1
+
+        if points_count / len(target_points) &lt;= rate or \
+                points_count - len(target_points) &lt;= 10: #匹配点圈内点数量不多于1.2倍或不多于10个检点数
+            return True
+
+        return False
+
+    @staticmethod
+    def _gradient_std_search(src_points, dst_points, reci=False):
+        &#34;&#34;&#34;
+        对应点对的梯度标准差
+        &#34;&#34;&#34;
+        k_list = list()
+        for src_point, dst_point in zip(src_points, dst_points):
+            k = (src_point[1] - dst_point[1]) / (src_point[0] - dst_point[0])
+            if reci: k_list.append(1 / k)
+            else: k_list.append(k)
+        return np.std(k_list)
+
+    @staticmethod
+    def _center_point_search(target_points):
+        &#34;&#34;&#34;
+        中心点匹配
+        &#34;&#34;&#34;
+        target_points = np.array(target_points)
+        x_mean = np.mean(target_points[:, 0])
+        y_mean = np.mean(target_points[:, 1])
+        return sorted(target_points, key=lambda x: ((x[0] - x_mean) ** 2) + (x[1] - y_mean) ** 2)[0]
+
+    def _cross_line_points(self, center_point, scale, rotate, chip):
+        &#34;&#34;&#34;
+        中心点出发的十字线点集
+        &#34;&#34;&#34;
+        points = list()
+        temp = center_point
+
+        ind = 0
+        while 0 &lt; temp[0] &lt; self._range_thresh and 0 &lt; temp[1] &lt; self._range_thresh:
+            ind = int(ind % len(chip))
+            _x = (chip[ind] * scale) * np.cos(np.radians(rotate))
+            _y = (chip[ind] * scale) * np.sin(np.radians(rotate))
+            temp = [temp[0] + _x, temp[1] + _y]
+            points.append(temp)
+            ind += 1
+
+        ind = -1
+        temp = center_point
+        while 0 &lt; temp[0] &lt; self._range_thresh and 0 &lt; temp[1] &lt; self._range_thresh:
+            ind = int(ind % len(chip))
+            _x = (chip[ind] * scale) * np.cos(np.radians(rotate))
+            _y = (chip[ind] * scale) * np.sin(np.radians(rotate))
+            temp = [temp[0] - _x, temp[1] - _y]
+            points.append(temp)
+            ind -= 1
+
+        return points
+
+    def reference_template_v2(self, method_threshold=0.1):
+        &#34;&#34;&#34;模板推导算法V2&#34;&#34;&#34;
+        self._check_parm()
+        self._qc_points_to_gloabal(all_points=True)
+        if len(self.qc_pts) == 0:
+            self.flag_skip_reference = True
+            clog.info(&#34;QC track points is None, quit template reference.&#34;)
+            return
+        qc_pts = sorted(self.qc_pts.items(), key=lambda x: x[1].shape[0], reverse=True)
+        index, best_point = self._template_correct(qc_pts, self.rotate_fov_min)
+        self.fov_index = qc_pts[index][0]
+
+        if len(best_point) == 0:
+            clog.info(&#34;Reference template failed.&#34;)
+            return
+
+        correct_scale_x = self.scale_x
+        correct_scale_y = self.scale_y
+        correct_rotate = self.rotation
+
+        for method in self.MINIMIZE_METHOD:
+            self.set_minimize_method(method=method)
+            self.first_template_correct(target_points=qc_pts[index][1],
+                                        index=qc_pts[index][0],
+                                        center_points=best_point)
+
+            self.fov_best_point = self.template
+
+            clog.info(f&#34;Reference template use method {method}.&#34;)
+            self.reference_template(&#39;multi&#39;)
+
+            valid_area, _, _, _, re_conf = self.get_template_eval()
+            if valid_area &gt; method_threshold or re_conf &gt; method_threshold:
+                break
+            else:
+                self.scale_x = correct_scale_x
+                self.scale_y = correct_scale_y
+                self.rotation = correct_rotate
+                clog.info(&#34;Reference template method change and try again.&#34;)
+
+    @staticmethod
+    def pair_to_template(temp_qc, temp_re, threshold=10, dis=False):
+        &#34;&#34;&#34;
+        one point of temp0 map to only one point of temp1
+        Args:
+            dis: 距离测量
+        &#34;&#34;&#34;
+        import scipy.spatial as spt
+
+        temp_src = np.array(temp_re)[:, :2]
+        temp_dst = np.array(temp_qc)[:, :2]
+        tree = spt.cKDTree(data=temp_src)
+        distance, index = tree.query(temp_dst, k=1)
+
+        if isinstance(threshold, int):
+            thr_index = index[distance &lt; threshold]
+            points_qc = temp_dst[distance &lt; threshold]
+        elif isinstance(threshold, list):
+            threshold1, threshold2 = threshold
+            thr_index = index[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+            points_qc = temp_dst[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+
+        points_re = np.array(temp_re)[thr_index]
+
+        if dis:
+            return distance
+        else:
+            return [points_re, points_qc]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="cellbin.contrib.template_reference.TemplateReference" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference">TemplateReference</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.MINIMIZE_METHOD"><code class="name">var <span class="ident">MINIMIZE_METHOD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.pair_to_template"><code class="name flex">
+<span>def <span class="ident">pair_to_template</span></span>(<span>temp_qc, temp_re, threshold=10, dis=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>one point of temp0 map to only one point of temp1</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dis</code></strong></dt>
+<dd>距离测量</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def pair_to_template(temp_qc, temp_re, threshold=10, dis=False):
+    &#34;&#34;&#34;
+    one point of temp0 map to only one point of temp1
+    Args:
+        dis: 距离测量
+    &#34;&#34;&#34;
+    import scipy.spatial as spt
+
+    temp_src = np.array(temp_re)[:, :2]
+    temp_dst = np.array(temp_qc)[:, :2]
+    tree = spt.cKDTree(data=temp_src)
+    distance, index = tree.query(temp_dst, k=1)
+
+    if isinstance(threshold, int):
+        thr_index = index[distance &lt; threshold]
+        points_qc = temp_dst[distance &lt; threshold]
+    elif isinstance(threshold, list):
+        threshold1, threshold2 = threshold
+        thr_index = index[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+        points_qc = temp_dst[(threshold1 &lt; distance) &amp; (distance &lt; threshold2)]
+
+    points_re = np.array(temp_re)[thr_index]
+
+    if dis:
+        return distance
+    else:
+        return [points_re, points_qc]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.get_fov_info"><code class="name flex">
+<span>def <span class="ident">get_fov_info</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_fov_info(self, ):
+    return self.fov_index, self.fov_best_point</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.reference_template_v2"><code class="name flex">
+<span>def <span class="ident">reference_template_v2</span></span>(<span>self, method_threshold=0.1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>模板推导算法V2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reference_template_v2(self, method_threshold=0.1):
+    &#34;&#34;&#34;模板推导算法V2&#34;&#34;&#34;
+    self._check_parm()
+    self._qc_points_to_gloabal(all_points=True)
+    if len(self.qc_pts) == 0:
+        self.flag_skip_reference = True
+        clog.info(&#34;QC track points is None, quit template reference.&#34;)
+        return
+    qc_pts = sorted(self.qc_pts.items(), key=lambda x: x[1].shape[0], reverse=True)
+    index, best_point = self._template_correct(qc_pts, self.rotate_fov_min)
+    self.fov_index = qc_pts[index][0]
+
+    if len(best_point) == 0:
+        clog.info(&#34;Reference template failed.&#34;)
+        return
+
+    correct_scale_x = self.scale_x
+    correct_scale_y = self.scale_y
+    correct_rotate = self.rotation
+
+    for method in self.MINIMIZE_METHOD:
+        self.set_minimize_method(method=method)
+        self.first_template_correct(target_points=qc_pts[index][1],
+                                    index=qc_pts[index][0],
+                                    center_points=best_point)
+
+        self.fov_best_point = self.template
+
+        clog.info(f&#34;Reference template use method {method}.&#34;)
+        self.reference_template(&#39;multi&#39;)
+
+        valid_area, _, _, _, re_conf = self.get_template_eval()
+        if valid_area &gt; method_threshold or re_conf &gt; method_threshold:
+            break
+        else:
+            self.scale_x = correct_scale_x
+            self.scale_y = correct_scale_y
+            self.rotation = correct_rotate
+            clog.info(&#34;Reference template method change and try again.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_qc_points"><code class="name flex">
+<span>def <span class="ident">set_qc_points</span></span>(<span>self, pts)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>pts: {index: [x, y, ind_x, ind_y], &hellip;}</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_qc_points(self, pts):
+    &#34;&#34;&#34;
+    pts: {index: [x, y, ind_x, ind_y], ...}
+    &#34;&#34;&#34;
+    if self.fov_loc_array is None:
+        print(&#34;Please init global location.&#34;)
+        return
+
+    assert isinstance(pts, dict), &#34;QC Points is error.&#34;
+    for ind in pts.keys():
+        points = np.array(pts[ind])
+        points[:, :2] = np.round(points[:, :2], 2)
+        self.qc_pts[ind] = points</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_rotate"><code class="name flex">
+<span>def <span class="ident">set_rotate</span></span>(<span>self, r: float)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_rotate(self, r: float):
+    self.rotation = self._to_digit(r)
+    assert self.rotation is not None, &#34;Input is not a number.&#34;
+    self.set_rotate_flag = True</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_scale"><code class="name flex">
+<span>def <span class="ident">set_scale</span></span>(<span>self, scale_x: float, scale_y: float)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_scale(self, scale_x: float, scale_y: float):
+    self.scale_x = self._to_digit(scale_x)
+    self.scale_y = self._to_digit(scale_y)
+    assert self.scale_x is not None and self.scale_y is not None, &#34;Input is not a number.&#34;
+    self.set_scale_flag = True</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_threshold_v2"><code class="name flex">
+<span>def <span class="ident">set_threshold_v2</span></span>(<span>self, scale_range=None, rotate_range=None, search_thresh=None, rotate_fov_min=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>模板推导V2阈值</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_threshold_v2(self,
+                     scale_range=None,
+                     rotate_range=None,
+                     search_thresh=None,
+                     rotate_fov_min=None):
+    &#34;&#34;&#34;
+    模板推导V2阈值
+    &#34;&#34;&#34;
+    if scale_range is not None:
+        self.scale_range = scale_range
+    if rotate_range is not None:
+        self.rotate_range = rotate_range
+    if search_thresh is not None:
+        self.search_thresh = search_thresh
+    if rotate_fov_min is not None:
+        self.rotate_fov_min = rotate_fov_min</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="cellbin.contrib.template_reference.TemplateReference" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference">TemplateReference</a></b></code>:
+<ul class="hlist">
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.first_template_correct" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.first_template_correct">first_template_correct</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.get_global_eval" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.get_global_eval">get_global_eval</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.get_template_eval" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.get_template_eval">get_template_eval</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.homography_image" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.homography_image">homography_image</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.points_area_eval" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.points_area_eval">points_area_eval</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.reference_template" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.reference_template">reference_template</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.save_template" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.save_template">save_template</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.set_chipno" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.set_chipno">set_chipno</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.set_fov_location" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.set_fov_location">set_fov_location</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.set_minimize_method" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.set_minimize_method">set_minimize_method</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference.TemplateReference.set_threshold" href="template_reference.html#cellbin.contrib.template_reference.TemplateReference.set_threshold">set_threshold</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin.contrib" href="index.html">cellbin.contrib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2">TemplateReferenceV2</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.MINIMIZE_METHOD" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.MINIMIZE_METHOD">MINIMIZE_METHOD</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.get_fov_info" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.get_fov_info">get_fov_info</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.pair_to_template" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.pair_to_template">pair_to_template</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.reference_template_v2" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.reference_template_v2">reference_template_v2</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_qc_points" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_qc_points">set_qc_points</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_rotate" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_rotate">set_rotate</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_scale" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_scale">set_scale</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_threshold_v2" href="#cellbin.contrib.template_reference_v2.TemplateReferenceV2.set_threshold_v2">set_threshold_v2</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

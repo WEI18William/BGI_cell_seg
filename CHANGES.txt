@@ -1,0 +1,15 @@
+Release 1.2.7, Sep 25, 2023
+
+- update README.md
+
+Release 1.2.6, Sep 25, 2023
+
+- move test(example) to cellbin package, update qc&pipeline to enable operation adjustment
+- optimize cell segmentation and registration using numba, add unit test for these changes, fix pyvips rot bug (tigerRose)
+- add auto download weights, all weights have been upload to StereoCell_v2.0 GitHub repo
+- add new template algorithm, will do global template reference firstly, fov template reference secondly
+- dependencies are all adjusted to match same requirements which develop group use
+- add doc string in stitch module
+- image qc add time cost
+- (bug fix) global template reference get nothing, return will be a empty list (template_reference_v2 line 283)
+- (bug fix) f_deep_watershed radius from 10 to 2

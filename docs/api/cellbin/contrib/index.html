@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cellbin.contrib API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cellbin.contrib</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+
+from .template_reference import TemplateReference
+from .template_reference_v2 import TemplateReferenceV2
+from .fov_aligner import FOVAligner
+from .global_location import GlobalLocation
+
+
+infinity = 0.00000001
+
+
+def rotate(pt, angle, ori_w, ori_h, new_w, new_h):
+    px, py = pt
+    cx = int(new_w / 2)
+    cy = int(new_h / 2)
+    theta = angle
+    rad = math.radians(theta)
+    new_px = cx + float(px - cx) * math.cos(rad) + float(py - cy) * math.sin(rad)
+    new_py = cy + -(float(px - cx) * math.sin(rad)) + float(py - cy) * math.cos(rad)
+    x_offset, y_offset = (ori_w - new_w) / 2, (ori_h - new_h) / 2
+    new_px += x_offset
+    new_py += y_offset
+    return int(new_px), int(new_py)
+
+
+class Line(object):
+    def __init__(self, ):
+        self.coefficient = None
+        self.bias = None
+        self.index = 0
+
+    def two_points(self, shape):
+        h, w = shape
+        if self.coefficient &gt;= 0:
+            pt0 = self.get_point_by_x(0)
+            pt1 = self.get_point_by_x(w)
+        else:
+            pt0 = self.get_point_by_y(0)
+            pt1 = self.get_point_by_y(h)
+        return [pt0, pt1]
+
+    def set_coefficient_by_rotation(self, rotation):
+        self.coefficient = math.tan(math.radians(rotation))
+
+    def init_by_point_pair(self, pt0, pt1):
+        x0, y0 = pt0
+        x1, y1 = pt1
+        if x1 &gt; x0:
+            self.coefficient = (y1 - y0) / (x1 - x0)
+        elif x1 == x0:
+            self.coefficient = (y0 - y1) / infinity
+        else:
+            self.coefficient = (y0 - y1) / (x0 - x1)
+        self.bias = y0 - self.coefficient * x0
+
+    def init_by_point_k(self, pt0, k):
+        x0, y0 = pt0
+        self.coefficient = k
+        self.bias = y0 - k * x0
+
+    def rotation(self, ):
+        return math.degrees(math.atan(self.coefficient))
+
+    def get_point_by_x(self, x):
+        return [x, self.coefficient * x + self.bias]
+
+    def get_point_by_y(self, y):
+        return [(y - self.bias) / self.coefficient, y]
+
+    def line_rotate(self, angle, ori_w, ori_h, new_w, new_h):
+        shape = (new_h, new_w)
+        p0, p1 = self.two_points(
+            shape=shape
+        )
+        p0_new = rotate(
+            p0,
+            angle,
+            ori_w, ori_h, new_w, new_h
+        )
+        p1_new = rotate(
+            p1,
+            angle,
+            ori_w, ori_h, new_w, new_h
+        )
+        self.init_by_point_pair(p0_new, p1_new)
+        return self</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="cellbin.contrib.GMM_correct" href="GMM_correct.html">cellbin.contrib.GMM_correct</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.alignment" href="alignment.html">cellbin.contrib.alignment</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.cell_mask" href="cell_mask.html">cellbin.contrib.cell_mask</a></code></dt>
+<dd>
+<div class="desc"><p>Created on Thu Mar
+2 09:30:48 2023 …</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.fast_correct" href="fast_correct.html">cellbin.contrib.fast_correct</a></code></dt>
+<dd>
+<div class="desc"><p>Created on Tue Mar
+7 11:14:43 2023 …</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.fov_aligner" href="fov_aligner.html">cellbin.contrib.fov_aligner</a></code></dt>
+<dd>
+<div class="desc"><p>Matcher provide the way to get overlap/offset from neighbor FOV.</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.global_location" href="global_location.html">cellbin.contrib.global_location</a></code></dt>
+<dd>
+<div class="desc"><p>求解拼接坐标</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.line_detector" href="line_detector.html">cellbin.contrib.line_detector</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.roi_track" href="roi_track.html">cellbin.contrib.roi_track</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.template_match" href="template_match.html">cellbin.contrib.template_match</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.template_reference" href="template_reference.html">cellbin.contrib.template_reference</a></code></dt>
+<dd>
+<div class="desc"><p>reference template for image, must need QC data.
+create by lizepeng, 2023/1/31 10:00</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.template_reference_v2" href="template_reference_v2.html">cellbin.contrib.template_reference_v2</a></code></dt>
+<dd>
+<div class="desc"><p>reference template v2 for image, must need QC data.
+create by lizepeng, 2023/4/13 14:09</p></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.track_roi_picker" href="track_roi_picker.html">cellbin.contrib.track_roi_picker</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="cellbin.contrib.vision_track" href="vision_track.html">cellbin.contrib.vision_track</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="cellbin.contrib.rotate"><code class="name flex">
+<span>def <span class="ident">rotate</span></span>(<span>pt, angle, ori_w, ori_h, new_w, new_h)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotate(pt, angle, ori_w, ori_h, new_w, new_h):
+    px, py = pt
+    cx = int(new_w / 2)
+    cy = int(new_h / 2)
+    theta = angle
+    rad = math.radians(theta)
+    new_px = cx + float(px - cx) * math.cos(rad) + float(py - cy) * math.sin(rad)
+    new_py = cy + -(float(px - cx) * math.sin(rad)) + float(py - cy) * math.cos(rad)
+    x_offset, y_offset = (ori_w - new_w) / 2, (ori_h - new_h) / 2
+    new_px += x_offset
+    new_py += y_offset
+    return int(new_px), int(new_py)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cellbin.contrib.Line"><code class="flex name class">
+<span>class <span class="ident">Line</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Line(object):
+    def __init__(self, ):
+        self.coefficient = None
+        self.bias = None
+        self.index = 0
+
+    def two_points(self, shape):
+        h, w = shape
+        if self.coefficient &gt;= 0:
+            pt0 = self.get_point_by_x(0)
+            pt1 = self.get_point_by_x(w)
+        else:
+            pt0 = self.get_point_by_y(0)
+            pt1 = self.get_point_by_y(h)
+        return [pt0, pt1]
+
+    def set_coefficient_by_rotation(self, rotation):
+        self.coefficient = math.tan(math.radians(rotation))
+
+    def init_by_point_pair(self, pt0, pt1):
+        x0, y0 = pt0
+        x1, y1 = pt1
+        if x1 &gt; x0:
+            self.coefficient = (y1 - y0) / (x1 - x0)
+        elif x1 == x0:
+            self.coefficient = (y0 - y1) / infinity
+        else:
+            self.coefficient = (y0 - y1) / (x0 - x1)
+        self.bias = y0 - self.coefficient * x0
+
+    def init_by_point_k(self, pt0, k):
+        x0, y0 = pt0
+        self.coefficient = k
+        self.bias = y0 - k * x0
+
+    def rotation(self, ):
+        return math.degrees(math.atan(self.coefficient))
+
+    def get_point_by_x(self, x):
+        return [x, self.coefficient * x + self.bias]
+
+    def get_point_by_y(self, y):
+        return [(y - self.bias) / self.coefficient, y]
+
+    def line_rotate(self, angle, ori_w, ori_h, new_w, new_h):
+        shape = (new_h, new_w)
+        p0, p1 = self.two_points(
+            shape=shape
+        )
+        p0_new = rotate(
+            p0,
+            angle,
+            ori_w, ori_h, new_w, new_h
+        )
+        p1_new = rotate(
+            p1,
+            angle,
+            ori_w, ori_h, new_w, new_h
+        )
+        self.init_by_point_pair(p0_new, p1_new)
+        return self</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="cellbin.contrib.Line.get_point_by_x"><code class="name flex">
+<span>def <span class="ident">get_point_by_x</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_point_by_x(self, x):
+    return [x, self.coefficient * x + self.bias]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.get_point_by_y"><code class="name flex">
+<span>def <span class="ident">get_point_by_y</span></span>(<span>self, y)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_point_by_y(self, y):
+    return [(y - self.bias) / self.coefficient, y]</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.init_by_point_k"><code class="name flex">
+<span>def <span class="ident">init_by_point_k</span></span>(<span>self, pt0, k)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_by_point_k(self, pt0, k):
+    x0, y0 = pt0
+    self.coefficient = k
+    self.bias = y0 - k * x0</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.init_by_point_pair"><code class="name flex">
+<span>def <span class="ident">init_by_point_pair</span></span>(<span>self, pt0, pt1)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_by_point_pair(self, pt0, pt1):
+    x0, y0 = pt0
+    x1, y1 = pt1
+    if x1 &gt; x0:
+        self.coefficient = (y1 - y0) / (x1 - x0)
+    elif x1 == x0:
+        self.coefficient = (y0 - y1) / infinity
+    else:
+        self.coefficient = (y0 - y1) / (x0 - x1)
+    self.bias = y0 - self.coefficient * x0</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.line_rotate"><code class="name flex">
+<span>def <span class="ident">line_rotate</span></span>(<span>self, angle, ori_w, ori_h, new_w, new_h)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def line_rotate(self, angle, ori_w, ori_h, new_w, new_h):
+    shape = (new_h, new_w)
+    p0, p1 = self.two_points(
+        shape=shape
+    )
+    p0_new = rotate(
+        p0,
+        angle,
+        ori_w, ori_h, new_w, new_h
+    )
+    p1_new = rotate(
+        p1,
+        angle,
+        ori_w, ori_h, new_w, new_h
+    )
+    self.init_by_point_pair(p0_new, p1_new)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.rotation"><code class="name flex">
+<span>def <span class="ident">rotation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotation(self, ):
+    return math.degrees(math.atan(self.coefficient))</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.set_coefficient_by_rotation"><code class="name flex">
+<span>def <span class="ident">set_coefficient_by_rotation</span></span>(<span>self, rotation)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_coefficient_by_rotation(self, rotation):
+    self.coefficient = math.tan(math.radians(rotation))</code></pre>
+</details>
+</dd>
+<dt id="cellbin.contrib.Line.two_points"><code class="name flex">
+<span>def <span class="ident">two_points</span></span>(<span>self, shape)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def two_points(self, shape):
+    h, w = shape
+    if self.coefficient &gt;= 0:
+        pt0 = self.get_point_by_x(0)
+        pt1 = self.get_point_by_x(w)
+    else:
+        pt0 = self.get_point_by_y(0)
+        pt1 = self.get_point_by_y(h)
+    return [pt0, pt1]</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="cellbin" href="../index.html">cellbin</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="cellbin.contrib.GMM_correct" href="GMM_correct.html">cellbin.contrib.GMM_correct</a></code></li>
+<li><code><a title="cellbin.contrib.alignment" href="alignment.html">cellbin.contrib.alignment</a></code></li>
+<li><code><a title="cellbin.contrib.cell_mask" href="cell_mask.html">cellbin.contrib.cell_mask</a></code></li>
+<li><code><a title="cellbin.contrib.fast_correct" href="fast_correct.html">cellbin.contrib.fast_correct</a></code></li>
+<li><code><a title="cellbin.contrib.fov_aligner" href="fov_aligner.html">cellbin.contrib.fov_aligner</a></code></li>
+<li><code><a title="cellbin.contrib.global_location" href="global_location.html">cellbin.contrib.global_location</a></code></li>
+<li><code><a title="cellbin.contrib.line_detector" href="line_detector.html">cellbin.contrib.line_detector</a></code></li>
+<li><code><a title="cellbin.contrib.roi_track" href="roi_track.html">cellbin.contrib.roi_track</a></code></li>
+<li><code><a title="cellbin.contrib.template_match" href="template_match.html">cellbin.contrib.template_match</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference" href="template_reference.html">cellbin.contrib.template_reference</a></code></li>
+<li><code><a title="cellbin.contrib.template_reference_v2" href="template_reference_v2.html">cellbin.contrib.template_reference_v2</a></code></li>
+<li><code><a title="cellbin.contrib.track_roi_picker" href="track_roi_picker.html">cellbin.contrib.track_roi_picker</a></code></li>
+<li><code><a title="cellbin.contrib.vision_track" href="vision_track.html">cellbin.contrib.vision_track</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="cellbin.contrib.rotate" href="#cellbin.contrib.rotate">rotate</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cellbin.contrib.Line" href="#cellbin.contrib.Line">Line</a></code></h4>
+<ul class="">
+<li><code><a title="cellbin.contrib.Line.get_point_by_x" href="#cellbin.contrib.Line.get_point_by_x">get_point_by_x</a></code></li>
+<li><code><a title="cellbin.contrib.Line.get_point_by_y" href="#cellbin.contrib.Line.get_point_by_y">get_point_by_y</a></code></li>
+<li><code><a title="cellbin.contrib.Line.init_by_point_k" href="#cellbin.contrib.Line.init_by_point_k">init_by_point_k</a></code></li>
+<li><code><a title="cellbin.contrib.Line.init_by_point_pair" href="#cellbin.contrib.Line.init_by_point_pair">init_by_point_pair</a></code></li>
+<li><code><a title="cellbin.contrib.Line.line_rotate" href="#cellbin.contrib.Line.line_rotate">line_rotate</a></code></li>
+<li><code><a title="cellbin.contrib.Line.rotation" href="#cellbin.contrib.Line.rotation">rotation</a></code></li>
+<li><code><a title="cellbin.contrib.Line.set_coefficient_by_rotation" href="#cellbin.contrib.Line.set_coefficient_by_rotation">set_coefficient_by_rotation</a></code></li>
+<li><code><a title="cellbin.contrib.Line.two_points" href="#cellbin.contrib.Line.two_points">two_points</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

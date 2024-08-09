@@ -1,0 +1,12 @@
+.idea
+cellbin\dnn\weights\*.onnx
+/cell_bin.egg-info/
+/build/
+
+/dist/
+
+__pycache__/
+*.pyc
+*.pyo
+
+**/__pycache__
